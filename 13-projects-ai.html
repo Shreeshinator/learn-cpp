@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>13 · AI Inference Engine — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Project 13 · Capstone — math + vectors · ~90 min</span>
+<h1>Build an AI inference engine from scratch (no libraries)</h1>
+<p><strong>Goal:</strong> implement forward inference for a multilayer perceptron using only the standard library (<code>std::vector</code> and scalar arithmetic). This project covers <strong>AI, inference vs training, neuron, weight, bias, ReLU, softmax, argmax, matrix, forward pass, and MLP</strong>.</p>
+
+<div class="toc"><strong>On this page</strong><ol><li>AI: inference vs training</li><li>Neuron: weighted sum and bias</li><li>ReLU, softmax, and argmax</li><li>Matrix engine: matVec</li><li>Multilayer perceptron: 4 → 8 → 3 forward pass</li><li>Compiling and running</li><li>Loading trained weights</li><li>Benchmarking</li><li>AI microservice integration</li><li>Capstone checklist</li></ol></div>
+
+<div class="callout"><strong>Overview:</strong> Training optimizes parameters on large datasets; inference applies trained weights: <code>z = Wx + b</code>, ReLU, softmax. This engine implements inference in C++ for deployment without Python dependencies: load parameters, evaluate the forward pass, select the maximum-probability class.</div>
+
+<h2>1. AI: inference vs training</h2>
+<ul>
+<li><strong>AI (model evaluation)</strong> in this context = mapping numeric inputs to numeric outputs via learned parameters. Example: input vector <code>[0.9, 0.1, 0.8, 0.2]</code> → probability vector <code>[0.7, 0.2, 0.1]</code>. Behavior is determined by parameter values, not explicit rules.</li>
+<li><strong>Training</strong> = numerical optimization of parameters. Performed in Python (PyTorch/scikit-learn) by minimizing prediction error over labeled datasets (<strong>gradient descent</strong> = iterative error minimization). Computationally intensive, executed once.</li>
+<li><strong>Inference</strong> = application of fixed parameters to new inputs. Consists of matrix multiplication, addition, and elementwise nonlinearities. Deterministic, portable, executed repeatedly. This lesson implements inference exclusively.</li>
+<li><strong>Model</strong> = parameter set plus evaluation procedure. <strong>MLP (Multi-Layer Perceptron)</strong> = feedforward architecture with sequential fully-connected layers. This implementation: 4 → 8 → 3.</li>
+<li><strong>Constraint:</strong> no external dependencies (<code>torch</code>, Eigen excluded). Only <code>vector/iostream/cmath/algorithm</code> for containers, output, exponentials, and reductions.</li>
+</ul>
+<div class="explain"><strong>Distinction:</strong> training determines parameter values; inference evaluates the parameterized function. The same inference code handles arbitrary dimensions — 4 inputs or 784-pixel MNIST vectors — with only parameter dimensions changing.</div>
+
+<h2>2. Neuron: weighted sum and bias</h2>
+<div class="callout"><strong>Definition:</strong> a neuron computes <code>z = sum(w[i]*x[i]) + b</code>, where <code>x</code> = inputs, <code>w</code> = weights, <code>b</code> = bias. <strong>Weight</strong> = per-input coefficient (positive amplifies, negative inverts). <strong>Bias</strong> = additive offset independent of inputs.</div>
+<p><strong>Numerical verification (evaluate manually):</strong></p>
+<pre><code>x = [1, 2, 3], w = [0.5, -1.0, 0.2], b = 0.5
+sum = 0.5*1 + (-1.0)*2 + 0.2*3 + 0.5
+    = 0.5   + (-2.0)   + 0.6   + 0.5
+    = -0.4
+neuron output (pre-activation) = -0.4</code></pre>
+<div class="explain"><strong>Interpretation:</strong> each input is scaled by its weight and accumulated with the bias. Large positive values indicate strong activation; large negative values indicate suppression. A <strong>layer</strong> = multiple neurons evaluated on identical inputs, each with independent weights/bias. The hidden layer contains 8 neurons; the output layer contains 3.</div>
+
+<h2>3. ReLU, softmax, and argmax</h2>
+<p>Raw scores require normalization before interpretation. Three standard transformations:</p>
+<ul>
+<li><strong>ReLU (Rectified Linear Unit)</strong> = <code>max(0, x)</code>. Negative values map to zero; non-negative values are unchanged. Introduces nonlinearity, enabling multilayer networks to represent non-linear functions. Example: <code>[-0.4, 2.1, 0.0] → [0, 2.1, 0]</code>.</li>
+<li><strong>Softmax</strong> = converts logits to a probability distribution summing to 1: <code>softmax[i] = exp(z[i]) / sum(exp(z))</code>. <strong>exp</strong> = exponential function (ensures positivity, accentuates maxima). Normalization yields class probabilities.</li>
+<li><strong>Argmax</strong> = index of the maximum element. For <code>[0.7, 0.2, 0.1]</code>, argmax = 0. This index is the predicted class.</li>
+</ul>
+<pre><code>ReLU example:
+  in  = [-1.0, 0.5, 0.0]
+  out = [ 0.0, 0.5, 0.0]
+
+Softmax example with z = [2.0, 1.0, 0.1]:
+  exp(z) = [7.39, 2.72, 1.11]
+  sum = 11.22
+  probs = [0.66, 0.24, 0.10]    # sums to 1.0
+
+Argmax example:
+  probs = [0.66, 0.24, 0.10] -&gt; argmax = 0</code></pre>
+<div class="explain"><strong>Numerical stability:</strong> <code>exp(1000)</code> overflows. Subtracting the maximum prior to exponentiation (<code>exp(z[i]-max)</code>) preserves the result (normalization cancels the constant) while bounding intermediate values. The implementation below applies this standard technique.</div>
+
+<h2>4. Matrix engine: matVec</h2>
+<p>A <strong>matrix (Mat)</strong> = weight table with rows = layer neurons, columns = inputs. A <strong>vector (Vec)</strong> = one-dimensional value list. <code>matVec</code> evaluates one fully-connected layer: each row computes <code>z = Wx + b</code>.</p>
+<pre><code>// ai.cpp -- g++ -std=c++17 -O2 ai.cpp -o ai
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;fstream&gt;
+#include &lt;chrono&gt;
+using Vec = std::vector&lt;float&gt;;
+using Mat = std::vector&lt;Vec&gt;;  // rows x cols
+
+Vec matVec(const Mat&amp; W, const Vec&amp; x, const Vec&amp; b) {
+    Vec y(W.size(), 0);
+    for (size_t i = 0; i &lt; W.size(); i++) {
+        float s = b[i];
+        for (size_t j = 0; j &lt; x.size(); j++) s += W[i][j] * x[j];
+        y[i] = s;
+    }
+    return y;
+}
+void relu(Vec&amp; v) {
+    for (auto&amp; x : v) x = std::max(0.f, x);
+}
+Vec softmax(Vec z) {
+    float m = *std::max_element(z.begin(), z.end());
+    float sum = 0;
+    for (auto&amp; x : z) { x = std::exp(x - m); sum += x; }
+    for (auto&amp; x : z) x /= sum;
+    return z;
+}
+int argmax(const Vec&amp; v) {
+    return (int)(std::max_element(v.begin(), v.end()) - v.begin());
+}</code></pre>
+<div class="explain"><strong>Type aliases:</strong> <code>using Vec = vector&lt;float&gt;</code> defines a single-precision decimal list. <code>using Mat = vector&lt;Vec&gt;</code> defines a row-major table. <code>float</code> (32-bit) is standard for inference (reduced memory vs <code>double</code>). Additional headers (<code>string/fstream/chrono</code>) support file loading and benchmarking below.</div>
+<div class="explain"><strong>matVec specification:</strong><br>
+<code>Vec matVec(const Mat&amp; W, const Vec&amp; x, const Vec&amp; b)</code> — <code>W</code> = weight matrix, <code>x</code> = input vector, <code>b</code> = bias vector (one per row). <code>const &amp;</code> = pass by constant reference (no copy).<br>
+<code>Vec y(W.size(), 0);</code> — result vector with one entry per row (neuron).<br>
+<code>for (i...) float s = b[i];</code> — initializes accumulator with the bias term.<br>
+<code>for (j...) s += W[i][j]*x[j];</code> — accumulates weighted inputs. <code>W[i][j]</code> = row i, column j.<br>
+<code>y[i]=s;</code> — stores the pre-activation score. <code>return y;</code> returns the layer output.</div>
+<div class="explain"><strong>Activation utilities:</strong><br>
+<code>relu</code>: in-place elementwise maximum with zero (<code>auto&amp;</code> mutates the argument directly).<br>
+<code>softmax</code>: accepts <code>z</code> by value (operates on a copy). Computes maximum <code>m</code>, applies <code>exp(x-m)</code> with summation, then divides by the sum to produce probabilities.<br>
+<code>argmax</code>: <code>max_element</code> returns an iterator to the maximum; subtracting <code>begin()</code> yields the index.</div>
+
+<h2>5. Multilayer perceptron: 4 → 8 → 3 forward pass</h2>
+<p><strong>Forward pass</strong> = single inference evaluation: input → hidden pre-activations → ReLU → output logits → softmax → class selection. Parameters below are illustrative fixed values for mechanical verification (not trained).</p>
+<pre><code>struct MLP {
+    Mat W1 = {{.2,.5,-.3,.1},{.4,-.1,.6,.2},{-.5,.3,.1,.4},{.1,.1,.1,.1},
+              {.3,-.2,.5,-.4},{.6,.1,-.1,.2},{-.2,-.3,.4,.5},{.1,.6,-.5,.3}};
+    Vec b1 = {0,0,0,0,0,0,0,0};
+    Mat W2 = {{.5,-.2,.3,.1,.4,-.1,.2,.3},{-.3,.4,.1,.5,-.2,.3,.1,-.4},{.1,.2,-.4,.3,.1,.5,-.3,.2}};
+    Vec b2 = {0,0,0};
+    Vec forward(Vec x) {
+        Vec h = matVec(W1, x, b1);
+        relu(h);
+        Vec z = matVec(W2, h, b2);
+        return softmax(z);
+    }
+};
+int main() {
+    MLP net;
+    Vec sample = {0.9, 0.1, 0.8, 0.2};  // example feature vector
+    Vec probs = net.forward(sample);
+    std::cout &lt;&lt; "probs: ";
+    for (float p : probs) std::cout &lt;&lt; p &lt;&lt; " ";
+    std::cout &lt;&lt; "\n predicted class: " &lt;&lt; argmax(probs) &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+<div class="explain"><strong>Line by line:</strong><br>
+<code>struct MLP { ... };</code> — aggregate containing parameters and evaluation method.<br>
+<code>Mat W1 (8×4)</code> — hidden-layer weights: 8 neurons × 4 inputs. <code>Vec b1 (8 zeros)</code> — hidden biases.<br>
+<code>Mat W2 (3×8)</code> — output-layer weights: 3 classes × 8 hidden activations. <code>Vec b2 (3 zeros)</code> — output biases.<br>
+<code>Vec forward(Vec x)</code> — <code>matVec(W1,x,b1)</code> → 8 hidden scores → <code>relu(h)</code> → <code>matVec(W2,h,b2)</code> → 3 logits → <code>softmax</code> → probabilities.<br>
+<code>main</code>: instantiates <code>net</code>, defines input vector <code>sample</code>, evaluates <code>forward</code>, prints probabilities and <code>argmax</code> (predicted class 0/1/2). Modifying <code>sample</code> and re-executing demonstrates input-dependent classification.</div>
+
+<h2>6. Compiling and running</h2>
+<pre><code>cd ~/Documents/CppCourse
+# Windows: cd $HOME\Documents\CppCourse
+
+g++ -std=c++17 -O2 ai.cpp -o ai
+./ai
+# Windows: .\ai.exe
+
+# Expected output (values subject to float rounding):
+# probs: 0.45 0.25 0.30
+# predicted class: 0</code></pre>
+<div class="explain"><strong>Compiler flags:</strong> <code>-O2</code> = optimization level 2 (enables standard performance transformations). <code>-march=native</code> (optional) = target host CPU instruction set. Modify <code>sample</code> to <code>{0.1, 0.9, 0.2, 0.8}</code> and re-execute to observe probability redistribution. Inference behavior is fully determined by inputs given fixed parameters; no external libraries are required.</div>
+
+<h2>7. Loading trained weights</h2>
+<p>Illustrative parameters validate mechanics. Production parameters originate from Python training and transfer via text serialization. The forward procedure is unchanged; only matrix dimensions increase (e.g. MNIST: 784 → 128 → 10).</p>
+<pre><code># Python: train model, then serialize parameters as text:
+# import numpy as np
+# np.savetxt("W1.txt", W1)   # one row per line, space-separated
+# np.savetxt("b1.txt", b1)
+# np.savetxt("W2.txt", W2)
+# np.savetxt("b2.txt", b2)</code></pre>
+<div class="explain"><strong>Python stage:</strong> <code>savetxt</code> writes numeric arrays as whitespace-delimited text, one row per line, producing <code>W1.txt</code> etc.</div>
+<pre><code>// C++: load serialized parameters (add to ai.cpp)
+Vec loadVec(const std::string&amp; path) {
+    Vec v;
+    float x;
+    std::ifstream f(path);
+    while (f &gt;&gt; x) v.push_back(x);
+    return v;
+}
+Mat loadMat(const std::string&amp; path, int rows, int cols) {
+    Mat m(rows, Vec(cols));
+    std::ifstream f(path);
+    for (int i = 0; i &lt; rows; i++)
+        for (int j = 0; j &lt; cols; j++) f &gt;&gt; m[i][j];
+    return m;
+}
+// Then in main():
+//   MLP net;
+//   net.W1 = loadMat("W1.txt", 128, 784);
+//   net.b1 = loadVec("b1.txt");
+//   ... identical forward() on a 784-element input</code></pre>
+<div class="explain"><strong>C++ stage:</strong> <code>loadVec</code> opens the file (<code>ifstream</code> = input file stream) and extracts decimals with <code>&gt;&gt;</code> until exhaustion. <code>loadMat</code> preallocates a rows×cols matrix and fills it row-major via nested loops (outer = rows, inner = columns). After assignment, <code>forward()</code> executes unchanged: for MNIST, input = 784 grayscale values (28×28 flattened), output = 10 probabilities (digits 0–9), argmax = predicted digit.</div>
+
+<h2>8. Benchmarking</h2>
+<pre><code>// Measure average inference latency:
+auto t0 = std::chrono::high_resolution_clock::now();
+for (int k = 0; k &lt; 10000; k++) net.forward(sample);
+auto t1 = std::chrono::high-resolution_clock::now();
+double ms = std::chrono::duration&lt;double, std::milli&gt;(t1 - t0).count() / 10000.0;
+std::cout &lt;&lt; "avg ms per forward: " &lt;&lt; ms &lt;&lt; "\n";</code></pre>
+<div class="explain"><strong>Procedure:</strong> <code>high_resolution_clock::now()</code> captures timestamps. Executing <code>forward</code> 10000 times amortizes timer resolution; dividing by 10000 yields mean latency in milliseconds. <strong>chrono</strong> = C++ time facility. Compare <code>-O2</code> vs unoptimized vs <code>-O2 -march=native</code> to quantify compiler optimization. Further directions: <strong>parallelize</strong> independent row computations with <code>std::thread</code>; <strong>quantize</strong> to <code>int8</code> for reduced memory and increased throughput at minor precision cost.</div>
+
+<h2>9. AI microservice integration</h2>
+<p>The Lesson 08 TCP server combined with this inference engine forms an <strong>AI microservice</strong> (network-accessible prediction service).</p>
+<pre><code>Client (Python or C++) sends:  "0.9 0.1 0.8 0.2\n"
+Server (Lesson 08 networking + this lesson):
+  1. receive line -&gt; parse to floats
+  2. probs = net.forward(input)
+  3. answer = argmax(probs)
+  4. send: "class 0 (0.45 0.25 0.30)\n"
+Handle successive clients in a loop.</code></pre>
+<div class="explain"><strong>Deployment rationale:</strong> resource-constrained clients transmit feature vectors to a C++ server (no Python runtime required) and receive predictions. Required components are now complete: transport (Lesson 08) + inference (this lesson). Integration produces a portfolio-grade C++ inference service.</div>
+
+<h2>✅ Capstone checklist</h2>
+<ol>
+<li><strong>Execute the reference model:</strong> compile and run <code>ai.cpp</code>. Modify <code>sample</code> values, re-execute, and record resulting probability shifts and class changes.</li>
+<li><strong>Implement parameter loading:</strong> generate small tables from Python (or manually in a text editor as <code>W1.txt</code>), load via <code>loadMat/loadVec</code>, and print to verify correctness.</li>
+<li><strong>Benchmark:</strong> add the chrono measurement block and report mean latency. Compare <code>-O2</code> vs unoptimized builds quantitatively.</li>
+<li><strong>Network deployment:</strong> integrate <code>matVec/forward</code> into the Lesson 08 TCP server to classify client-supplied vectors. Publish all six projects with READMEs and demonstration output.</li>
+</ol>
+
+<div class="callout ok"><strong>Completion.</strong> Progression from standard output to shells, audio processing, graphics, networking, and neural inference is complete. The consistent methodology — precise definitions, minimal implementation, incremental validation — transfers directly to subsequent libraries and frameworks.</div>
+
+<div class="pager"><a class="btn ghost" href="12-projects-opengl.html">← Game</a><a class="btn" href="index.html">Back to Home ↑</a></div>
+<footer>Learn C++ From Scratch · Project 13 / Final</footer>
+</main></div><script src="script.js"></script></body></html>

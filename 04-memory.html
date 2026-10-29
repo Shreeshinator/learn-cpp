@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04 · Memory & Pointers — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 04 · Memory and Pointers</span>
+<h1>Memory, pointers, references &amp; smart pointers</h1>
+<p>This lesson defines program memory, addresses, the stack and heap, references, raw pointers, dynamic allocation, common lifetime errors, RAII and smart pointers, move semantics, sanitizers, and the pointer constructs encountered in C interfaces. The distinct meanings of <code>*</code> and <code>&amp;</code> are specified precisely on first use.</p>
+
+<div class="toc"><strong>In this lesson:</strong>
+<ol>
+<li>RAM, bytes, and addresses</li>
+<li>Storage duration: stack vs heap vs static storage</li>
+<li>The meanings of <code>*</code> and <code>&amp;</code> by context</li>
+<li>References (<code>&amp;</code>)</li>
+<li>Raw pointers</li>
+<li><code>nullptr</code> vs <code>NULL</code></li>
+<li><code>new</code>/<code>delete</code> vs <code>malloc</code>/<code>free</code></li>
+<li>Three lifetime errors: leak, dangling pointer, double-free</li>
+<li>Smart pointers and RAII</li>
+<li>Move semantics</li>
+<li>Sanitizers</li>
+<li>Pointer-to-pointer and function pointers</li>
+<li>Exercises</li>
+</ol>
+</div>
+
+<h2>1. RAM, bytes, and addresses</h2>
+<div class="explain"><strong>Definition — RAM (Random Access Memory)</strong><br>Volatile working storage holding the code and data of executing programs. Contents are discarded when power is removed. Each location is identified by a numeric address.</div>
+<div class="explain"><strong>Definition — byte</strong><br>The smallest addressable unit of memory, consisting of 8 bits. An <code>int</code> typically occupies 4 consecutive bytes; a <code>double</code> typically occupies 8.</div>
+<div class="explain"><strong>Definition — address</strong><br>The numeric location of an object in memory, conventionally written in hexadecimal (prefix <code>0x</code>), e.g., <code>0x61ff0c</code>. The address of <code>x</code> is the location at which its storage begins.</div>
+<pre><code>Addresses:   0x61ff08      0x61ff0c      0x61ff10
+             +--------+    +--------+    +--------+
+             |  ????  |    |   42   |    |  ????  |
+             +--------+    +--------+    +--------+
+                                ^
+                                |
+                     int x = 42 is stored here
+                     address of x = 0x61ff0c</code></pre>
+<p>A variable designates typed storage; its value is the data held at that storage; its address is where that storage is located. A pointer stores a memory address.</p>
+
+<h2>2. Storage duration: stack vs heap vs static storage</h2>
+<div class="explain"><strong>Definition — stack</strong><br>Memory for objects with automatic storage duration, principally local variables. The stack stores automatic variables. Storage is created on entry to the enclosing block and released automatically at the closing <code>}</code>. Capacity is limited (typically on the order of 8 MB) and allocation is highly efficient.</div>
+<div class="explain"><strong>Definition — heap</strong><br>Memory for objects with dynamic storage duration allocated with <code>new</code>. The heap stores dynamic allocations. Lifetime is explicitly controlled: an allocation persists until released with <code>delete</code>. Capacity is large but manual management is required.</div>
+<div class="explain"><strong>Definition — static storage (data segment)</strong><br>Memory for objects with static storage duration: global variables and <code>static</code> variables. Such objects are created before <code>main()</code> begins and destroyed after it returns, retaining their values for the full execution.</div>
+<pre><code>STACK (automatic, small, fast)          HEAP (dynamic, large)
+- local variables                       - allocated with new
+- released at end of scope              - persists until delete is called
+- int x = 5;                            - int* p = new int(5); delete p;
+
+STATIC STORAGE (full program lifetime)
+- int globalScore = 0; // namespace scope
+- static int calls = 0; // retains value across calls</code></pre>
+<pre><code>#include &lt;iostream&gt;
+
+int globalScore = 0; // static storage: constructed before main(), destroyed after
+
+void f(){
+    int x = 10; // automatic: created here, destroyed at closing }
+    int* p = new int(20); // dynamic: allocation persists until delete
+    std::cout &lt;&lt; *p &lt;&lt; "\n"; // dereference p; prints 20
+    delete p; // release is mandatory; omission produces a leak
+    p = nullptr; // reset to null to prevent accidental use after release
+}
+int main(){ f(); }</code></pre>
+<table><tr><th>Storage</th><th>Capacity and performance</th><th>Released by</th><th>Used for</th></tr>
+<tr><td>Stack</td><td>Small (approx. 8 MB), high performance</td><td>Automatically at scope exit</td><td>Local variables, small arrays</td></tr>
+<tr><td>Heap</td><td>Large, moderately lower performance</td><td>Explicit <code>delete</code>, or a managing smart pointer</td><td>Large objects, objects that must outlive the creating function</td></tr>
+<tr><td>Static storage</td><td>Small</td><td>Automatically at program termination</td><td>Global variables, <code>static</code> state, configuration</td></tr></table>
+
+<h2>3. The meanings of <code>*</code> and <code>&amp;</code> by context</h2>
+<p>The same symbol performs distinct functions depending on syntactic position. The complete set is defined below.</p>
+<table><tr><th>Symbol</th><th>Position</th><th>Meaning</th><th>Example</th></tr>
+<tr><td><code>*</code> in a declaration</td><td><code>int* p;</code></td><td>Declares a <strong>pointer</strong>: <code>p</code> stores an address of an <code>int</code>.</td><td><code>int* p = &amp;x;</code></td></tr>
+<tr><td><code>*</code> in an expression</td><td><code>*p = 100;</code> or <code>cout &lt;&lt; *p;</code></td><td><strong>Dereference</strong>: access the object at the stored address.</td><td><code>*p</code> designates the pointed-to value.</td></tr>
+<tr><td><code>&amp;</code> in a declaration</td><td><code>int&amp; ref = x;</code></td><td>Declares a <strong>reference</strong>: <code>ref</code> is an alias for <code>x</code>.</td><td>Modification of <code>ref</code> modifies <code>x</code>.</td></tr>
+<tr><td><code>&amp;</code> in an expression</td><td><code>&amp;x</code></td><td><strong>Address-of</strong>: evaluates to the address of the operand.</td><td><code>p = &amp;x;</code> stores the address of <code>x</code> in <code>p</code>.</td></tr>
+<tr><td><code>*</code> as operator</td><td><code>a * b</code></td><td>Multiplication.</td><td><code>3 * 4</code> evaluates to 12.</td></tr>
+<tr><td><code>&amp;</code> / <code>&amp;&amp;</code> as operator</td><td><code>a &amp; b</code> / <code>a &amp;&amp; b</code></td><td>Bitwise AND / logical AND. Unrelated to pointers.</td><td><code>if (a &gt; 0 &amp;&amp; b &gt; 0)</code></td></tr></table>
+<div class="explain"><strong>Definition — declaration vs use</strong><br>A <strong>declaration</strong> introduces a variable (<code>int* p = ...</code>). A <strong>use</strong> is any subsequent expression involving it (<code>*p = 5;</code>). Identical symbols have distinct meanings in each position.</div>
+<div class="callout"><strong>Reading declarations:</strong> read right-to-left. <code>int* p;</code> reads "p is a pointer to int." <code>int&amp; r;</code> reads "r is a reference to int." In expressions, <code>*p</code> reads "the object p points to" and <code>&amp;x</code> reads "address of x."</div>
+
+<h2>4. References (<code>&amp;</code>)</h2>
+<div class="explain"><strong>Definition — reference</strong><br>An alias for an existing object. No separate object is created. The reference must be initialized at declaration and cannot be reseated to another object thereafter. Assignment through a reference modifies the referenced object.</div>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+void addBonus(int&amp; score){ score += 10; }
+void print(const std::string&amp; s){ std::cout &lt;&lt; s &lt;&lt; "\n"; }
+
+int main(){
+    int s = 90;
+    addBonus(s); // s is now 100; the function operated on the caller's object
+    int&amp; ref = s; // ref is an alias for s
+    ref++;       // s is now 101
+    print("hello");
+}</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>void addBonus(int&amp; score)</code></td><td>Accepts the caller's object by reference. The <code>&amp;</code> in the parameter declaration designates a reference; modifications affect the argument.</td></tr>
+<tr><td><code>void print(const std::string&amp; s)</code></td><td>Accepts a large object by const reference: no copy is made, and <code>const</code> prohibits modification.</td></tr>
+<tr><td><code>int&amp; ref = s;</code></td><td>Declares <code>ref</code> as an alias for <code>s</code>. Initialization is mandatory. A subsequent <code>ref = other;</code> assigns values; it does not change the binding.</td></tr></table>
+<div class="callout ok"><strong>Parameter selection:</strong><br>• Small types not modified by the callee: pass by value (<code>void f(int x)</code>).<br>• Large types inspected but not modified: <code>const T&amp;</code>.<br>• Objects the callee must modify: <code>T&amp;</code>.<br>• Objects that may be absent: pointer (nullable); references always designate a valid object.</div>
+
+<h2>5. Raw pointers</h2>
+<div class="explain"><strong>Definition — pointer</strong><br>A variable whose value is an address. Declared with <code>*</code>. The address is obtained with <code>&amp;</code> and the pointed-to object is accessed with <code>*</code> (dereference). A <strong>raw pointer</strong> is an unmanaged pointer: lifetime and validity are the programmer's responsibility, in contrast to a smart pointer that enforces ownership.</div>
+<pre><code>int x = 42;
+int* p = &amp;x;
+std::cout &lt;&lt; p &lt;&lt; "\n";   // prints the address, e.g. 0x61ff0c
+std::cout &lt;&lt; *p &lt;&lt; "\n";  // prints 42: dereference accesses the pointed-to object
+*p = 100;           // modifies x through the pointer; x is now 100
+int* q = nullptr;   // explicitly designates no object; the correct initial state
+if(q) { /* ... */ } // contextual conversion: non-null is true, nullptr is false</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>int* p = &amp;x;</code></td><td>Declares a pointer to <code>int</code> and initializes it with the address of <code>x</code>.</td></tr>
+<tr><td><code>*p</code></td><td>Dereference: reading <code>*p</code> yields the pointed-to value; writing <code>*p = 100</code> modifies it.</td></tr>
+<tr><td><code>int* q = nullptr;</code></td><td>Initializes the pointer to null. An uninitialized pointer holds an indeterminate value and must not be dereferenced.</td></tr></table>
+<div class="callout warn"><strong>Prohibited operations:</strong> dereferencing <code>nullptr</code>, accessing an object after <code>delete</code>, and omitting <code>delete</code>. Current practice avoids manual <code>new</code>/<code>delete</code> in favor of containers and smart pointers.</div>
+
+<h2>6. <code>nullptr</code> vs <code>NULL</code></h2>
+<div class="explain"><strong>Definition — nullptr</strong><br>A keyword of pointer type designating "points to no object." It is unambiguous in overload resolution.</div>
+<div class="explain"><strong>Definition — NULL</strong><br>A legacy C macro evaluating to integer <code>0</code>. It converts to a null pointer but, being an integer, may select an integer overload instead of a pointer overload. Do not use it in C++.</div>
+<pre><code>int* p1 = nullptr; // correct: null pointer constant with pointer type
+// int* p2 = NULL; // obsolete: integer zero; may resolve to the wrong overload</code></pre>
+
+<h2>7. <code>new</code>/<code>delete</code> vs <code>malloc</code>/<code>free</code></h2>
+<div class="explain"><strong>Definition — new / delete</strong><br>The C++ allocation facility. <code>new</code> allocates storage and invokes the constructor; <code>delete</code> invokes the destructor and releases storage. <code>new int[100]</code> allocates an array of 100; it must be released with <code>delete[]</code>.</div>
+<div class="explain"><strong>Definition — malloc / free</strong><br>The C allocation facility. <code>malloc</code> allocates uninitialized bytes without invoking any constructor; <code>free</code> releases storage without invoking any destructor. It appears in C libraries (including audio, networking, and OS interfaces) that operate outside the C++ object model. Recognize it; do not use it in C++ code.</div>
+<pre><code>int* a = new int(5); delete a;
+int* arr = new int[100]; delete[] arr;
+
+// C facility (no construction). Encountered in C library interfaces:
+// #include &lt;cstdlib&gt;
+// int* b = (int*)malloc(sizeof(int));
+// free(b);</code></pre>
+<table><tr><th>Property</th><th><code>new</code>/<code>delete</code> (C++)</th><th><code>malloc</code>/<code>free</code> (C)</th></tr>
+<tr><td>Invokes constructor / destructor?</td><td>Yes</td><td>No — uninitialized bytes only</td></tr>
+<tr><td>Type awareness?</td><td>Yes (<code>new int[100]</code>)</td><td>No — byte count computed manually (<code>malloc(400)</code>) with a cast</td></tr>
+<tr><td>Use in new C++ code?</td><td>Rarely — prefer <code>vector</code> and smart pointers</td><td>Only when a C interface requires it</td></tr></table>
+
+<h2>8. Three lifetime errors: leak, dangling pointer, double-free</h2>
+<p>Every raw-pointer lifetime defect is an instance of one of these three categories.</p>
+<pre><code>--- ERROR 1: LEAK (allocation never released) ---
+int* b = new int(6);
+// missing delete b;
+
+  Effect: the pointer b is destroyed at scope exit, but the allocation
+  persists with no pointer designating it. It is unrecoverable until
+  program termination. Repeated leaks exhaust available memory.
+
+--- ERROR 2: DANGLING POINTER / USE-AFTER-FREE ---
+int* a = new int(5);
+delete a;      // storage released
+// *a = 1;     // invalid: a designates released storage
+
+  Effect: writing through a after delete modifies released storage,
+  producing a crash or silent corruption of a subsequent allocation.
+
+  Correction: delete a; a = nullptr; Dereferencing nullptr fails
+  deterministically rather than corrupting state. Prefer unique_ptr.
+
+--- ERROR 3: DOUBLE-FREE ---
+// delete a; ... delete a; // second release of the same allocation
+
+  Effect: the allocator state is corrupted, typically terminating the program.
+  Correction: exactly one delete per new. delete on nullptr is a safe no-op.</code></pre>
+<pre><code>int* a = new int(5);
+delete a;
+a = nullptr; // valid: subsequent delete is a no-op; dereference fails deterministically
+// *a = 1; // invalid: null dereference
+int* b = new int(6);
+// missing delete b; // LEAK: allocation is unrecoverable</code></pre>
+<div class="callout"><strong>Requirements:</strong> initialize every pointer to <code>nullptr</code>, release each allocation exactly once, reset the pointer after release, or use <code>unique_ptr</code> to enforce these properties automatically.</div>
+
+<h2>9. Smart pointers and RAII</h2>
+<div class="explain"><strong>Definition — RAII (Resource Acquisition Is Initialization)</strong><br>A discipline in which a resource (dynamic memory, file handle, lock) is owned by an object whose destructor releases it. Acquisition occurs during construction; release occurs automatically at scope exit, including during exception unwinding. Explicit cleanup calls are unnecessary.</div>
+<div class="explain"><strong>Definition — smart pointer</strong><br>A class type that satisfies the pointer interface (<code>-&gt;</code>, <code>*</code>) while owning the pointed-to allocation and releasing it in its destructor. Three standard types exist:</div>
+<table><tr><th>Smart pointer</th><th>Copyable?</th><th>Release condition</th><th>Application</th></tr>
+<tr><td><code>unique_ptr</code> — exclusive ownership</td><td>No; transferable only by move</td><td>When the single owner is destroyed</td><td><strong>Default selection.</strong> Use unless shared ownership is required.</td></tr>
+<tr><td><code>shared_ptr</code> — shared ownership with reference count</td><td>Yes; each copy increments the count</td><td>When the last owner is destroyed (count reaches 0)</td><td>Genuinely shared objects (e.g., a node referenced by multiple subsystems). Incurs reference-count overhead.</td></tr>
+<tr><td><code>weak_ptr</code> — non-owning observer</td><td>Yes</td><td>Does not extend lifetime; validity must be verified before use</td><td>Breaking ownership cycles; caches and observers.</td></tr></table>
+<pre><code>#include &lt;memory&gt;
+#include &lt;iostream&gt;
+
+struct Bullet { Bullet(){std::cout&lt;&lt;"born\n";} ~Bullet(){std::cout&lt;&lt;"dead\n";} };
+
+int main(){
+    auto a = std::make_unique&lt;Bullet&gt;(); // exclusive ownership; prints born
+    // auto b = a; // ERROR — unique_ptr is non-copyable
+    auto b = std::move(a); // ownership transfers to b; a becomes null
+    // destruction of b at scope exit releases the object; prints dead
+
+    auto s1 = std::make_shared&lt;Bullet&gt;(); // shared ownership; count = 1
+    auto s2 = s1; // count = 2; both designate the same object
+    // destruction order: s2 (count 2-&gt;1), s1 (count 1-&gt;0, object released)
+}</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>make_unique&lt;Bullet&gt;()</code></td><td>Allocates a <code>Bullet</code> and returns a <code>unique_ptr&lt;Bullet&gt;</code> owning it. <code>auto</code> deduces the pointer type. Preferred over explicit <code>new</code> because allocation and ownership transfer are atomic.</td></tr>
+<tr><td><code>std::move(a)</code></td><td>Converts <code>a</code> to an expiring value, authorizing transfer of ownership to <code>b</code>. <code>a</code> is null thereafter.</td></tr>
+<tr><td><code>make_shared&lt;Bullet&gt;()</code></td><td>Allocates a <code>Bullet</code> with an associated reference count initialized to 1. Each copy increments the count; each destruction decrements it. Release occurs at zero.</td></tr></table>
+<div class="callout warn"><strong>Ownership cycles:</strong> if <code>A</code> holds a <code>shared_ptr</code> to <code>B</code> and <code>B</code> holds a <code>shared_ptr</code> to <code>A</code>, the count never reaches zero and both allocations leak. Resolution: one direction holds a <code>weak_ptr</code>. The owning direction uses <code>shared_ptr</code>; the observing direction uses <code>weak_ptr</code>.</div>
+
+<h2>10. Move semantics</h2>
+<div class="explain"><strong>Definition — copy vs move</strong><br>A <strong>copy</strong> duplicates the referenced state, requiring time proportional to its size. A <strong>move</strong> transfers ownership of the underlying resource, typically by copying a pointer and nullifying the source — a constant-time operation. Moves apply automatically to expiring values (temporaries) and explicitly via <code>std::move(x)</code>, which designates <code>x</code> as eligible for resource transfer. A moved-from object remains in a valid but unspecified state: it may be reassigned or destroyed, but not otherwise inspected.</div>
+<pre><code>#include &lt;vector&gt;
+#include &lt;utility&gt;
+std::vector&lt;int&gt; make(){ std::vector&lt;int&gt; v(1000000,1); return v; }
+int main(){
+    std::vector&lt;int&gt; a = make(); // resource transferred from the returned temporary
+    std::vector&lt;int&gt; b = std::move(a); // resource transferred from a; a is now empty
+}</code></pre>
+
+<h2>11. Sanitizers</h2>
+<div class="explain"><strong>Definition — sanitizer / Valgrind</strong><br>Runtime instrumentation reporting invalid memory operations with file and line attribution. <strong>AddressSanitizer (ASan)</strong>, included with g++ and clang, is enabled with <code>-fsanitize=address -g</code>. <strong>Valgrind</strong> is an external Linux analysis tool invoked as <code>valgrind ./a.out</code>. Both convert silent memory errors into precise diagnostics.</div>
+<pre><code>g++ -fsanitize=address -g prog.cpp &amp;&amp; ./a.out
+// -fsanitize=address enables invalid-access detection
+// -g embeds line information so reports identify source locations</code></pre>
+<div class="callout ok"><strong>Recommended practice:</strong> compile exercises with <code>-Wall -Wextra -fsanitize=address -g</code>. Execution is slower, but use-after-free, leaks, and overflows are reported at the responsible line.</div>
+
+<h2>12. Pointer-to-pointer and function pointers</h2>
+<p>These constructs are infrequent in new code but appear in C interfaces, comparators, thread entry points, and callbacks. Recognition is required.</p>
+<div class="explain"><strong>Definition — pointer-to-pointer (<code>int**</code>)</strong><br>A pointer designating another pointer: <code>pp -&gt; p -&gt; x</code>. It permits a function to modify the caller's pointer (out-parameter) or to represent an array of pointers.</div>
+<div class="explain"><strong>Definition — function pointer / callback</strong><br>A variable storing the address of a function rather than data. It permits the caller to specify deferred behavior — e.g., a comparison function for sorting or a completion handler. C++ code generally uses <code>std::function</code> or lambdas; C interfaces use the raw form <code>void(*)(int)</code>.</div>
+<pre><code>int x = 10;
+int* p = &amp;x;   // p designates x
+int** pp = &amp;p; // pp designates p, which designates x
+**pp = 20;     // double dereference assigns x; x is now 20
+
+void foo(int n) {}
+void (*fp)(int) = &amp;foo; // pointer to function taking int, returning void
+fp(42);                 // invokes foo(42) through the pointer</code></pre>
+<table><tr><th>Construct</th><th>Meaning</th><th>Encountered in</th></tr>
+<tr><td><code>int** p</code></td><td>Out-parameter modifying the caller's pointer, or array of pointers</td><td>C interfaces, <code>main(int argc, char** argv)</code></td></tr>
+<tr><td><code>void(*fp)(int)</code></td><td>Callable accepting <code>int</code> and returning <code>void</code></td><td>Comparators, thread entry points, event handlers, audio callbacks</td></tr></table>
+<div class="callout"><strong>Reading rule:</strong> for <code>**</code>, resolve two levels of indirection. For <code>(*fp)(...)</code>, read as "invoke the supplied function." Hand-written function pointers may be replaced with lambdas (Lessons 05/07) where the interface permits.</div>
+
+<h2>Exercises</h2>
+<ol>
+<li><strong>Reference-based <code>swap</code>.</strong> Implement <code>void swap(int&amp;, int&amp;)</code> using a temporary, without <code>std::swap</code>. In <code>main()</code>, verify that <code>a=3, b=7</code> are exchanged after the call.</li>
+<li><strong>Ownership transfer.</strong> Define <code>auto p1 = std::make_unique&lt;int&gt;(42);</code>. Print <code>*p1</code>. Execute <code>auto p2 = std::move(p1);</code> and verify <code>p1 == nullptr</code> and <code>*p2 == 42</code>.</li>
+<li><strong>Manual allocation vs <code>vector</code>.</strong> First allocate <code>int* arr = new int[5];</code>, populate it with 1–5, print the contents, then execute <code>delete[] arr; arr = nullptr;</code>. Then repeat with <code>std::vector&lt;int&gt; v = {1,2,3,4,5};</code> and no explicit release. Compare the safety properties.</li>
+<li><strong>Diagnosing a leak.</strong> Write a program executing <code>new int(1)</code> without <code>delete</code>. Compile with <code>g++ -fsanitize=address -g leak.cpp &amp;&amp; ./a.out</code>, identify the reported line, then correct the program with <code>unique_ptr</code> and confirm the report is eliminated.</li>
+<li><strong>Classifying defects.</strong> For each of the following, identify leak, dangling pointer, or double-free: <code>int* a = new int(5); delete a; *a = 1;</code>; <code>int* b = new int(6);</code> with no <code>delete</code>; <code>delete a; delete a;</code>.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="03-oop.html">← OOP</a><a class="btn" href="05-stl.html">Next: STL & Vectors →</a></div>
+<footer>Learn C++ From Scratch · Lesson 04</footer>
+</main></div><script src="script.js"></script></body></html>

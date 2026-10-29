@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · OOP — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 03 · OOP</span>
+<h1>Object-Oriented Programming: Classes, Inheritance, Polymorphism</h1>
+<p>This lesson covers object-oriented programming in C++: classes and objects, access control, encapsulation, constructors and destructors, inheritance, virtual dispatch, abstraction, object lifetime rules, and composition. Each term is defined on first use, followed by complete, annotated examples.</p>
+
+<div class="toc"><strong>In this lesson:</strong>
+<ol>
+<li>What is OOP and why it is used</li>
+<li>Classes and objects</li>
+<li><code>struct</code> vs <code>class</code></li>
+<li><code>public</code>, <code>private</code>, <code>protected</code></li>
+<li>Encapsulation</li>
+<li>Constructors and destructors</li>
+<li>Full example 1: <code>BankAccount</code> with line-by-line explanation</li>
+<li>Inheritance and the is-a relationship</li>
+<li>Full example 2: <code>Animal</code> / <code>Dog</code> / <code>Cat</code></li>
+<li><code>virtual</code>, <code>override</code>, and the vtable</li>
+<li>Polymorphism — compile-time vs runtime</li>
+<li>Pure virtual functions and abstract classes — Full example 3: <code>Shape</code></li>
+<li>Rule of 3 / 5 / 0</li>
+<li><code>this</code>, <code>explicit</code>, <code>static</code>, <code>friend</code>, operator overloading</li>
+<li>Multiple inheritance, the diamond problem, and composition</li>
+<li>Exercises</li>
+</ol>
+</div>
+
+<h2>1. What is OOP? Why does it exist?</h2>
+<p>Without encapsulation, related state and operations are stored in separate variables and free functions with unrestricted access:</p>
+<pre><code>string player1Name = "Asha";
+int player1Hp = 80;
+string player2Name = "Ravi";
+int player2Hp = 90;
+// ... 50 more players ...
+void healPlayer1(int n) { player1Hp += n; }
+// ... 200 lines later, which function modified player1Hp, and is the value valid?</code></pre>
+<p>At small scale this is manageable. At larger scale, unrestricted access to shared state makes it difficult to determine where a value was modified and whether invariants hold. OOP addresses this by grouping related data and the operations permitted on that data into a single type.</p>
+<div class="explain"><strong>Definition — function</strong><br>A named, callable unit that accepts zero or more arguments, executes a sequence of statements, and optionally returns a value.</div>
+<div class="explain"><strong>Definition — global variable</strong><br>A variable with program-wide scope. It is accessible from any function, which makes unintended modification difficult to trace.</div>
+<div class="explain"><strong>Definition — OOP (Object-Oriented Programming)</strong><br>A design approach in which data (member variables) and the operations on that data (member functions) are defined together in a class. An object is an instance of a class. Access control restricts which code can modify internal state.</div>
+<p>OOP is conventionally described by four properties:</p>
+<table><tr><th>Property</th><th>Definition</th><th>Example</th></tr>
+<tr><td>Encapsulation</td><td>Internal state is private; modification is permitted only through a defined public interface that enforces invariants.</td><td><code>BankAccount::withdraw()</code> rejects withdrawals exceeding the balance.</td></tr>
+<tr><td>Inheritance</td><td>A derived class reuses and extends the interface and implementation of a base class.</td><td><code>Dog</code> derives from <code>Animal</code> and reuses <code>name</code>.</td></tr>
+<tr><td>Polymorphism</td><td>The same interface produces type-specific behavior. Pronounced pol-ee-MOR-fiz-um.</td><td><code>Animal::speak()</code> executes <code>Dog::speak()</code> or <code>Cat::speak()</code> depending on the dynamic type.</td></tr>
+<tr><td>Abstraction</td><td>Clients depend on an interface (what operations exist), not on implementation details (how they execute).</td><td>Calling <code>shape.area()</code> without knowledge of the concrete shape type.</td></tr></table>
+
+<h2>2. What is a class? What is an object?</h2>
+<div class="explain"><strong>Definition — class</strong><br>A user-defined type that specifies a set of member variables and member functions. A class defines data and operations. It specifies structure and behavior but holds no per-instance storage until instantiated.</div>
+<div class="explain"><strong>Definition — object</strong><br>An instance of a class: a concrete entity with its own storage for each non-static member variable. Multiple objects of the same class share the same interface but maintain independent state.</div>
+<div class="explain"><strong>Definition — member</strong><br>An element declared inside a class. A <strong>member variable</strong> (field) stores per-object or shared state. A <strong>member function</strong> (method) operates on objects of that class.</div>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+struct Player {
+    std::string name;
+    int hp = 100;
+    void heal(int n){ hp += n; }
+};
+
+int main(){
+    Player p{"Asha", 80};
+    p.heal(10);
+    std::cout &lt;&lt; p.name &lt;&lt; " " &lt;&lt; p.hp &lt;&lt; "\n"; // prints: Asha 90
+}</code></pre>
+<p><strong>Line-by-line explanation:</strong></p>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>#include &lt;iostream&gt;</code></td><td>Declares standard output facilities, including <code>std::cout</code>.</td></tr>
+<tr><td><code>#include &lt;string&gt;</code></td><td>Declares <code>std::string</code> for owning character sequences.</td></tr>
+<tr><td><code>struct Player { ... };</code></td><td>Defines a class type named <code>Player</code>. The trailing <code>;</code> terminates the class definition.</td></tr>
+<tr><td><code>std::string name;</code></td><td>Declares a per-object member variable storing the player name.</td></tr>
+<tr><td><code>int hp = 100;</code></td><td>Declares a per-object member variable with default member initializer <code>100</code>.</td></tr>
+<tr><td><code>void heal(int n){ hp += n; }</code></td><td>Declares a member function that adds <code>n</code> to the hp of the object on which it is called. <code>void</code> indicates no return value.</td></tr>
+<tr><td><code>Player p{"Asha", 80};</code></td><td>Defines object <code>p</code> of type <code>Player</code>, initialized with <code>name="Asha"</code> and <code>hp=80</code>.</td></tr>
+<tr><td><code>p.heal(10);</code></td><td>Invokes <code>heal</code> on <code>p</code>. Only <code>p.hp</code> is modified. The <code>.</code> operator selects a member of an object.</td></tr>
+<tr><td><code>std::cout &lt;&lt; p.name ...</code></td><td>Inserts <code>p.name</code> and <code>p.hp</code> into the output stream. <code>&lt;&lt;</code> is the stream insertion operator.</td></tr></table>
+
+<h2>3. <code>struct</code> vs <code>class</code></h2>
+<div class="explain"><strong>Definition — struct and class</strong><br>Both declare class types with identical capabilities (member functions, constructors, inheritance). The sole difference is the default member access: <code>struct</code> members are <code>public</code> by default; <code>class</code> members are <code>private</code> by default. Explicit access specifiers override the default in either case.</div>
+<table><tr><th>Property</th><th><code>struct</code></th><th><code>class</code></th></tr>
+<tr><td>Default member access</td><td><code>public</code></td><td><code>private</code></td></tr>
+<tr><td>Typical use</td><td>Passive data aggregates without invariants, e.g., <code>Point{x, y}</code></td><td>Types that enforce invariants, e.g., <code>BankAccount</code></td></tr>
+<tr><td>Supported features</td><td>Member functions, constructors, inheritance — full support</td><td>Member functions, constructors, inheritance — full support</td></tr></table>
+<pre><code>struct Point { double x, y; }; // Point p; p.x = 5; is valid
+
+class BankAccount {
+    double balance = 0; // private by default; inaccessible from outside
+};</code></pre>
+<div class="callout"><strong>Guideline:</strong> use <code>struct</code> for data without constraints. Use <code>class</code> when the type must maintain an invariant, such as a non-negative balance.</div>
+
+<h2>4. <code>public</code>, <code>private</code>, <code>protected</code></h2>
+<div class="explain"><strong>Definition — public / private / protected</strong><br>Access specifiers controlling which code may use a member. <code>public</code>: accessible to all code. <code>private</code>: accessible only to member functions (and friends) of the same class. <code>protected</code>: accessible to the class and its derived classes, but not to external code.</div>
+<pre><code>class Account {
+public:
+    void deposit(double amt);
+private:
+    double balance = 0;
+protected:
+    std::string auditTag = "std";
+};</code></pre>
+<table><tr><th>Specifier</th><th>Accessible from</th><th>Used for</th></tr>
+<tr><td><code>public</code></td><td>All code, including <code>main()</code></td><td>Validated interface: <code>deposit()</code>, <code>speak()</code></td></tr>
+<tr><td><code>private</code></td><td>Only member functions of the same class</td><td>Internal state: <code>balance</code></td></tr>
+<tr><td><code>protected</code></td><td>The class and its derived classes</td><td>Implementation details shared with derived classes</td></tr></table>
+
+<h2>5. Encapsulation</h2>
+<div class="explain"><strong>Definition — encapsulation (en-cap-soo-LAY-shun)</strong><br>The practice of declaring data members private and exposing only member functions that preserve the type's invariants. All state transitions pass through validated operations.</div>
+<p>Encapsulation exists to maintain the <strong>invariant</strong>.</p>
+<div class="explain"><strong>Definition — invariant</strong><br>A condition that must hold for the entire lifetime of every valid object, e.g., "balance is never negative." Member functions are required to preserve it.</div>
+
+<h2>6. Constructors and destructors</h2>
+<div class="explain"><strong>Definition — constructor</strong><br>A special member function invoked automatically at object creation. It establishes a valid initial state. It has the same name as the class and no return type, including no <code>void</code>.</div>
+<div class="explain"><strong>Definition — destructor</strong><br>A special member function invoked automatically at object destruction (end of scope or <code>delete</code>). Its name is the class name prefixed with <code>~</code>, e.g., <code>~BankAccount()</code>. It releases resources acquired by the object.</div>
+<div class="explain"><strong>Definition — initializer list</strong><br>The <code>: balance(initial)</code> clause in a constructor definition. It directly initializes members before the constructor body executes. It is more efficient than assignment and is required for references, const members, and members without default constructors.</div>
+<pre><code>class BankAccount {
+    double balance = 0;
+public:
+    BankAccount(double initial) : balance(0) {
+        if (initial &gt;= 0) balance = initial;
+    }
+    ~BankAccount() { /* release resources here */ }
+};</code></pre>
+<p>Constructor categories:</p>
+<table><tr><th>Category</th><th>Declaration</th><th>Invocation</th></tr>
+<tr><td>Default</td><td><code>BankAccount();</code></td><td><code>BankAccount a;</code></td></tr>
+<tr><td>Parameterized</td><td><code>BankAccount(double initial);</code></td><td><code>BankAccount a(500);</code></td></tr>
+<tr><td>Copy</td><td><code>BankAccount(const BankAccount&amp; other);</code></td><td><code>BankAccount b = a;</code></td></tr>
+<tr><td>Move</td><td><code>BankAccount(BankAccount&amp;&amp; other);</code></td><td>Transfer from an expiring value (see Lesson 04)</td></tr></table>
+<div class="explain"><strong>Definition — const member function</strong><br><code>double getBalance() const { ... }</code> — the trailing <code>const</code> specifies that the function does not modify the object. It may be called on const objects, and the compiler rejects any modification within it.</div>
+
+<h2>7. Full example 1: <code>BankAccount</code></h2>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class BankAccount {
+private:
+    double balance = 0;
+public:
+    BankAccount(double initial) { if(initial &gt;= 0) balance = initial; }
+    void deposit(double amt){ if(amt &gt; 0) balance += amt; }
+    bool withdraw(double amt){
+        if(amt &gt; 0 &amp;&amp; amt &lt;= balance){ balance -= amt; return true; }
+        return false;
+    }
+    double getBalance() const { return balance; }
+};
+
+int main(){
+    BankAccount a(500);
+    a.deposit(200);
+    a.withdraw(100);
+    std::cout &lt;&lt; a.getBalance() &lt;&lt; "\n"; // prints 600
+    // a.balance = 99999; // ERROR — private access violation
+}</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>class BankAccount {</code></td><td>Begins the definition of class type <code>BankAccount</code>.</td></tr>
+<tr><td><code>private: double balance = 0;</code></td><td>Declares private storage for the balance, default-initialized to 0. External code cannot name this member.</td></tr>
+<tr><td><code>BankAccount(double initial)...</code></td><td>Constructor establishing the invariant: a negative initial value is rejected and the balance remains 0.</td></tr>
+<tr><td><code>void deposit(double amt)...</code></td><td>Public operation that increases the balance only for positive amounts.</td></tr>
+<tr><td><code>bool withdraw...</code></td><td>Public operation that decreases the balance only if <code>amt</code> is positive and does not exceed the balance. Returns <code>true</code> on success, <code>false</code> otherwise.</td></tr>
+<tr><td><code>double getBalance() const</code></td><td>Const accessor returning the current balance without modifying the object.</td></tr>
+<tr><td><code>BankAccount a(500);</code></td><td>Defines object <code>a</code>; the constructor sets the balance to 500.</td></tr>
+<tr><td><code>a.balance = 99999;</code> (commented)</td><td>Ill-formed: the compiler rejects direct access to a private member. The rejection confirms encapsulation.</td></tr></table>
+<div class="callout"><strong>Professional practice:</strong> declarations are placed in a header (<code>BankAccount.h</code>) and definitions in a source file (<code>BankAccount.cpp</code>). A single file is sufficient for introductory examples.</div>
+
+<h2>8. Inheritance and the is-a relationship</h2>
+<div class="explain"><strong>Definition — inheritance</strong><br>A mechanism by which a derived class acquires the members of a base class and may add or override behavior. The base class is also termed parent or superclass; the derived class is also termed child or subclass. Syntax: <code>class Dog : public Animal</code>.</div>
+<div class="explain"><strong>Definition — is-a test</strong><br>A validity criterion for public inheritance: inheritance is appropriate only if every derived object is logically a base object. A Dog is an Animal, so derivation is valid. A Game is not a Player, so a Game should contain a Player (composition) rather than derive from it.</div>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Animal {
+public:
+    std::string name;
+    Animal(std::string n):name(n){}
+    virtual void speak() const { std::cout &lt;&lt; name &lt;&lt; " makes a sound\n"; }
+    virtual ~Animal() = default;
+};
+class Dog : public Animal {
+public:
+    Dog(std::string n):Animal(n){}
+    void speak() const override { std::cout &lt;&lt; name &lt;&lt; " barks!\n"; }
+};
+class Cat : public Animal {
+public:
+    Cat(std::string n):Animal(n){}
+    void speak() const override { std::cout &lt;&lt; name &lt;&lt; " meows!\n"; }
+};</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>class Animal { ... };</code></td><td>Base class defining state and operations common to all animals.</td></tr>
+<tr><td><code>Animal(std::string n):name(n){}</code></td><td>Constructor directly initializing member <code>name</code> from parameter <code>n</code>.</td></tr>
+<tr><td><code>virtual void speak() const</code></td><td>Declares a virtual function that derived classes may override. Dispatch is resolved at runtime.</td></tr>
+<tr><td><code>virtual ~Animal() = default;</code></td><td>Virtual destructor ensuring destruction through a base pointer invokes the derived destructor. <code>= default</code> requests the compiler-generated implementation. A non-virtual destructor in a polymorphic base is a defect.</td></tr>
+<tr><td><code>class Dog : public Animal</code></td><td>Derives <code>Dog</code> from <code>Animal</code>. Public inheritance models the is-a relationship.</td></tr>
+<tr><td><code>Dog(std::string n):Animal(n){}</code></td><td>Derived constructor forwarding <code>n</code> to the base constructor before executing the derived body.</td></tr>
+<tr><td><code>void speak() const override</code></td><td>Overrides the base implementation. <code>override</code> requires the compiler to verify a matching base virtual exists, which detects signature errors.</td></tr></table>
+
+<h2>9. <code>virtual</code>, <code>override</code>, and the vtable</h2>
+<div class="explain"><strong>Definition — virtual function</strong><br>A member function declared <code>virtual</code> in the base class. Calls through a pointer or reference are dispatched to the override corresponding to the dynamic (runtime) type of the object.</div>
+<div class="explain"><strong>Definition — override</strong><br>A specifier on a derived declaration indicating intent to override a base virtual. It adds no dispatch behavior; it enforces correctness by requiring a matching base declaration.</div>
+<div class="explain"><strong>Definition — vtable (virtual table)</strong><br>A per-class table generated by the compiler mapping each virtual function to its concrete implementation. Each polymorphic object holds a pointer to its class's vtable, enabling runtime selection of the correct override through a base pointer.</div>
+<pre><code>#include &lt;memory&gt;
+#include &lt;vector&gt;
+int main(){
+    std::vector&lt;std::unique_ptr&lt;Animal&gt;&gt; zoo;
+    zoo.push_back(std::make_unique&lt;Dog&gt;("Rex"));
+    zoo.push_back(std::make_unique&lt;Cat&gt;("Mimi"));
+    for(auto&amp; a: zoo) a-&gt;speak();
+}</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>vector&lt;unique_ptr&lt;Animal&gt;&gt; zoo;</code></td><td>Declares a dynamic array of exclusive-ownership pointers to <code>Animal</code>. Each element may point to any derived type.</td></tr>
+<tr><td><code>make_unique&lt;Dog&gt;("Rex")</code></td><td>Allocates a <code>Dog</code> object and returns a <code>unique_ptr</code> managing it. Ownership transfer requires no explicit <code>delete</code>.</td></tr>
+<tr><td><code>a-&gt;speak()</code></td><td>Invokes <code>speak</code> through the pointer. <code>-&gt;</code> dereferences the pointer and selects the member. Virtual dispatch selects <code>Dog::speak</code> or <code>Cat::speak</code> per element.</td></tr></table>
+<div class="callout warn"><strong>Omitting <code>virtual</code>:</strong> <code>a-&gt;speak()</code> resolves statically to <code>Animal::speak</code> for all elements, because selection is based on the static pointer type rather than the dynamic object type.</div>
+
+<h2>10. Polymorphism — compile-time vs runtime</h2>
+<div class="explain"><strong>Definition — polymorphism ("many forms")</strong><br>The use of a single interface to produce behavior specific to the argument types or the dynamic object type. Two categories:</div>
+<table><tr><th>Category</th><th>Designation</th><th>Resolution</th><th>Example</th></tr>
+<tr><td>Identical name, distinct parameter types</td><td>Compile-time (overloading, templates)</td><td>Selected by the compiler from the call arguments</td><td><code>print(5)</code> vs <code>print("hi")</code>; <code>myMax(3,7)</code> vs <code>myMax(2.5,1.1)</code></td></tr>
+<tr><td>Identical call, distinct dynamic type</td><td>Runtime (virtual + override)</td><td>Selected at execution via the vtable</td><td><code>a-&gt;speak()</code> executes <code>Dog::speak</code> or <code>Cat::speak</code></td></tr></table>
+<div class="explain"><strong>Definition — overloading</strong><br>Declaring multiple functions with the same name but distinct parameter lists, e.g., <code>draw(int x)</code> and <code>draw(int x, int y)</code>. The compiler selects the overload from the argument types. No virtual dispatch is involved.</div>
+<pre><code>void print(int x) { std::cout &lt;&lt; "number " &lt;&lt; x &lt;&lt; "\n"; }
+void print(std::string s) { std::cout &lt;&lt; "word " &lt;&lt; s &lt;&lt; "\n"; }
+// print(5) selects the int overload; print("hi") selects the string overload.</code></pre>
+
+<h2>11. Pure virtual functions and abstract classes — Full example 3: <code>Shape</code></h2>
+<div class="explain"><strong>Definition — pure virtual function</strong><br>A virtual function terminated with <code>= 0</code>, e.g., <code>virtual double area() const = 0;</code>. It declares an interface without providing an implementation and requires each concrete derived class to supply an override.</div>
+<div class="explain"><strong>Definition — abstract class</strong><br>A class containing at least one pure virtual function. It cannot be instantiated directly. Only concrete derived classes that implement all pure virtuals can be instantiated.</div>
+<pre><code>class Shape {
+public:
+    virtual double area() const = 0;
+    virtual ~Shape() = default;
+};
+class Circle : public Shape {
+    double r;
+public:
+    Circle(double radius):r(radius){}
+    double area() const override { return 3.14159*r*r; }
+};
+class Rectangle : public Shape {
+    double w, h;
+public:
+    Rectangle(double width, double height):w(width),h(height){}
+    double area() const override { return w*h; }
+};
+// Shape s; // ERROR — abstract class cannot be instantiated
+// Circle c(2.0); // valid — concrete class</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>virtual double area() const = 0;</code></td><td>Pure virtual declaration: derived classes must implement <code>area()</code>. <code>double</code> is the return type; <code>const</code> indicates the call modifies no state.</td></tr>
+<tr><td><code>class Circle : public Shape</code></td><td>Declares <code>Circle</code> as a derived type subject to the <code>Shape</code> interface contract.</td></tr>
+<tr><td><code>double area() const override</code></td><td>Concrete implementation satisfying the pure virtual requirement. <code>override</code> enables compiler verification.</td></tr></table>
+
+<h2>12. Rule of 3 / 5 / 0</h2>
+<div class="explain"><strong>Definition — Rule of 3 / 5</strong><br>If a class directly manages a resource (memory from <code>new</code>, a file handle, a socket), the compiler-generated destructor, copy constructor, copy-assignment operator, move constructor, and move-assignment operator are insufficient. A default copy would produce two objects referencing the same resource, resulting in a double release. Such a class must define: destructor, copy constructor, copy-assignment (Rule of 3), plus move constructor and move-assignment (Rule of 5). The preferred alternative is the Rule of 0: hold resources via <code>std::vector</code>, <code>std::string</code>, or <code>unique_ptr</code>, which already implement correct semantics, so no custom special members are required.</div>
+<pre><code>class Buffer {
+    int* data; int n;
+public:
+    Buffer(int size): n(size), data(new int[size]{}) {}
+    ~Buffer(){ delete[] data; }
+    Buffer(const Buffer&amp; o): n(o.n), data(new int[o.n])
+    { for(int i=0;i&lt;n;i++) data[i]=o.data[i]; }
+    Buffer(Buffer&amp;&amp; o) noexcept: n(o.n), data(o.data)
+    { o.data=nullptr; o.n=0; }
+};</code></pre>
+<table><tr><th>Construct</th><th>Description</th></tr>
+<tr><td><code>new int[size]{}</code></td><td>Allocates an array of <code>size</code> integers with value-initialization (zero-initialized). The pointer stores the address of the first element.</td></tr>
+<tr><td><code>~Buffer(){ delete[] data; }</code></td><td>Destructor releasing the array. The <code>[]</code> form is required for arrays. Omission produces a leak.</td></tr>
+<tr><td><code>Buffer(const Buffer&amp; o)</code></td><td>Copy constructor performing a deep copy: allocates independent storage and copies each element. <code>const &amp;</code> denotes a read-only reference (no copy of the source).</td></tr>
+<tr><td><code>Buffer(Buffer&amp;&amp; o) noexcept</code></td><td>Move constructor transferring ownership: copies the pointer, then sets the source to <code>nullptr</code> so only the new object releases the allocation. <code>&amp;&amp;</code> binds to expiring values; <code>noexcept</code> permits efficient use in standard containers.</td></tr></table>
+<div class="callout ok"><strong>Rule of 0:</strong> if <code>Buffer</code> stored <code>std::vector&lt;int&gt; data;</code> instead of <code>int* data;</code>, all custom special members could be removed. <code>vector</code> implements correct copy, move, and destruction semantics.</div>
+
+<h2>13. <code>this</code>, <code>explicit</code>, <code>static</code>, <code>friend</code>, operator overloading</h2>
+<h3><code>this</code></h3>
+<div class="explain"><strong>Definition — this</strong><br>An implicit pointer available in every non-static member function, pointing to the object on which the function was called. <code>this-&gt;x</code> explicitly refers to the current object's member <code>x</code>. It is required when a parameter shadows a member name, or when the function must return a reference to the object itself.</div>
+<pre><code>class Box {
+    int w = 0;
+public:
+    void set(int w){ this-&gt;w = w; }
+};</code></pre>
+<h3><code>explicit</code></h3>
+<div class="explain"><strong>Definition — explicit</strong><br>A specifier on a single-argument constructor preventing implicit conversion. Without it, <code>Buffer b = 10;</code> would implicitly construct <code>Buffer(10)</code>. With it, construction must be direct: <code>Buffer b(10);</code>.</div>
+<pre><code>class Buffer2 {
+public:
+    explicit Buffer2(int n){}
+};</code></pre>
+<h3><code>static</code> members</h3>
+<div class="explain"><strong>Definition — static member</strong><br>A member with a single instance shared by all objects of the class, rather than per-object storage. A static member function has no <code>this</code> pointer and can access only static data.</div>
+<pre><code>class Counter {
+public:
+    static int total;
+    Counter(){ total++; }
+};
+int Counter::total = 0;</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>static int total;</code></td><td>Declares a shared class-level variable. The declaration does not define storage.</td></tr>
+<tr><td><code>Counter(){ total++; }</code></td><td>Constructor incrementing the shared count on each instantiation.</td></tr>
+<tr><td><code>int Counter::total = 0;</code></td><td>Defines the static member and initializes it to 0. <code>::</code> is the scope-resolution operator. This definition appears once in a source file.</td></tr></table>
+<h3><code>friend</code></h3>
+<div class="explain"><strong>Definition — friend</strong><br>A declaration granting a designated class or function access to private and protected members. Example: <code>friend class B;</code> inside <code>A</code> permits <code>B</code> to access <code>A</code>'s non-public members. It weakens encapsulation and should be used selectively.</div>
+<pre><code>class A {
+    friend class B;
+    friend void spy(A&amp;);
+private: int x = 1;
+};</code></pre>
+<h3>Operator overloading</h3>
+<div class="explain"><strong>Definition — operator overloading</strong><br>Definition of the behavior of built-in operators (<code>+</code>, <code>==</code>, <code>&lt;&lt;</code>) for a user-defined type, enabling expressions such as <code>a + b</code> instead of <code>a.add(b)</code>.</div>
+<pre><code>struct Vec2 {
+    double x, y;
+    Vec2 operator+(const Vec2&amp; o) const { return {x+o.x, y+o.y}; }
+    bool operator==(const Vec2&amp; o) const { return x==o.x &amp;&amp; y==o.y; }
+};
+// Vec2 a{1,2}, b{3,4}; Vec2 c = a + b; // {4,6}. if (a == b) ...</code></pre>
+<table><tr><th>Construct</th><th>Description</th></tr>
+<tr><td><code>operator+</code></td><td>Defines <code>a + b</code> for <code>Vec2</code>. The parameter <code>const Vec2&amp; o</code> is a read-only reference avoiding a copy.</td></tr>
+<tr><td><code>const</code> qualifier</td><td>Specifies that the operator does not modify either operand.</td></tr>
+<tr><td><code>operator==</code></td><td>Defines equality comparison by comparing <code>x</code> and <code>y</code> components. Returns <code>bool</code>.</td></tr></table>
+
+<h2>14. Multiple inheritance, the diamond problem, and composition</h2>
+<div class="explain"><strong>Definition — multiple inheritance</strong><br>Derivation of a class from more than one direct base: <code>class D : public B1, public B2 {}</code>. Permitted in C++ but increases complexity; use only when justified.</div>
+<div class="explain"><strong>Definition — diamond problem</strong><br>Ambiguity arising when two bases <code>B</code> and <code>C</code> both derive from <code>A</code>, and <code>D</code> derives from both <code>B</code> and <code>C</code>, yielding two <code>A</code> subobjects. Virtual inheritance (<code>class B : public virtual A</code>) produces a single shared <code>A</code> subobject, but avoiding the structure is generally preferable.</div>
+<pre><code>class D : public B1, public B2 {};
+class B : public virtual A {};
+class C : public virtual A {};
+class D2 : public B, public C {};</code></pre>
+<table><tr><th>Inheritance form</th><th>Semantics</th><th>Recommendation</th></tr>
+<tr><td><code>public</code> (<code>class Dog : public Animal</code>)</td><td>Is-a relationship. A <code>Dog</code> can be used wherever an <code>Animal</code> is expected.</td><td>Standard form for interface hierarchies.</td></tr>
+<tr><td><code>protected / private</code> inheritance</td><td>Implemented-in-terms-of. Reuses implementation without establishing substitutability.</td><td>Rare; composition is generally clearer.</td></tr></table>
+<div class="callout"><strong>Prefer composition (has-a) to inheritance (is-a).</strong> A <code>Game</code> contains a <code>Player</code>; it is not a <code>Player</code>. Deep inheritance hierarchies are fragile because changes propagate to all derived classes. Model shared interfaces with abstract base classes and assemble behavior from member objects.</div>
+
+<h2>Exercises</h2>
+<ol>
+<li><strong>Encapsulated <code>Book</code>.</strong> Define class <code>Book</code> with private members <code>title</code>, <code>author</code>, and <code>pages</code>. Provide a constructor, const accessors (<code>getTitle()</code>), and a <code>summary()</code> function printing title, author, and page count. In <code>main()</code>, instantiate one object and call <code>summary()</code>.</li>
+<li><strong>Polymorphic <code>Shape</code>.</strong> Extend the <code>Shape</code> example with <code>Circle</code> and <code>Rectangle</code> implementing <code>area()</code>. In <code>main()</code>, populate <code>vector&lt;unique_ptr&lt;Shape&gt;&gt;</code> with two circles and one rectangle, accumulate the areas in a loop, and print the total.</li>
+<li><strong><code>Person</code> and <code>Student</code>.</strong> Define base <code>Person</code> with <code>name</code> and virtual <code>introduce()</code>. Derive <code>Student</code> overriding <code>introduce()</code> to include the school. Invoke <code>introduce()</code> through a <code>Person*</code> to a <code>Student</code> and verify dynamic dispatch selects the derived version.</li>
+<li><strong>Operator overloading for <code>Vec2</code>.</strong> Define <code>struct Vec2{double x,y;};</code> with <code>operator+</code> and <code>operator==</code>. In <code>main()</code>, verify <code>{1,2} + {3,4} == {4,6}</code> and print the result.</li>
+<li><strong>Rule of 0.</strong> Refactor <code>Buffer</code> to store <code>std::vector&lt;int&gt;</code> instead of <code>int*</code> and remove its destructor, copy, and move members. Verify correct behavior and consider why managed members eliminate manual resource handling.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="02-basics.html">← Basics</a><a class="btn" href="04-memory.html">Next: Memory & Pointers →</a></div>
+<footer>Learn C++ From Scratch · Lesson 03</footer>
+</main></div><script src="script.js"></script></body></html>

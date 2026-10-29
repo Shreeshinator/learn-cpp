@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08 · Networking — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 08 · No networking experience needed</span>
+<h1>Network programming with sockets: addresses, TCP/UDP, and client-server communication</h1>
+<p>By the end of this lesson you will run two programs on the same host that exchange bytes over a socket, extend that to concurrent clients and message broadcast, and serve a minimal HTTP response to a browser. Each concept is defined precisely before use.</p>
+<p>Core definitions: an IP address identifies a host; a port identifies a process on that host. 127.0.0.1 is loopback. A socket is an OS-managed endpoint for network communication, referenced by a descriptor/handle. TCP provides reliable ordered byte stream; UDP provides unordered datagrams. POSIX sockets are the Linux/macOS API; Winsock is the Windows API.</p>
+
+<div class="toc"><strong>On this page</strong><ol>
+<li>Networks, protocols, and bytes</li>
+<li>IP addresses and ports</li>
+<li>TCP vs UDP</li>
+<li>Sockets and OS descriptors</li>
+<li>Winsock and POSIX socket APIs</li>
+<li>Project 1: echo server and client, line by line</li>
+<li>Concurrent clients with threads</li>
+<li>From echo to broadcast chat</li>
+<li>Serving HTTP to a browser</li>
+<li>UDP datagrams</li>
+</ol></div>
+
+<h2>1. Networks, protocols, and bytes</h2>
+<p>Two processes exchange data either on the same host (via files, pipes, or loopback networking) or on distinct hosts connected by physical links and wireless media. In the latter case they require agreed procedures governing transmission.</p>
+<p>A <strong>network</strong> is a set of hosts connected by transmission media. A <strong>protocol</strong> is a specification defining message format, sequencing, and error handling. Network transmission carries <strong>bytes</strong> (values 0–255); higher-level data must be serialized to bytes by the sender and reconstructed by the receiver.</p>
+<div class="explain"><strong>Definition: byte and encoding</strong><br>
+All network payloads are byte sequences. Text such as <code>"hi"</code> is encoded to bytes (typically UTF-8 / ASCII: <code>h=104, i=105</code>). “Sending a message” means transmitting its byte encoding; the receiver decodes those bytes back to the original representation.</div>
+
+<h2>2. IP addresses and ports</h2>
+<p>Delivery requires two levels of addressing:</p>
+<ul>
+<li><strong>IP address</strong> identifies a host on the network. <code>127.0.0.1</code> is the IPv4 loopback address: it always designates the local host and is standard for development and testing. <code>192.168.1.5</code> is an example of a host address on a local network.</li>
+<li><strong>Port</strong> identifies a process (more precisely, a socket binding) on that host. Since a host runs multiple networked processes, the port number selects the recipient. Web services conventionally use <code>80</code> or <code>8080</code>.</li>
+<li>Combined form: <code>127.0.0.1:8080</code> denotes the process bound to port 8080 on the local host.</li>
+</ul>
+<p>For development, select ports in the range 1024–65535. Ports below 1024 are privileged and require elevated rights on most systems.</p>
+
+<h2>3. TCP vs UDP</h2>
+<p>TCP and UDP are the two primary transport protocols. The selection determines reliability, ordering, and connection semantics:</p>
+<table><tr><th>Property</th><th>TCP</th><th>UDP</th></tr>
+<tr><td><strong>Model</strong></td><td>Connection-oriented. Endpoints establish a connection, then exchange a continuous stream.</td><td>Connectionless. Each datagram is addressed and transmitted independently.</td></tr>
+<tr><td><strong>Reliability and order</strong></td><td>Reliable and ordered. TCP retransmits lost segments and delivers bytes in transmission order.</td><td>Unreliable and unordered. Datagrams may be lost, duplicated, or reordered.</td></tr>
+<tr><td><strong>Overhead</strong></td><td>Higher (connection state, sequencing, acknowledgements).</td><td>Minimal (no connection state).</td></tr>
+<tr><td><strong>Typical use</strong></td><td>Chat, HTTP, file transfer — where completeness and order are required.</td><td>Real-time games, voice, video — where latency matters more than loss of individual updates.</td></tr>
+<tr><td><strong>C++ operations</strong></td><td><code>connect / accept / send / recv</code></td><td><code>sendto / recvfrom</code></td></tr></table>
+<p><strong>This lesson begins with TCP</strong> because its ordered, reliable byte stream simplifies initial client-server implementations.</p>
+<div class="callout"><strong>TCP framing requirement:</strong> TCP delivers a byte <em>stream</em>, not discrete messages. Transmission of “hello” followed by “world” may arrive as “helloworld” in one read or as “hel” + “loworld” across two reads. Application protocols therefore define message boundaries — in this lesson, a terminating newline <code>\n</code> marks the end of each message.</div>
+
+<h2>4. Sockets and OS descriptors</h2>
+<p>Application code does not access network hardware directly; it requests kernel-mediated communication through defined system interfaces.</p>
+<div class="explain"><strong>Definition: operating system</strong><br>
+Windows, macOS, and Linux. The OS owns network interfaces and enforces isolation. Programs obtain and operate on network resources exclusively through OS interfaces.</div>
+<div class="explain"><strong>Definition: descriptor / handle</strong><br>
+When the OS grants a resource (“open this file”, “create this socket”), it returns a small integer reference — a <strong>file descriptor</strong> on Linux/macOS, a <strong>handle</strong> (of type SOCKET) on Windows, e.g. <code>3</code> or <code>7</code>. Subsequent operations pass this reference to identify the resource: “transmit these bytes on descriptor 7”. When finished, the program releases it with <code>close</code> (POSIX) or <code>closesocket</code> (Windows).</div>
+<div class="explain"><strong>Definition: socket</strong><br>
+A socket is an OS-managed endpoint for network communication, referenced by a descriptor/handle. Creation specifies the address family and type — e.g. IPv4 (<code>AF_INET</code>) with a reliable stream (<code>SOCK_STREAM</code> for TCP). The program then binds, connects, transmits with <code>send</code>, receives with <code>recv</code>, and releases the descriptor on completion.<br><br>
+Summary: <em>to communicate over a network, a program requests a socket descriptor from the OS, then uses that descriptor to transmit and receive bytes.</em></div>
+
+<h2>5. Winsock and POSIX socket APIs</h2>
+<p>Linux/macOS and Windows expose the same socket semantics through distinct interfaces:</p>
+<ul>
+<li><strong>POSIX / Berkeley sockets</strong> (Linux, macOS): <code>socket(), bind(), listen(), accept(), connect(), send(), recv(), close()</code>. Declared in <code>&lt;sys/socket.h&gt;</code>.</li>
+<li><strong>Winsock</strong> (Windows): functionally equivalent, with three differences: initialization via <code>WSAStartup()</code> before any socket call, release via <code>closesocket()</code> instead of <code>close()</code>, and termination via <code>WSACleanup()</code>.</li>
+</ul>
+<p>This lesson presents the POSIX form first, then isolates the Windows-specific lines. Application logic — bind, listen, accept, transmit — is identical across platforms.</p>
+
+<h2>6. Project 1: echo server and client, explained line by line</h2>
+<p><strong>Echo</strong> designates a server that returns each received payload to its sender. It verifies bidirectional transmission before introducing broadcast or protocol logic.</p>
+<p>Execution requires <strong>two terminals</strong>: one hosts <code>server</code> (binds and accepts), the other hosts <code>client</code> (connects and transmits).</p>
+<h3>6a. The TCP server</h3>
+<p>A TCP server executes five operations in fixed order:</p>
+<ol>
+<li><code>socket()</code> — request a TCP socket descriptor from the OS.</li>
+<li><code>bind()</code> — associate the descriptor with a local port (here 8080) and interface.</li>
+<li><code>listen()</code> — mark the descriptor as accepting inbound connections and set the pending-connection queue length.</li>
+<li><code>accept()</code> — block until a client connects; return a <em>new</em> connected descriptor dedicated to that peer. The listening descriptor remains open for further connections.</li>
+<li><code>recv() / send()</code> — receive bytes and transmit the response on the connected descriptor, then <code>close()</code> it.</li>
+</ol>
+<pre><code>// server.cpp — Linux/macOS: g++ -std=c++17 server.cpp -o server
+// Windows: see section 6c for the required additions.
+#include &lt;sys/socket.h&gt;  // socket(), bind(), listen(), accept(), recv(), send()
+#include &lt;netinet/in.h&gt;  // sockaddr_in: structure holding IP address + port
+#include &lt;unistd.h&gt;      // close()
+#include &lt;iostream&gt;
+#include &lt;thread&gt;        // per-connection concurrency
+#include &lt;cstring&gt;        // string utilities
+
+// Executed once per accepted connection, on a dedicated thread:
+void handle(int clientSocket){
+    // clientSocket is the connected descriptor for this peer.
+    char buf[1024]; // receive buffer for up to 1023 payload bytes
+    // recv blocks until bytes arrive, returning the count received.
+    // Capacity is limited to sizeof(buf)-1 to reserve space for a terminator.
+    ssize_t n = recv(clientSocket, buf, sizeof(buf)-1, 0);
+    if(n &gt; 0){
+        buf[n] = 0; // append null terminator for output as a C string
+        std::cout &lt;&lt; "got: " &lt;&lt; buf;
+        std::string reply = std::string("echo: ") + buf; // construct response
+        // Transmit the response on the same connected descriptor:
+        send(clientSocket, reply.c_str(), reply.size(), 0);
+    }
+    close(clientSocket); // release the per-connection descriptor; listener remains open
+}
+
+int main(){
+    // 1. Request a TCP descriptor. AF_INET = IPv4, SOCK_STREAM = TCP byte stream.
+    int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+
+    // Permit immediate rebinding after restart (avoids TIME_WAIT retention):
+    int opt = 1;
+    setsockopt(serverSocket, SOL_SOCKET, SO_REUSEADDR, &amp;opt, sizeof(opt));
+
+    // 2. Bind to port 8080 on all local interfaces (INADDR_ANY):
+    sockaddr_in addr{};             // address structure with three assigned fields:
+    addr.sin_family = AF_INET;      // address family: IPv4
+    addr.sin_port = htons(8080);     // port in network byte order (see below)
+    addr.sin_addr.s_addr = INADDR_ANY; // accept connections on any local interface
+    bind(serverSocket, (sockaddr*)&amp;addr, sizeof(addr));
+
+    // 3. Mark as passive with a pending-connection queue of 10.
+    listen(serverSocket, 10);
+    std::cout &lt;&lt; "listening on 8080... run the client in another terminal\n";
+
+    // 4+5. Accept loop: each accepted descriptor is serviced on a detached thread.
+    while(true){
+        int clientSocket = accept(serverSocket, nullptr, nullptr); // blocks until connection
+        std::thread(handle, clientSocket).detach(); // service concurrently; resume accepting
+    }
+}</code></pre>
+<div class="explain"><strong>Definition: htons and byte order</strong><br>
+Hosts may store multi-byte integers in different byte orders (<strong>endianness</strong>). Network protocols specify big-endian transmission order (“network byte order”). <code>htons</code> (“host to network, short”) converts a 16-bit port number from host order to network order. Apply <code>htons()</code> to every port assigned to a socket address structure.</div>
+
+<h3>6b. The TCP client</h3>
+<p>A TCP client performs three operations: <code>socket → connect → send/recv</code>.</p>
+<pre><code>// client.cpp — g++ -std=c++17 client.cpp -o client
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;arpa/inet.h&gt; // inet_pton: parse dotted-decimal IP text to binary
+#include &lt;unistd.h&gt;    // close()
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+
+int main(){
+    // 1. Request a TCP descriptor:
+    int s = socket(AF_INET, SOCK_STREAM, 0);
+
+    // 2. Specify the target: 127.0.0.1 (loopback) port 8080:
+    sockaddr_in a{};
+    a.sin_family = AF_INET;
+    a.sin_port = htons(8080);
+    inet_pton(AF_INET, "127.0.0.1", &amp;a.sin_addr); // textual address -&gt; binary form
+
+    // Establish the connection. Blocks until the server accepts or reports failure:
+    connect(s, (sockaddr*)&amp;a, sizeof(a));
+
+    // 3. Exchange data:
+    const char* m = "hello server\n"; // \n delimits the message per framing convention
+    send(s, m, strlen(m), 0);         // transmit bytes (excluding null terminator)
+
+    char b[1024];
+    ssize_t n = recv(s, b, sizeof(b)-1, 0); // block awaiting the response
+    if(n &gt; 0){ b[n] = 0; std::cout &lt;&lt; "server said: " &lt;&lt; b; }
+    close(s); // release the descriptor
+}</code></pre>
+<p>Verification: terminal 1 → <code>./server</code>, terminal 2 → <code>./client</code>. Expected client output: <code>server said: echo: hello server</code>.</p>
+<div class="callout"><strong>Connection diagnostics:</strong> (1) Confirm the server process is running. (2) Confirm identical port numbers on both sides. (3) Confirm firewall authorization — approve the OS prompt on Windows. (4) Confirm the address is exactly <code>127.0.0.1</code>.</div>
+
+<h3>6c. Windows compatibility — differing lines only</h3>
+<p>Identical logic with platform-specific initialization and release. Prepend the following:</p>
+<pre><code>#ifdef _WIN32
+  #include &lt;winsock2.h&gt;   // Windows socket declarations
+  #include &lt;ws2tcpip.h&gt;   // inet_pton on Windows
+  #pragma comment(lib, "ws2_32.lib") // link the Windows networking library
+#endif
+
+// at the start of main():
+#ifdef _WIN32
+  WSADATA w;                    // receives Winsock version details
+  WSAStartup(MAKEWORD(2,2), &amp;w); // initialize Winsock version 2.2
+#endif
+// ... remainder identical, except:
+//   close(s) -&gt; closesocket(s)
+// at the end of main():
+#ifdef _WIN32
+  WSACleanup(); // release Winsock resources
+#endif</code></pre>
+<p><code>#ifdef _WIN32</code> conditionally compiles the enclosed lines on Windows only. A single source file thus builds on both API families.</p>
+<div class="callout ok"><strong>Resource discipline:</strong> encapsulate the descriptor in a class whose destructor invokes <code>close / closesocket</code> (RAII, Lesson 04). Deterministic release then holds on all paths, including exceptions.</div>
+
+<h2>7. Concurrent clients with threads</h2>
+<p>Concurrency in this server derives from a single statement:</p>
+<pre><code>std::thread(handle, clientSocket).detach();</code></pre>
+<p>Without it, the accept loop would block in per-connection I/O and delay subsequent connections. A <strong>thread</strong> (Lesson 07) assigns each accepted descriptor to an independent execution path running <code>handle</code>: the main loop returns immediately to <code>accept</code> while established connections proceed in parallel.</p>
+
+<h2>8. From echo to broadcast chat</h2>
+<p>Echo responds to one peer. A broadcast server <strong>retains all connected descriptors and forwards each received message to every other peer</strong>:</p>
+<ol>
+<li>Maintain shared state: <code>std::vector&lt;int&gt; clients;</code> with a <code>std::mutex</code> serializing concurrent modifications.</li>
+<li>On accept: acquire the mutex, append the new descriptor, release.</li>
+<li>On receipt of a delimited line: acquire the mutex, transmit to each descriptor except the sender, release.</li>
+<li>Implement the client with <strong>two threads</strong>: one blocking on <code>getline</code> (standard input → <code>send</code>), the other blocking on <code>recv</code> (socket → standard output). A single thread cannot block on both sources simultaneously.</li>
+<li>Preserve message framing: terminate each transmission with <code>\n</code>. On reception, accumulate bytes until <code>\n</code> is observed, then emit one complete message.</li>
+<li>Extension: treat each client's first line as its identifier and prefix outbound messages (e.g. <code>[Ravi] hi!</code>).</li>
+</ol>
+
+<h2>9. Minimal HTTP response for browser clients</h2>
+<p><strong>HTTP</strong> is a text protocol layered over TCP. A fixed-format header followed by a body suffices for a browser to render a response. Request <code>http://localhost:8080</code> after transmitting the following on the accepted descriptor:</p>
+<pre><code>std::string body = "&lt;h1&gt;Hi from C++!&lt;/h1&gt;"; // response payload
+std::string header =
+  "HTTP/1.1 200 OK\r\n"              // status line: success
+  "Content-Type: text/html\r\n"      // payload media type
+  "Content-Length: " + std::to_string(body.size()) + "\r\n"
+  "Connection: close\r\n"            // terminate TCP connection after response
+  "\r\n";                            // empty line: end of header, start of body
+std::string response = header + body;
+send(clientSocket, response.c_str(), response.size(), 0);
+// Then navigate to http://localhost:8080 in a browser.</code></pre>
+<p>Subsequent step: read <code>index.html</code> from storage with <code>ifstream</code> and transmit its contents as the body — a minimal static file server.</p>
+
+<h2>10. UDP datagrams</h2>
+<p>UDP is connectionless: no connection establishment or acceptance phase exists. Transmission specifies the destination per datagram:</p>
+<pre><code>// UDP sender — no connect, no accept:
+int s = socket(AF_INET, SOCK_DGRAM, 0); // DGRAM = datagram (UDP); STREAM = TCP byte stream
+sockaddr_in a{};
+a.sin_family = AF_INET;
+a.sin_port = htons(9000);
+inet_pton(AF_INET, "127.0.0.1", &amp;a.sin_addr);
+// sendto transmits the buffer to the specified address:
+sendto(s, "ping", 4, 0, (sockaddr*)&amp;a, sizeof(a));
+// The peer receives with recvfrom(), which additionally reports the sender address.</code></pre>
+<p>Select UDP when occasional loss is acceptable (e.g. periodic position updates) and latency is critical. Select TCP when completeness and order are required (chat, file transfer).</p>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li>Execute the echo server and client. Modify the payload. Apply <code>\n</code> framing and emit each received line separately.</li>
+<li>Chat v1: retain connected descriptors in <code>vector&lt;int&gt;</code> and broadcast each message to all peers. Validate with three concurrent clients.</li>
+<li>Chat v2: add identifiers with <code>mutex</code> protection. Remove the mutex experimentally and observe the resulting inconsistency.</li>
+<li>HTTP: serve the contents of <code>index.html</code> and render it in a browser via <code>http://localhost:8080</code>.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="07-advanced.html">← Advanced</a><a class="btn" href="09-projects-terminal.html">Next: Terminal Project →</a></div>
+<footer>Learn C++ From Scratch · Lesson 08</footer>
+</main></div><script src="script.js"></script></body></html>

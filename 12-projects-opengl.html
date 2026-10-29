@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>12 · OpenGL / SFML Game — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Project 12 · Graphics + game loop · ~90 min</span>
+<h1>Build a game: Pong / Breakout with SFML (OpenGL under the hood)</h1>
+<p><strong>Goal:</strong> implement a windowed Pong game operating at 60 frames per second. This project covers <strong>game loop, input / update / draw, FPS, SFML, OpenGL, GLFW, VAO, VBO, shader, velocity, dt, and collision detection</strong>.</p>
+
+<div class="toc"><strong>On this page</strong><ol><li>The game loop: input / update / draw at 60 Hz</li><li>SFML vs OpenGL vs GLFW</li><li>Installing SFML and compilation flags</li><li>Complete Pong implementation</li><li>Pong walkthrough: window, shapes, velocity, dt, collision</li><li>VAO / VBO / shaders</li><li>Breakout extension</li><li>Troubleshooting</li><li>Exercises</li></ol></div>
+
+<div class="callout"><strong>Overview:</strong> A game loop runs input-update-render at 60 Hz; SFML abstracts window/input/graphics built on OpenGL. Each iteration polls input state, advances simulation by delta-time, and renders the frame.</div>
+
+<h2>1. The game loop: input / update / draw at 60 Hz</h2>
+<ul>
+<li><strong>Game loop</strong> — <code>while (window is open) { input; update; draw; }</code> executed continuously. It is structurally analogous to a REPL, but frame-driven rather than input-blocking.</li>
+<li><strong>Input</strong> — sampling current key state. Example: <code>isKeyPressed(W)</code> indicates whether W is held. Paddle displacement applies only while the corresponding key is active.</li>
+<li><strong>Update</strong> — advancing simulation state: <code>ball += velocity * dt</code>. <strong>Velocity</strong> = displacement vector per unit time. <strong>dt (delta-time)</strong> = elapsed seconds since the prior frame (e.g. 0.016s at 60 Hz). Scaling by <code>dt</code> yields frame-rate-independent motion.</li>
+<li><strong>Draw</strong> — clear framebuffer → issue draw calls → present (<code>display()</code>). <strong>FPS (frames per second)</strong> quantifies render rate; 60 FPS = one frame per 1/60s. <code>setFramerateLimit(60)</code> caps the loop to reduce CPU/GPU load.</li>
+<li><strong>Collision</strong> — geometric overlap test. <code>intersects()</code> evaluates rectangle intersection; velocity components are negated on contact to simulate reflection.</li>
+</ul>
+<pre><code>Per-frame sequence at 60 Hz:
+  INPUT:   sample keys (W/S for left paddle, Up/Down for right)
+  UPDATE:  paddles += speed*dt, ball += vel, evaluate wall/paddle contact
+  DRAW:    clear(black) -&gt; draw(left) draw(right) draw(ball) -&gt; display()
+Repeat until window closure.</code></pre>
+<div class="explain"><strong>Notes:</strong> input sampling performs no mutation. Update applies <code>dt</code> scaling so observed speed is consistent across hardware. Rendering always begins from a cleared buffer to prevent frame retention artifacts.</div>
+
+<h2>2. SFML vs OpenGL vs GLFW</h2>
+<ul>
+<li><strong>SFML (Simple and Fast Multimedia Library)</strong> — high-level multimedia framework: <code>RenderWindow</code>, <code>RectangleShape</code>, <code>CircleShape</code>, <code>Keyboard</code>. Provides window management, input, 2D rendering, and audio. Internally issues OpenGL calls.</li>
+<li><strong>OpenGL</strong> — low-level graphics API for direct GPU programming: explicit buffer management and shader specification. Approximately 50 lines are required to display a single triangle. Maximum control at maximum verbosity. Production 3D engines build on OpenGL/DirectX/Vulkan.</li>
+<li><strong>GLFW + GLAD</strong> — intermediate configuration: GLFW provides window creation and input; GLAD loads OpenGL entry points. Triangle submission remains explicit.</li>
+<li><strong>Selection:</strong> SFML is appropriate for initial 2D projects (Pong demonstrates loop, input, and collision concepts transferable to any framework). Direct OpenGL is appropriate when custom 3D rendering or shader control is required.</li>
+</ul>
+<div class="explain"><strong>Comparison:</strong> SFML provides integrated abstractions with reduced configuration. OpenGL provides explicit GPU control requiring manual setup. GLFW isolates window/input management while retaining explicit rendering.</div>
+
+<h2>3. Installing SFML</h2>
+<pre><code># Windows with MSYS2 UCRT64 (recommended, matches this course):
+pacman -S mingw-w64-ucrt-x86_64-sfml
+# Then compile with:
+g++ -std=c++17 pong.cpp -o pong -lsfml-graphics -lsfml-window -lsfml-system
+
+# Ubuntu / Debian / Mint:
+sudo apt update
+sudo apt install -y libsfml-dev
+g++ -std=c++17 pong.cpp -o pong -lsfml-graphics -lsfml-window -lsfml-system
+
+# Mac with Homebrew:
+brew install sfml
+g++ -std=c++17 pong.cpp -o pong -lsfml-graphics -lsfml-window -lsfml-system
+# If Mac reports library not found, run: brew info sfml (displays required -I/-L flags)</code></pre>
+<div class="explain"><strong>Compiler invocation:</strong> <code>pong.cpp</code> = translation unit. <code>-o pong</code> = output executable. <code>-lsfml-graphics -lsfml-window -lsfml-system</code> = link three SFML components: graphics (2D primitives), window (context + input), system (clock/time). Each must be specified; omission yields <code>undefined reference</code> link errors. On Windows, execute installation and compilation within the <strong>MSYS2 UCRT64</strong> environment so PATH resolves SFML.</div>
+
+<h2>4. Complete Pong implementation</h2>
+<pre><code>// pong.cpp -- g++ -std=c++17 pong.cpp -o pong -lsfml-graphics -lsfml-window -lsfml-system
+#include &lt;SFML/Graphics.hpp&gt;
+#include &lt;algorithm&gt;
+int main() {
+    sf::RenderWindow win(sf::VideoMode(800, 600), "Pong - C++");
+    win.setFramerateLimit(60);
+    sf::RectangleShape left(sf::Vector2f(15, 100));
+    left.setPosition(20, 250);
+    sf::RectangleShape right(sf::Vector2f(15, 100));
+    right.setPosition(765, 250);
+    sf::CircleShape ball(10);
+    ball.setPosition(390, 290);
+    sf::Vector2f vel(4.f, 3.f);
+    float leftY = 250, rightY = 250;
+    sf::Clock clock;
+    while (win.isOpen()) {
+        sf::Event e;
+        while (win.pollEvent(e)) {
+            if (e.type == sf::Event::Closed) win.close();
+        }
+        float dt = clock.restart().asSeconds();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) leftY -= 400 * dt;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) leftY += 400 * dt;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) rightY -= 400 * dt;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) rightY += 400 * dt;
+        leftY = std::max(0.f, std::min(500.f, leftY));
+        rightY = std::max(0.f, std::min(500.f, rightY));
+        left.setPosition(20, leftY);
+        right.setPosition(765, rightY);
+        ball.move(vel);
+        auto p = ball.getPosition();
+        if (p.y &lt; 0 || p.y &gt; 580) vel.y = -vel.y;
+        if (ball.getGlobalBounds().intersects(left.getGlobalBounds()) ||
+            ball.getGlobalBounds().intersects(right.getGlobalBounds())) {
+            vel.x = -vel.x * 1.05f;
+        }
+        if (p.x &lt; -20 || p.x &gt; 800) {
+            ball.setPosition(390, 290);
+            vel = {4.f, 3.f};
+        }
+        win.clear(sf::Color::Black);
+        win.draw(left);
+        win.draw(right);
+        win.draw(ball);
+        win.display();
+    }
+    return 0;
+}</code></pre>
+
+<h2>5. Pong walkthrough</h2>
+<div class="explain"><strong>Part A — window initialization:</strong><br>
+<code>#include &lt;SFML/Graphics.hpp&gt;</code> — SFML graphics module (window, shapes, color).<br>
+<code>#include &lt;algorithm&gt;</code> — standard algorithms including <code>std::max/min</code>.<br>
+<code>sf::RenderWindow win(sf::VideoMode(800,600), "Pong - C++");</code> — creates an 800×600 render window. <code>sf::</code> is the SFML namespace. <code>VideoMode</code> specifies dimensions. Coordinate origin is top-left (0,0); x increases rightward, y increases downward.<br>
+<code>win.setFramerateLimit(60);</code> — limits the loop to 60 iterations per second.</div>
+<div class="explain"><strong>Part B — scene objects:</strong><br>
+<code>sf::RectangleShape left(sf::Vector2f(15,100));</code> — 15×100 rectangle. <code>Vector2f</code> = two-component float vector.<br>
+<code>left.setPosition(20,250);</code> — positions top-left corner at (20,250) (vertically centered: 600/2 − 50 = 250). Right paddle x=765 (800 − 20 − 15).<br>
+<code>sf::CircleShape ball(10);</code> — circle radius 10 (20px diameter). <code>ball.setPosition(390,290);</code> — approximately centered (800/2−10, 600/2−10).<br>
+<code>sf::Vector2f vel(4.f, 3.f);</code> — <strong>velocity</strong> per-frame displacement: +4 x (right), +3 y (down). Negative components reverse direction.<br>
+<code>float leftY=250, rightY=250;</code> — tracked paddle y-coordinates; x remains fixed.<br>
+<code>sf::Clock clock;</code> — elapsed-time source. <code>restart()</code> returns interval since prior call and restarts measurement.</div>
+<div class="explain"><strong>Part C — input and delta-time:</strong><br>
+<code>while (win.isOpen())</code> — game loop; terminates on window closure.<br>
+<code>while (win.pollEvent(e)) if (e.type==Closed) win.close();</code> — drains the OS event queue (close requests, etc.). <code>pollEvent</code> returns pending events. Required on Windows to maintain responsiveness.<br>
+<code>float dt = clock.restart().asSeconds();</code> — seconds elapsed since prior frame (nominally 0.016). Enables hardware-independent speed.<br>
+Four <code>isKeyPressed</code> branches: W/S control left paddle, Up/Down control right paddle. Displacement <code>400*dt</code> = 400 px/sec × seconds (~6.6px at 60 Hz). Negative y = upward (coordinate system).<br>
+<code>leftY = max(0, min(500, leftY));</code> — <strong>clamps</strong> position to [0,500] (500 = 600 − 100 paddle height).<br>
+<code>setPosition</code> applies the computed coordinates.</div>
+<div class="explain"><strong>Part D — ball integration, collision, reset:</strong><br>
+<code>ball.move(vel);</code> — translates ball by velocity (calibrated for the 60 Hz limit).<br>
+<code>auto p = ball.getPosition();</code> — retrieves top-left position. <code>auto</code> = deduced type.<br>
+<code>if (p.y&lt;0 || p.y&gt;580) vel.y=-vel.y;</code> — vertical wall contact (580 = 600 − 20 ball diameter); negates y-component (reflection).<br>
+<code>if (ball.getGlobalBounds().intersects(...))</code> — <code>getGlobalBounds()</code> returns the axis-aligned bounding box. <code>intersects</code> tests rectangle overlap. On paddle contact, negates x-component and scales by <code>1.05f</code> (5% acceleration).<br>
+<code>if (p.x&lt;-20 || p.x&gt;800)</code> — lateral exit indicates a scored point. Resets ball to center and restores initial velocity.<br>
+<code>win.clear(Black); win.draw(...); win.display();</code> — clears to black, submits each drawable, then <code>display()</code> presents the completed frame. Omitting <code>display</code> leaves the window unpresented.</div>
+
+<h2>6. VAO / VBO / shaders</h2>
+<div class="callout"><strong>Technical summary:</strong> The GPU processes <strong>triangles</strong>. A <strong>VBO (Vertex Buffer Object)</strong> stores vertex attribute data (positions, colors) in GPU memory. A <strong>VAO (Vertex Array Object)</strong> records the attribute binding configuration for VBOs. A <strong>shader</strong> is a GPU-executed program: the <strong>vertex shader</strong> transforms vertices to clip space; the <strong>fragment shader</strong> computes per-pixel color (written in <strong>GLSL</strong>). Per frame, SFML binds the appropriate VAO, activates shaders, and issues <code>glDrawArrays(GL_TRIANGLES,...)</code> for each drawable. SFML encapsulates this pipeline; direct OpenGL development requires explicit management of each stage.</div>
+
+<h2>7. Breakout extension</h2>
+<ol>
+<li><strong>Mouse-controlled paddle:</strong> per frame, <code>auto m = sf::Mouse::getPosition(win); paddle.setPosition(m.x - 50, 550);</code> (−50 centers a 100px paddle on the cursor). Clamp x to [0,700].</li>
+<li><strong>Brick grid:</strong> <code>std::vector&lt;sf::RectangleShape&gt; bricks;</code> populated as 3 rows × 8 columns (90×25 cells, 10px spacing), distinct <code>setFillColor</code> per row. Render via iteration.</li>
+<li><strong>Ball-brick collision:</strong> iterate bricks; on <code>ball.getGlobalBounds().intersects(bricks[i].getGlobalBounds())</code>, negate <code>vel.y</code>, erase the element (<code>bricks.erase(bricks.begin()+i);</code>), increment <code>score</code>, <code>break</code> (single removal per frame).</li>
+<li><strong>Lives and termination state:</strong> <code>int lives = 3;</code> Ball below y=600 → decrement, reset ball. If <code>lives==0</code> or <code>bricks.empty()</code>, display <code>sf::Text</code> (“You win!” / “Game over”). <code>sf::Text</code> requires a loaded font: <code>sf::Font f; f.loadFromFile("arial.ttf"); text.setFont(f);</code> (place a .ttf adjacent to the executable).</li>
+<li><strong>Collision audio:</strong> integrate Lesson 11 miniaudio: invoke <code>ma_sound_start(&amp;blip);</code> within the collision branch.</li>
+</ol>
+<div class="explain"><strong>Recommended order:</strong> mouse input validates event handling. Brick storage validates containers and iteration. Collision validates index-safe removal. Lives/text validate state transitions. Audio validates cross-lesson integration. Implement and test each stage independently.</div>
+
+<h2>8. Troubleshooting</h2>
+<table><tr><th>Symptom</th><th>Cause</th><th>Resolution</th></tr>
+<tr><td><code>SFML/Graphics.hpp: No such file</code></td><td>SFML not installed or environment PATH misconfigured.</td><td>Repeat section 3 for the active platform (MSYS2 UCRT64 / apt / brew). Restart the terminal after installation.</td></tr>
+<tr><td><code>undefined reference to sf::...</code></td><td>Missing SFML link libraries.</td><td>Append all three at the end of the g++ command: <code>-lsfml-graphics -lsfml-window -lsfml-system</code>.</td></tr>
+<tr><td>Black window, no motion</td><td>Missing <code>win.display()</code> or objects positioned outside the viewport.</td><td>Verify <code>display()</code> is present. Log positions via <code>std::cout</code> for inspection.</td></tr>
+<tr><td>Speed varies across machines</td><td>Fixed per-frame displacement without <code>dt</code> scaling.</td><td>Multiply all motion terms by <code>dt</code>.</td></tr>
+<tr><td>Ball adheres to paddle / oscillates</td><td>Collision condition remains true across consecutive frames while overlapping, repeatedly inverting <code>vel.x</code>.</td><td>After reflection, displace the ball out of intersection (<code>ball.move(-vel.x, 0);</code>) or condition on approach direction.</td></tr>
+</table>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li><strong>Score display:</strong> maintain <code>int scoreL=0, scoreR=0;</code> Left exit → <code>scoreR++</code>; right exit → <code>scoreL++</code>. Render via <code>sf::Text</code>. First to 5 triggers victory display and halts ball motion.</li>
+<li><strong>Breakout implementation:</strong> follow section 7 sequentially. Begin with paddle plus one brick row, expand to three rows, then add lives logic.</li>
+<li><strong>Collision audio:</strong> play <code>blip.wav</code> (Lesson 11) on paddle/wall contact using miniaudio. Validate audio and graphics linkage independently before merging.</li>
+<li><strong>Velocity limit:</strong> the paddle reflection applies <code>*1.05f</code> acceleration. Impose a maximum (e.g. inhibit boost when <code>abs(vel.x)&gt;12</code>) to preserve playability.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="11-projects-audio.html">← Audio</a><a class="btn" href="13-projects-ai.html">Next: AI Engine →</a></div>
+<footer>Learn C++ From Scratch · Project 12</footer>
+</main></div><script src="script.js"></script></body></html>

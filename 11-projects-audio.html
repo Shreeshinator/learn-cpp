@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11 · Audio Player — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Project 11 · Binary files + sound · ~60 min</span>
+<h1>Build an audio player in C++</h1>
+<p><strong>Goal:</strong> implement WAV file inspection and audio playback. This project covers <strong>sound representation, PCM, sample, sample rate, WAV, header, RIFF, WinMM, miniaudio, engine, and sound objects</strong>.</p>
+
+<div class="toc"><strong>On this page</strong><ol><li>Digital audio: PCM, sample, and sample rate</li><li>WAV format: the 44-byte header</li><li>Obtaining a test.wav file</li><li>Windows playback with PlaySound</li><li>Reading WAV metadata with wavinfo</li><li>Cross-platform playback with miniaudio</li><li>Playlist player</li><li>Compiling and running</li><li>Exercises</li></ol></div>
+
+<div class="callout"><strong>Overview:</strong> PCM digitizes audio at a sample rate; WAV stores a 44-byte header plus samples. Playback delivers the sample sequence to the audio device at the rate specified in the header.</div>
+
+<h2>1. Digital audio: PCM, sample, and sample rate</h2>
+<ul>
+<li><strong>Sound</strong> — variation in air pressure over time. A <strong>microphone</strong> converts pressure variation to an electrical signal; a <strong>speaker</strong> performs the inverse conversion.</li>
+<li><strong>PCM (Pulse Code Modulation)</strong> — representation of audio as a sequence of amplitude measurements sampled at uniform intervals. Standard <code>.wav</code> files store PCM data.</li>
+<li><strong>Sample</strong> — a single amplitude measurement. Example sequence: <code>0, 120, -50, 300...</code>. Commonly stored as <strong>int16</strong> (range -32768 to 32767).</li>
+<li><strong>Sample rate</strong> — samples per second, expressed in <strong>Hz</strong>. <strong>44100 Hz</strong> (CD quality) denotes 44100 samples per second. Higher rates increase fidelity and file size. Telephony uses 8000 Hz.</li>
+<li><strong>Channels</strong> — independent audio streams. <strong>1 = mono</strong>, <strong>2 = stereo</strong> (left/right).</li>
+<li><strong>Bits per sample</strong> — quantization precision per measurement. <strong>16-bit</strong> provides 65536 levels (standard). <strong>8-bit</strong> provides 256 levels.</li>
+<li><strong>Byte rate</strong> — sustained data throughput: <code>sampleRate * channels * bits/8</code>. Example: 44100×2×2 = 176400 bytes/sec.</li>
+</ul>
+<pre><code>Sound = air pressure over time (continuous).
+PCM = discrete amplitude measurements, e.g. 44100 per second as int16.
+  time -&gt;  0ms   0.02ms  0.04ms  0.06ms ...
+  value -&gt;   0     120     240     180  ...
+WAV file = 44-byte header + sample data.
+Playback = submit samples to the audio device at the specified rate.</code></pre>
+<div class="explain"><strong>Interpretation:</strong> the header defines the sampling parameters; the data chunk contains the measurements. Incorrect playback rate alters pitch and duration proportionally.</div>
+
+<h2>2. WAV format: the 44-byte header</h2>
+<p>A <code>.wav</code> file consists of a <strong>header</strong> (44-byte descriptor) followed by <strong>sample data</strong>. A <strong>binary file</strong> must be accessed as raw bytes; opening WAV data as text produces unstructured output.</p>
+<ul>
+<li><strong>RIFF (Resource Interchange File Format)</strong> — container format. Bytes 0–3 contain <code>RIFF</code>, bytes 4–7 specify file size minus 8, bytes 8–11 contain <code>WAVE</code>.</li>
+<li><strong>fmt␣</strong> — format subchunk identifier (bytes 12–15), followed by format parameters (channel count, sample rate, bit depth).</li>
+<li><strong>data</strong> — data subchunk identifier (bytes 36–39), followed by data size and sample bytes.</li>
+<li><strong>Little-endian</strong> — multi-byte integers stored least-significant byte first (x86 standard). Direct struct mapping on little-endian hosts requires no manual conversion.</li>
+</ul>
+<table><tr><th>Bytes</th><th>Field name</th><th>Description</th><th>Typical value</th></tr>
+<tr><td>0–3</td><td><code>riff[4]</code></td><td>Container identifier. Must be <code>R I F F</code>; otherwise the file is not RIFF/WAV.</td><td><code>"RIFF"</code></td></tr>
+<tr><td>4–7</td><td><code>size (uint32)</code></td><td>Total file size minus 8. <strong>uint32</strong> = unsigned 32-bit integer.</td><td>e.g. 176444</td></tr>
+<tr><td>8–11</td><td><code>wave[4]</code></td><td>Format identifier. Must be <code>W A V E</code>.</td><td><code>"WAVE"</code></td></tr>
+<tr><td>12–15</td><td><code>fmt[4]</code></td><td>Format subchunk identifier (<code>fmt</code> + space).</td><td><code>"fmt "</code></td></tr>
+<tr><td>16–19</td><td><code>fmtLen</code></td><td>Format subchunk length (16 for PCM).</td><td>16</td></tr>
+<tr><td>20–21</td><td><code>audioFmt</code></td><td>Audio format code. 1 = PCM. Other values indicate compressed formats.</td><td>1</td></tr>
+<tr><td>22–23</td><td><code>channels</code></td><td>Channel count: 1 = mono, 2 = stereo.</td><td>1 or 2</td></tr>
+<tr><td>24–27</td><td><code>sampleRate</code></td><td>Samples per second per channel.</td><td>44100</td></tr>
+<tr><td>28–31</td><td><code>byteRate</code></td><td>Bytes per second (sampleRate × channels × bits/8). Determines playback throughput.</td><td>176400</td></tr>
+<tr><td>32–33</td><td><code>blockAlign</code></td><td>Bytes per sample frame (channels × bits/8). Stereo 16-bit = 4.</td><td>4</td></tr>
+<tr><td>34–35</td><td><code>bits</code></td><td>Bits per individual sample.</td><td>16</td></tr>
+<tr><td>36–39</td><td><code>data[4]</code></td><td>Data subchunk identifier.</td><td><code>"data"</code></td></tr>
+<tr><td>40–43</td><td><code>dataSize</code></td><td>Sample data length in bytes. Duration = dataSize / byteRate seconds.</td><td>e.g. 176400 = 1 sec</td></tr>
+<tr><td>44…</td><td>samples…</td><td>PCM samples (int16; interleaved L/R for stereo).</td><td>…</td></tr>
+</table>
+<div class="explain"><strong>Summary:</strong> identifier fields (<code>RIFF/WAVE/fmt/data</code>) enable format validation. Numeric fields define decoding parameters. Total header length is 44 bytes; all subsequent bytes are sample data.</div>
+
+<h2>3. Obtaining a test.wav file</h2>
+<ul>
+<li><strong>Option A — system recorder:</strong> Windows Sound Recorder or phone voice memo. Export and rename to <code>test.wav</code>. Place adjacent to the executable.</li>
+<li><strong>Option B — Audacity:</strong> Generate → Tone → Export as WAV (16-bit PCM). Name the output <code>test.wav</code>.</li>
+<li><strong>Option C — sample archive:</strong> download a 16-bit PCM <code>.wav</code> file (e.g. Wikimedia Commons). Confirm the extension is <code>.wav</code>, not <code>.mp3</code>; the <code>wavinfo</code> implementation below supports uncompressed WAV only.</li>
+<li><strong>Placement:</strong> store in the executable's working directory (e.g. <code>Documents/CppCourse/test.wav</code>). A <code>can't load file</code> diagnostic typically indicates an incorrect working directory.</li>
+</ul>
+
+<h2>4. Windows playback with PlaySound</h2>
+<p><strong>WinMM (Windows Multimedia)</strong> provides system audio services. <strong><code>PlaySoundA</code></strong> plays a specified file. The <code>A</code> suffix denotes the ANSI character-set variant. Linking with <code>-lwinmm</code> includes the WinMM import library.</p>
+<pre><code>// play_win.cpp -- g++ play_win.cpp -lwinmm -o play
+#include &lt;windows.h&gt;
+#include &lt;mmsystem.h&gt;
+int main() {
+    PlaySoundA("test.wav", NULL, SND_FILENAME | SND_SYNC);
+    // SND_ASYNC = return immediately; SND_LOOP = loop
+    return 0;
+}</code></pre>
+<div class="explain"><strong>Line by line:</strong><br>
+<code>#include &lt;windows.h&gt;</code> — core Windows API declarations.<br>
+<code>#include &lt;mmsystem.h&gt;</code> — multimedia declarations including <code>PlaySound</code>.<br>
+<code>PlaySoundA("test.wav", NULL, SND_FILENAME | SND_SYNC);</code> — plays the named file. <code>NULL</code> = no module handle. <code>SND_FILENAME</code> = first argument is a filename. <code>|</code> = flag combination. <code>SND_SYNC</code> = synchronous operation (block until completion). <code>SND_ASYNC</code> = asynchronous (return immediately).<br>
+Link requirement: <code>g++ ... -lwinmm</code> where <code>-l</code> specifies the <code>winmm</code> library. Omission produces an <code>undefined reference to PlaySound</code> link error.<br>
+This API is Windows-specific. For portable playback (Windows/macOS/Linux), use miniaudio as described below.</div>
+
+<h2>5. Reading WAV metadata with wavinfo</h2>
+<p>This utility parses and displays the header fields defined in section 2. It performs no audio output.</p>
+<pre><code>// wavinfo.cpp -- g++ -std=c++17 wavinfo.cpp -o wavinfo
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;cstdint&gt;
+#pragma pack(push, 1)
+struct WavHeader {
+    char riff[4];
+    uint32_t size;
+    char wave[4];
+    char fmt[4];
+    uint32_t fmtLen;
+    uint16_t audioFmt;
+    uint16_t channels;
+    uint32_t sampleRate;
+    uint32_t byteRate;
+    uint16_t blockAlign;
+    uint16_t bits;
+    char data[4];
+    uint32_t dataSize;
+};
+#pragma pack(pop)
+int main(int argc, char* argv[]) {
+    if (argc &lt; 2) {
+        std::cout &lt;&lt; "usage: wavinfo file.wav\n";
+        return 1;
+    }
+    std::ifstream f(argv[1], std::ios::binary);
+    if (!f) {
+        std::cout &lt;&lt; "cannot open file\n";
+        return 1;
+    }
+    WavHeader h;
+    f.read((char*)&amp;h, sizeof(h));
+    std::cout &lt;&lt; "channels: " &lt;&lt; h.channels &lt;&lt; "\n";
+    std::cout &lt;&lt; "rate: " &lt;&lt; h.sampleRate &lt;&lt; "\n";
+    std::cout &lt;&lt; "bits: " &lt;&lt; h.bits &lt;&lt; "\n";
+    std::cout &lt;&lt; "data bytes: " &lt;&lt; h.dataSize &lt;&lt; "\n";
+    double secs = (double)h.dataSize / h.byteRate;
+    std::cout &lt;&lt; "duration: " &lt;&lt; secs &lt;&lt; "s\n";
+    return 0;
+}</code></pre>
+<div class="explain"><strong>Part A — headers and struct layout:</strong><br>
+<code>fstream</code> provides file stream I/O. <code>cstdint</code> provides fixed-width integer types such as <code>uint32_t</code>, matching the exact header field widths.<br>
+<code>#pragma pack(push,1)</code> sets 1-byte struct packing (disables compiler-inserted padding) to ensure a 44-byte layout. <code>#pragma pack(pop)</code> restores default packing.<br>
+<code>struct WavHeader { ... };</code> declares an aggregate with members in header order. <code>char riff[4]</code> stores a 4-character identifier. The struct serves as a typed overlay for the first 44 file bytes.</div>
+<div class="explain"><strong>Part B — main(): open, read, report:</strong><br>
+<code>if (argc &lt; 2)</code> — no filename supplied; prints usage and returns 1.<br>
+<code>std::ifstream f(argv[1], std::ios::binary);</code> — opens the file in binary mode (no newline translation; required for exact byte access).<br>
+<code>if (!f)</code> — open failure (invalid path); reports and exits.<br>
+<code>WavHeader h; f.read((char*)&amp;h, sizeof(h));</code> — reads 44 bytes directly into the struct. <code>reinterpret_cast</code>-equivalent conversion treats the struct as a byte buffer. <code>sizeof(h)</code> = 44. This single operation populates all fields.<br>
+Remaining statements print channel count, sample rate, bit depth, and data size. <code>double secs = (double)dataSize / byteRate;</code> computes duration in seconds; the cast to <code>double</code> preserves fractional precision.</div>
+<pre><code>g++ -std=c++17 wavinfo.cpp -o wavinfo
+./wavinfo test.wav
+# Windows: .\wavinfo.exe test.wav
+# Expected: channels: 2, rate: 44100, bits: 16, data bytes: ..., duration: ...s</code></pre>
+<div class="explain"><strong>Validation:</strong> execute against multiple WAV files and compare <code>dataSize</code> and duration. Longer recordings yield proportionally larger <code>dataSize</code> values.</div>
+
+<h2>6. Cross-platform playback with miniaudio</h2>
+<p><strong>miniaudio</strong> is a single-header audio library (<code>miniaudio.h</code>) supporting Windows/macOS/Linux output and WAV/MP3/FLAC decoding. <strong>Single-header library</strong> = distribution as one header file placed adjacent to the source; no separate installation required. Two core abstractions: <strong>engine</strong> = initialized audio subsystem (initialized once); <strong>sound</strong> = a loaded audio resource within the engine (multiple sounds per engine permitted).</p>
+<pre><code>// player.cpp -- g++ -std=c++17 player.cpp -o player
+#define MINIAUDIO_IMPLEMENTATION
+#include "miniaudio.h"
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+int main(int argc, char* argv[]) {
+    if (argc &lt; 2) {
+        std::cout &lt;&lt; "usage: player file.wav\n";
+        return 1;
+    }
+    ma_engine engine;
+    if (ma_engine_init(NULL, &amp;engine) != MA_SUCCESS) {
+        std::cout &lt;&lt; "engine fail\n";
+        return 1;
+    }
+    ma_sound sound;
+    if (ma_sound_init_from_file(&amp;engine, argv[1], 0, NULL, NULL, &amp;sound) != MA_SUCCESS) {
+        std::cout &lt;&lt; "can't load file\n";
+        return 1;
+    }
+    ma_sound_start(&amp;sound);
+    std::cout &lt;&lt; "Playing " &lt;&lt; argv[1] &lt;&lt; " -- press Enter to toggle, q+Enter to quit\n";
+    std::string line;
+    bool playing = true;
+    while (std::getline(std::cin, line)) {
+        if (line == "q") break;
+        playing = !playing;
+        if (playing) ma_sound_start(&amp;sound);
+        else ma_sound_stop(&amp;sound);
+        std::cout &lt;&lt; (playing ? "playing\n" : "paused\n");
+    }
+    ma_sound_uninit(&amp;sound);
+    ma_engine_uninit(&amp;engine);
+    return 0;
+}</code></pre>
+<div class="explain"><strong>Line by line:</strong><br>
+<code>#define MINIAUDIO_IMPLEMENTATION</code> — enables implementation inclusion; required in exactly one translation unit before the header.<br>
+<code>#include "miniaudio.h"</code> — quoted form searches the source directory first. Obtain <code>miniaudio.h</code> from the upstream repository and place it alongside <code>player.cpp</code>.<br>
+<code>if (argc &lt; 2)</code> — missing filename; prints usage and exits.<br>
+<code>ma_engine engine;</code> — declares the audio subsystem instance. <code>ma_</code> is the miniaudio prefix.<br>
+<code>ma_engine_init(NULL, &amp;engine)</code> — initializes with default configuration (<code>NULL</code> = defaults; second argument receives the initialized engine). Return value must equal <code>MA_SUCCESS</code>.<br>
+<code>ma_sound sound;</code> — declares a sound slot.<br>
+<code>ma_sound_init_from_file(&amp;engine, argv[1], 0, NULL, NULL, &amp;sound)</code> — decodes the specified file into the sound object (default flags/group). Failure indicates missing or unsupported input.<br>
+<code>ma_sound_start(&amp;sound);</code> — begins playback; samples stream to the audio device at the header-specified rate.<br>
+<code>bool playing = true;</code> — <strong>bool</strong> playback-state flag.<br>
+<code>while (getline(cin,line))</code> — per-line control: <code>q</code> terminates (<code>break</code>); otherwise inverts state (<code>!playing</code>), calls <code>ma_sound_start</code> or <code>ma_sound_stop</code> accordingly, and reports status.<br>
+<code>ma_sound_uninit / ma_engine_uninit</code> — releases the sound resource, then shuts down the engine.</div>
+<div class="callout"><strong>Additional controls:</strong> <code>ma_sound_set_volume(&amp;sound, 0.5f);</code> sets 50% volume (1.0 = full scale, 0.0 = mute; <code>f</code> = float literal). <code>ma_sound_get_cursor_in_seconds(&amp;sound, &amp;cur);</code> and <code>ma_sound_get_length_in_seconds(&amp;sound, &amp;len);</code> report playback position and duration. <code>ma_sound_seek_to_second(&amp;sound, 30);</code> seeks to 30 seconds.</div>
+
+<h2>7. Playlist player implementation sequence</h2>
+<p>After single-file playback functions, extend to directory-based playback in the following order:</p>
+<ol>
+<li><strong>Enumerate audio files:</strong> <code>for (auto&amp; e : std::filesystem::directory_iterator("music"))</code> filtering to <code>.wav/.mp3</code> extensions (same classification approach as Lesson 09). Store results in <code>vector&lt;string&gt;</code>.</li>
+<li><strong>Transport commands:</strong> implement <code>next</code>, <code>prev</code>, <code>list</code>. <code>next</code> stops and uninitializes the current sound, initializes the subsequent file, and starts playback. Maintain an index <code>i</code> for position.</li>
+<li><strong>Volume control:</strong> <code>+</code> / <code>-</code> adjust <code>ma_sound_set_volume</code> in 0.1 increments. Display the resulting value.</li>
+<li><strong>Progress display:</strong> report <code>cursor / length</code> in seconds using the position/length query functions above.</li>
+</ol>
+<div class="explain"><strong>Sequencing rationale:</strong> file enumeration validates filesystem handling. Transport commands validate engine reuse. Volume and progress exercise the extended API. Implement and test incrementally.</div>
+
+<h2>8. Compiling and running</h2>
+<pre><code># 1. Place miniaudio.h adjacent to player.cpp
+# 2. Navigate to the project directory
+cd ~/Documents/CppCourse
+# Windows: cd $HOME\Documents\CppCourse
+
+# 3. Compile
+g++ -std=c++17 wavinfo.cpp -o wavinfo
+g++ -std=c++17 player.cpp -o player
+# Windows PlaySound variant only:
+g++ play_win.cpp -lwinmm -o play
+
+# 4. Execute
+./wavinfo test.wav
+./player test.wav
+# Windows: .\wavinfo.exe test.wav  and  .\player.exe test.wav</code></pre>
+<div class="explain"><strong>Diagnostics:</strong> <code>miniaudio.h: No such file</code> indicates the header is not in the source directory. <code>can't load file</code> indicates an incorrect filename or working directory (verify with directory listing). Audible failure without errors typically indicates muted output or incorrect device selection; verify OS mixer settings and output device.</div>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li><strong>Metadata comparison:</strong> run <code>wavinfo</code> on three files. Record sample rate, channel count, bit depth, and duration. Sum durations to compute total playlist length.</li>
+<li><strong>Signal synthesis:</strong> generate a 440 Hz sine WAV (concert A). Write the 44-byte header from section 2 with binary output, then compute per-sample values as <code>sin(2*3.14159*440*t)</code> scaled to int16 range. Verify with the miniaudio player.</li>
+<li><strong>Volume controls:</strong> add <code>+</code> (increase) and <code>-</code> (decrease) handling to the miniaudio player using <code>ma_sound_set_volume</code>. Display volume after each adjustment.</li>
+<li><strong>Transport commands:</strong> replace Enter-toggle with explicit <code>p</code> (pause), <code>r</code> (resume), and <code>q</code> (quit) commands.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="10-projects-shell.html">← Shell</a><a class="btn" href="12-projects-opengl.html">Next: Game →</a></div>
+<footer>Learn C++ From Scratch · Project 11</footer>
+</main></div><script src="script.js"></script></body></html>

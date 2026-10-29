@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · STL, Vectors & Algorithms — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 05 · Standard Library</span>
+<h1>STL: vector, string, map, set &amp; algorithms</h1>
+<p>This lesson covers the Standard Template Library facilities used in daily C++ practice: containers (<code>vector</code>, <code>string</code>, <code>map</code>, <code>set</code>), iterators, and algorithms (<code>sort</code>, <code>find</code>, <code>transform</code>). Each facility is defined precisely, with complete examples and line-by-line explanations.</p>
+
+<div class="toc"><strong>In this lesson:</strong>
+<ol>
+<li>Libraries, the STL, and templates</li>
+<li>Why <code>vector</code> replaces manual dynamic arrays</li>
+<li><code>vector</code> — interface and semantics</li>
+<li><code>string</code> vs <code>char[]</code></li>
+<li><code>map</code> vs <code>unordered_map</code> and <code>set</code></li>
+<li>Iterators</li>
+<li>Algorithms — sort, find, count, transform</li>
+<li><code>using</code> aliases and function templates (<code>myMax</code>)</li>
+<li>Additional components: <code>array</code>, <code>pair</code>, <code>optional</code>, files</li>
+<li>Exercises</li>
+</ol>
+</div>
+
+<h2>1. Libraries, the STL, and templates</h2>
+<div class="explain"><strong>Definition — library</strong><br>A collection of tested declarations and definitions made available via <code>#include</code>. Example: <code>#include &lt;vector&gt;</code> provides the dynamic-array container.</div>
+<div class="explain"><strong>Definition — STL (Standard Template Library)</strong><br>The standardized component of the C++ standard library comprising <strong>containers</strong> (objects storing sequences or associative data: <code>vector</code>, <code>map</code>, <code>set</code>), <strong>iterators</strong> (objects designating positions within containers), and <strong>algorithms</strong> (function templates such as <code>sort</code> and <code>find</code> operating on iterator ranges).</div>
+<div class="explain"><strong>Definition — template</strong><br>A parameterized definition from which the compiler generates type-specific versions. <code>vector&lt;T&gt;</code> is a class template: <code>vector&lt;int&gt;</code> denotes a sequence of integers; <code>vector&lt;std::string&gt;</code> denotes a sequence of strings. The argument in <code>&lt;...&gt;</code> specifies the element type: <code>vector&lt;int&gt;</code> reads "vector of int."</div>
+
+<h2>2. Why <code>vector</code> replaces manual dynamic arrays</h2>
+<p>Manual management with <code>new int[N]</code> requires explicit reallocation, size tracking, and lifetime control:</p>
+<table><tr><th>Manual array requirement</th><th><code>vector</code> provision</th></tr>
+<tr><td>Fixed capacity must be estimated; growth requires allocating a larger array, copying elements, and releasing the original.</td><td>Automatic growth via <code>push_back</code>, typically by doubling capacity (amortized constant time).</td></tr>
+<tr><td><code>size</code> and <code>capacity</code> must be tracked explicitly; indexing errors produce out-of-bounds access.</td><td>Maintains both internally. <code>size()</code> returns the element count; <code>capacity()</code> returns allocated storage.</td></tr>
+<tr><td>Copying a raw pointer produces aliased ownership and double release.</td><td>Implements correct copy, move, and destruction semantics (Rule of 0).</td></tr>
+<tr><td>Unchecked indexing (<code>arr[i]</code>) has undefined behavior when out of range.</td><td><code>at(i)</code> performs bounds checking and throws <code>std::out_of_range</code>.</td></tr></table>
+<div class="callout ok"><strong>Guideline:</strong> use <code>vector</code> as the default sequential container. Select an alternative (map, set, deque) only when its specified complexity or ordering properties are required.</div>
+
+<h2>3. <code>std::vector</code> — interface and semantics</h2>
+<div class="explain"><strong>Definition — vector</strong><br>A dynamically resizable array storing elements in contiguous memory, which provides cache-efficient sequential access. <code>std::</code> designates the standard library namespace. <code>std::vector&lt;int&gt; v = {10,20,30};</code> defines a vector of integers containing three elements.</div>
+<div class="explain"><strong>Definition — size_t</strong><br>An unsigned integer type used for sizes and indices. <code>v.size()</code> returns <code>size_t</code>; loop indices should use <code>size_t</code> or <code>auto</code> to match.</div>
+<pre><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+int main(){
+    std::vector&lt;int&gt; v = {10,20,30};
+    v.push_back(40);
+    v.pop_back();
+    std::cout &lt;&lt; v.size() &lt;&lt; " " &lt;&lt; v[0] &lt;&lt; " " &lt;&lt; v.at(1) &lt;&lt; "\n"; // prints: 3 10 20
+    for(int x: v) std::cout &lt;&lt; x &lt;&lt; " ";
+    for(size_t i=0;i&lt;v.size();i++) std::cout &lt;&lt; v[i] &lt;&lt; " ";
+    std::vector&lt;std::vector&lt;int&gt;&gt; grid(3, std::vector&lt;int&gt;(3,0)); // 3x3 zero-initialized
+}</code></pre>
+<p><strong>Member functions and syntax:</strong></p>
+<table><tr><th>Expression</th><th>Definition</th><th>Complexity / notes</th></tr>
+<tr><td><code>vector&lt;int&gt; v = {10,20,30};</code></td><td>Constructs a vector containing the listed elements. <code>size()</code> is 3.</td><td>Linear in element count.</td></tr>
+<tr><td><code>push_back(40)</code></td><td>Appends 40 after the last element, reallocating (typically doubling capacity) if required.</td><td>Amortized O(1).</td></tr>
+<tr><td><code>pop_back()</code></td><td>Removes the last element, decrementing size by 1. It does not return the removed value; use <code>back()</code> beforehand if required.</td><td>O(1).</td></tr>
+<tr><td><code>size()</code></td><td>Returns the current element count.</td><td>O(1). Distinct from <code>capacity()</code> (allocated storage).</td></tr>
+<tr><td><code>v[0]</code></td><td>Returns the element at index 0 without bounds checking. Indices are zero-based.</td><td>O(1). Out-of-range access is undefined behavior.</td></tr>
+<tr><td><code>v.at(1)</code></td><td>Returns the element at index 1 with bounds checking; throws <code>std::out_of_range</code> if invalid.</td><td>O(1) with verification overhead.</td></tr>
+<tr><td><code>for(int x: v)</code> — range-based for</td><td>Iterates over each element, copying it into <code>x</code>. Use <code>for(auto&amp; x: v)</code> to modify elements without copying.</td><td>Linear traversal.</td></tr>
+<tr><td><code>reserve(n)</code></td><td>Preallocates storage for at least <code>n</code> elements. Size remains unchanged until elements are inserted.</td><td>Use when the approximate final size is known to avoid repeated reallocation.</td></tr>
+<tr><td><code>grid(3, vector&lt;int&gt;(3,0))</code></td><td>Constructs 3 rows, each a vector of 3 zero-initialized integers. <code>grid[1][2]</code> designates row 1, column 2.</td><td>Two-dimensional indexing.</td></tr></table>
+<div class="callout"><strong><code>[]</code> vs <code>at()</code>:</strong> use <code>[]</code> in performance-critical code with verified indices. Use <code>at()</code> when indices derive from external input or have not been validated.</div>
+
+<h2>4. <code>std::string</code> vs <code>char[]</code></h2>
+<div class="explain"><strong>Definition — string</strong><br>A dynamically resizable sequence of characters that tracks its own length, supports growth with <code>+=</code>, and manages its own storage. Declared in <code>#include &lt;string&gt;</code>.</div>
+<div class="explain"><strong>Definition — char[] / C-string</strong><br>An array of <code>char</code> terminated by a null character <code>'\0'</code> (value 0) marking the end of the sequence. The terminator must be maintained explicitly; omission causes reads to continue into adjacent memory. Capacity is fixed; extension requires manual reallocation. Recognize this form in legacy interfaces; do not use it for new code.</div>
+<pre><code>#include &lt;string&gt;
+#include &lt;iostream&gt;
+int main(){
+    std::string s = "  hello C++  ";
+    std::cout &lt;&lt; s.size() &lt;&lt; "\n";   // 13; length() is equivalent
+    std::string t = s.substr(2,5);   // 5 characters starting at index 2: "hello"
+    size_t p = s.find("C++");        // index of first occurrence, or npos if absent
+    s += "!!!";                      // appends; storage grows automatically
+    std::string csv = "a,b,c";
+}</code></pre>
+<table><tr><th>Member</th><th>Definition</th><th>Example</th></tr>
+<tr><td><code>size()</code> / <code>length()</code></td><td>Returns the character count. The two names are equivalent.</td><td><code>if (s.empty()) ...</code> tests for zero length.</td></tr>
+<tr><td><code>substr(pos, len)</code></td><td>Returns a copy of <code>len</code> characters starting at index <code>pos</code> (zero-based).</td><td><code>"hello".substr(1,3)</code> returns <code>"ell"</code>.</td></tr>
+<tr><td><code>find(target)</code></td><td>Returns the index of the first occurrence, or <code>string::npos</code> if not found. Always compare against <code>npos</code>.</td><td><code>auto p = s.find("C++");</code></td></tr>
+<tr><td><code>+=</code> / <code>+</code></td><td>Appends (<code>+=</code> modifies in place) or concatenates (<code>+</code> returns a new string).</td><td><code>s += "!!!"</code></td></tr>
+<tr><td><code>c_str()</code></td><td>Returns a null-terminated view for C interfaces requiring <code>const char*</code>. The view is valid only while the string is unmodified and alive.</td><td><code>fopen(s.c_str(), "r")</code></td></tr></table>
+<pre><code>char cstr[] = "hi"; // {'h','i','\0'}; fixed capacity 3, manual termination
+std::string s = "hi";
+s += "!";       // "hi!"; storage extended automatically
+s.size();       // 3; length tracked internally
+s.substr(0,1);  // "h"
+s.c_str();      // null-terminated view for C functions only</code></pre>
+
+<h2>5. <code>map</code>, <code>unordered_map</code>, <code>set</code></h2>
+<div class="explain"><strong>Definition — map (associative array)</strong><br>A container associating each <strong>key</strong> (e.g., <code>"Asha"</code>) with a <strong>value</strong> (e.g., <code>15</code>). <code>std::map&lt;string,int&gt; ages; ages["Asha"]=15;</code> stores value 15 under key "Asha."</div>
+<div class="explain"><strong>Definition — ordered vs unordered</strong><br><code>map</code> maintains keys in sorted order (implemented as a balanced tree; O(log n) lookup and insertion). Iteration is ordered. <code>unordered_map</code> organizes entries by hash value (hash table; average O(1) lookup and insertion). Iteration order is unspecified. Both support identical element-access syntax.</div>
+<div class="explain"><strong>Definition — set</strong><br>A container storing unique elements. <code>set</code> maintains sorted order; <code>unordered_set</code> provides average constant-time operations with unspecified order. Insertion of a duplicate has no effect.</div>
+<pre><code>#include &lt;map&gt;
+#include &lt;unordered_map&gt;
+#include &lt;set&gt;
+#include &lt;iostream&gt;
+int main(){
+    std::map&lt;std::string,int&gt; ages;
+    ages["Asha"] = 15;
+    ages["Ravi"] = 17;
+
+    std::unordered_map&lt;std::string,int&gt; freq;
+    freq["apple"]++;
+
+    std::set&lt;int&gt; seen;
+    seen.insert(5);
+    seen.insert(5); // no effect; element already present
+    std::cout &lt;&lt; seen.size() &lt;&lt; "\n"; // 1
+
+    for(auto&amp; [k,v] : ages) std::cout &lt;&lt; k &lt;&lt; ":" &lt;&lt; v &lt;&lt; "\n";
+}</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>ages["Asha"] = 15;</code></td><td>Inserts key "Asha" with value 15, or overwrites the existing value. Note: reading <code>ages["Nobody"]</code> also inserts a default-constructed value (0). For non-inserting lookup, use <code>find</code>.</td></tr>
+<tr><td><code>freq["apple"]++;</code></td><td>Increments the count for "apple," default-constructing it to 0 on first access. The standard counting idiom.</td></tr>
+<tr><td><code>seen.insert(5);</code></td><td>Inserts 5 if absent. <code>seen.count(5)</code> returns 1 if present, 0 otherwise.</td></tr>
+<tr><td><code>for(auto&amp; [k,v] : ages)</code></td><td>Range-based iteration with structured binding (C++17): <code>[k,v]</code> binds the key and value of each element. <code>auto&amp;</code> avoids copying.</td></tr></table>
+<table><tr><th>Requirement</th><th>Container</th><th>Rationale</th></tr>
+<tr><td>Sequential storage in insertion order</td><td><code>vector</code></td><td>Contiguous storage; efficient traversal.</td></tr>
+<tr><td>Insertion/removal at both ends</td><td><code>deque</code> (double-ended queue)</td><td>Constant-time operations at front and back.</td></tr>
+<tr><td>Key-to-value lookup with ordered traversal</td><td><code>map</code></td><td>Sorted iteration; logarithmic operations.</td></tr>
+<tr><td>Key-to-value lookup with maximum speed</td><td><code>unordered_map</code></td><td>Average constant-time operations.</td></tr>
+<tr><td>Uniqueness / membership test</td><td><code>set</code></td><td>Duplicate suppression; logarithmic or constant-time membership.</td></tr>
+<tr><td>Last-in-first-out / first-in-first-out</td><td><code>stack</code> / <code>queue</code></td><td>Restricted interfaces enforcing access discipline.</td></tr></table>
+
+<h2>6. Iterators</h2>
+<div class="explain"><strong>Definition — iterator</strong><br>An object designating a position within a container. <code>v.begin()</code> returns an iterator to the first element. <code>v.end()</code> returns the past-the-end iterator: a sentinel marking the termination of the range, not a dereferenceable element. <code>++it</code> advances to the next element; <code>*it</code> accesses the designated element; <code>it != end</code> tests for range termination.</div>
+<pre><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+int main(){
+    std::vector&lt;int&gt; v = {10,20,30};
+    auto it = v.begin(); // designates the element 10
+    std::cout &lt;&lt; *it &lt;&lt; "\n"; // 10
+    ++it; // advances to 20
+    std::cout &lt;&lt; *it &lt;&lt; "\n"; // 20
+}</code></pre>
+
+<h2>7. Algorithms — sort, find, count, transform</h2>
+<div class="explain"><strong>Definition — algorithm (STL)</strong><br>A function template in <code>#include &lt;algorithm&gt;</code> operating on an iterator range <code>[begin, end)</code>: <code>sort</code>, <code>find</code>, <code>count</code>, <code>transform</code>. The caller specifies what operation to apply; iteration and bounds are handled internally, eliminating manual loop errors.</div>
+<div class="explain"><strong>Definition — lambda</strong><br>An inline function object: <code>[](int x){ return x*2; }</code> defines a function accepting <code>x</code> and returning <code>x*2</code>. The capture list <code>[]</code> specifies which enclosing variables are accessible (empty here). Lambdas supply per-element behavior to algorithms.</div>
+<pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+int main(){
+    std::vector&lt;int&gt; v = {5,2,9,1,5};
+    std::sort(v.begin(), v.end()); // 1 2 5 5 9
+    auto it = std::find(v.begin(), v.end(), 9);
+    if(it != v.end()) std::cout &lt;&lt; "found at " &lt;&lt; (it - v.begin()) &lt;&lt; "\n";
+    int n = std::count(v.begin(), v.end(), 5); // 2
+    std::vector&lt;int&gt; doubled(v.size());
+    std::transform(v.begin(), v.end(), doubled.begin(), [](int x){return x*2;});
+}</code></pre>
+<table><tr><th>Algorithm</th><th>Definition</th><th>Result</th></tr>
+<tr><td><code>sort(begin, end)</code></td><td>Orders the range (ascending by default). Requires random-access iterators (vector, deque, array).</td><td>Modifies the range in place; returns void.</td></tr>
+<tr><td><code>find(begin, end, value)</code></td><td>Locates the first element equal to <code>value</code>. Returns the iterator to it, or <code>end</code> if absent. The result must be compared against <code>end</code> before dereference.</td><td>Iterator.</td></tr>
+<tr><td><code>count(begin, end, value)</code></td><td>Counts elements equal to <code>value</code>.</td><td>Integer count.</td></tr>
+<tr><td><code>transform(begin, end, out, fn)</code></td><td>Applies <code>fn</code> to each element and writes the result through <code>out</code>. The output range must have sufficient capacity.</td><td>Modifies the output range.</td></tr></table>
+
+<h2>8. <code>using</code> aliases and function templates (<code>myMax</code>)</h2>
+<div class="explain"><strong>Definition — type alias (using)</strong><br>An alternative name for a type, improving readability without changing semantics. <code>using Row = std::vector&lt;int&gt;;</code> establishes <code>Row</code> as synonymous with <code>vector&lt;int&gt;</code>. (<code>typedef</code> is the legacy equivalent; <code>using</code> is preferred.)</div>
+<div class="explain"><strong>Definition — function template</strong><br>A parameterized function definition instantiated per argument type: <code>template&lt;typename T&gt; T myMax(T a, T b)</code> accepts two values of type <code>T</code> and returns the greater. At each call, the compiler deduces <code>T</code> and generates the corresponding specialization. This is the mechanism underlying <code>vector&lt;T&gt;</code>.</div>
+<pre><code>#include &lt;array&gt;
+#include &lt;tuple&gt;
+#include &lt;optional&gt;
+#include &lt;sstream&gt;
+#include &lt;fstream&gt;
+std::pair&lt;std::string,int&gt; p{"score",100};
+std::optional&lt;int&gt; maybe;
+maybe = 42;
+
+// Type aliases:
+using Row = std::vector&lt;int&gt;;
+using Matrix = std::vector&lt;Row&gt;;
+Matrix m(3, Row(3, 0)); // 3x3 zero-initialized</code></pre>
+<pre><code>template&lt;typename T&gt;
+T myMax(T a, T b){ return a &gt; b ? a : b; }
+int m1 = myMax(3, 7);        // T=int; result 7
+double m2 = myMax(2.5, 1.1); // T=double; result 2.5</code></pre>
+<table><tr><th>Line</th><th>Description</th></tr>
+<tr><td><code>template&lt;typename T&gt;</code></td><td>Declares <code>T</code> as a type parameter resolved at each call site. <code>typename</code> indicates the parameter is a type.</td></tr>
+<tr><td><code>T myMax(T a, T b)</code></td><td>Declares a function accepting two values of identical type <code>T</code> and returning <code>T</code>. Mixed types (e.g., <code>int</code> and <code>string</code>) do not satisfy a single deduction.</td></tr>
+<tr><td><code>myMax(3,7)</code></td><td>Deduces <code>T=int</code>; the compiler generates and invokes <code>int myMax(int,int)</code>. Instantiation occurs at compile time with no runtime overhead.</td></tr></table>
+<div class="callout"><strong>Principle:</strong> <code>vector&lt;int&gt;</code> is a specialization of a class template. The same mechanism supports user-defined element types: <code>vector&lt;Player&gt;</code> and <code>map&lt;string, Player&gt;</code> require no additional implementation.</div>
+
+<h2>9. Additional components</h2>
+<table><tr><th>Component</th><th>Definition</th><th>Example</th></tr>
+<tr><td><code>array&lt;T,N&gt;</code></td><td>Fixed-capacity sequence of exactly <code>N</code> elements with bounds-checked access and size information.</td><td><code>std::array&lt;int,3&gt; a = {1,2,3}; a.size();</code></td></tr>
+<tr><td><code>pair</code> / <code>tuple</code></td><td>Heterogeneous aggregates of 2 (<code>pair</code>) or N (<code>tuple</code>) values. Permits multiple return values.</td><td><code>auto [name, age] = getPerson();</code></td></tr>
+<tr><td><code>optional&lt;T&gt;</code></td><td>An object that either contains a <code>T</code> or contains no value. Replaces sentinel values such as -1 for absence. Inspect with <code>has_value()</code>.</td><td><code>std::optional&lt;int&gt; o; o = 42;</code></td></tr>
+<tr><td><code>filesystem</code></td><td>Portable file and directory manipulation (see Lessons 07/09).</td><td><code>fs::create_directory("saves");</code></td></tr>
+<tr><td><code>sstream</code></td><td>String construction and parsing: <code>ostringstream</code> assembles with <code>&lt;&lt;</code>; <code>istringstream</code> extracts with <code>&gt;&gt;</code>.</td><td><code>ss &lt;&lt; "score " &lt;&lt; 100;</code></td></tr>
+<tr><td><code>fstream</code></td><td>File input/output: <code>ifstream</code> for reading, <code>ofstream</code> for writing.</td><td><code>out &lt;&lt; "hi";</code></td></tr></table>
+
+<h2>Exercises</h2>
+<ol>
+<li><strong>Word frequency.</strong> Read one line with <code>std::getline</code>. Tokenize with <code>find(' ')</code> and <code>substr</code>, or with <code>istringstream</code> and <code>&gt;&gt;</code>. Count occurrences with <code>unordered_map&lt;string,int&gt; freq; freq[word]++;</code>. Transfer to <code>map&lt;string,int&gt;</code> for ordered output.</li>
+<li><strong>Duplicate removal.</strong> Given <code>vector&lt;int&gt; v = {5,2,9,1,5,2};</code>, execute <code>sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());</code> and print the result. Document the function of <code>unique</code> and <code>erase</code> in one sentence each.</li>
+<li><strong>Largest three elements.</strong> Populate a vector with 10 values. Research <code>nth_element</code> for partial ordering, extract the three largest, and compare its efficiency against full <code>sort</code> for large inputs.</li>
+<li><strong>Associative container application.</strong> Implement a menu-driven directory with <code>map&lt;string,string&gt; phone;</code> supporting insertion (<code>phone[name]=num</code>), lookup (<code>find</code> with <code>!= end</code> verification), deletion (<code>erase(name)</code>), enumeration (range-based for with <code>[k,v]</code>), and termination.</li>
+<li><strong>Template deduction.</strong> Invoke <code>myMax</code> with <code>int</code>, <code>double</code>, and <code>string</code> arguments. Attempt <code>myMax(3, 2.5)</code> and analyze the compilation error: explain why a single parameter <code>T</code> cannot bind to two distinct types.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="04-memory.html">← Memory</a><a class="btn" href="06-dsa.html">Next: DSA →</a></div>
+<footer>Learn C++ From Scratch · Lesson 05</footer>
+</main></div><script src="script.js"></script></body></html>

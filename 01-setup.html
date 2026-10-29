@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01 · Setup, Compiler & Hello World — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+
+<span class="badge">Lesson 01 · ~45 min · Zero assumed — read slowly, type everything</span>
+<h1>Setup, what C++ is, and your first program</h1>
+<p><strong>Goal:</strong> by the end of this page you will have installed a compiler, created a C++ source file, compiled it, and executed it to print <code>Hello, world</code>. Each new term is defined as it appears.</p>
+
+<div class="toc"><strong>On this page</strong><ol><li>What C++ is</li><li>Files, folders, and the .cpp extension</li><li>VS Code: code editor</li><li>Terminal and PowerShell: command-line interface</li><li>g++, MinGW, and MSYS2</li><li>PATH: definition and verification</li><li>Install: Windows / Mac / Linux</li><li>Hello World, line by line</li><li>How compilation works (preprocessor / compiler / linker)</li><li>Common errors</li><li>Exercises + VS Code tips</li></ol></div>
+
+<div class="callout"><strong>Overview:</strong> C++ development uses three components. The source file (<code>.cpp</code>) contains human-readable code. A compiler translates C++ source code into machine code the CPU executes. It does this in three stages: preprocessing, compilation, and linking. The terminal is the interface used to invoke the compiler and run the resulting program. VS Code is the editor used to create and manage source files.</div>
+
+<h2>1. What is C++?</h2>
+<p><strong>C++</strong> (pronounced “C plus plus”) is a compiled language for writing precise, high-performance instructions for the computer.</p>
+<ul>
+<li><strong>Why a language is needed:</strong> the <strong>CPU (Central Processing Unit)</strong>, the processor that executes instructions, operates directly on <strong>machine code</strong> (binary instructions). Writing binary directly is impractical, so C++ provides a structured syntax that is translated into machine code by a compiler.</li>
+<li><strong>What C++ is used for:</strong> performance-critical software including operating systems, browsers, game engines, media tools, image editors, and machine-learning libraries such as PyTorch. It is selected where execution speed and control over resources are required.</li>
+<li><strong>Why learn it:</strong> <strong>performance and control.</strong> C++ provides direct management of <strong>memory</strong> (RAM, the short-term storage used during execution) and direct access to <strong>OS (Operating System — Windows, macOS, or Linux, the software that manages hardware and program execution)</strong> services, the <strong>GPU</strong> (graphics processor), networking, and audio hardware. This control is required for the shell, game, and inference projects built later in this course.</li>
+<li><strong>What C++ code is:</strong> a plain-text file with the extension <code>.cpp</code>. Example: <code>hello.cpp</code>. It can be opened in any text editor; this course uses VS Code for syntax highlighting and integrated compilation.</li>
+<li><strong>What a version such as C++17 means:</strong> C++ is defined by an ISO standard revised periodically. <strong>C++17</strong> refers to the standard published in 2017 — stable and broadly supported. <strong>C++20</strong> is the 2020 revision with additional features. This course uses C++17 for maximum compatibility.</li>
+</ul>
+
+<h2>2. Files, folders, and the .cpp extension</h2>
+<p>These are standard filesystem concepts, stated here for precision:</p>
+<ul>
+<li><strong>File:</strong> a named unit of stored data. The suffix after the final dot is the <strong>extension</strong>, which indicates the file type. Examples: <code>birthday.jpg</code> (image), <code>notes.txt</code> (plain text), <code>song.wav</code> (audio).</li>
+<li><strong>Folder (also called directory):</strong> a container for files and other folders. Example: <code>Documents\MyCode\</code> on Windows or <code>Documents/MyCode/</code> on macOS/Linux. The separator (<code>\</code> or <code>/</code>) denotes nesting.</li>
+<li><strong><code>.cpp</code>:</strong> the extension indicating a C++ source file. <code>hello.cpp</code> contains the source for the program named <code>hello</code>. The compiler uses this extension to identify the input language.</li>
+<li><strong><code>.exe</code> (Windows):</strong> an executable file produced by compiling and linking source code. The <code>.cpp</code> file is the input source; the <code>.exe</code> file is the compiled output the OS executes. On macOS/Linux the output typically has no extension (for example, <code>hello</code>).</li>
+<li><strong>Path (lowercase; distinct from PATH — see section 6):</strong> the location of a file in the filesystem. Example: <code>C:\Users\You\Documents\hello.cpp</code>.</li>
+</ul>
+<div class="callout ok"><strong>Setup step:</strong> create a folder named <code>CppCourse</code> inside Documents. Store all <code>.cpp</code> files for this course there. Note its full path; it is required when navigating in the terminal.</div>
+
+<h2>3. VS Code: code editor</h2>
+<p><strong>VS Code (Visual Studio Code)</strong> is a free editor for writing and managing code. It provides:</p>
+<ul>
+<li>Syntax highlighting and bracket matching for readability.</li>
+<li>Error indicators and hover documentation for rapid correction.</li>
+<li>An integrated terminal, so compilation commands can be run without leaving the editor.</li>
+<li><strong>Extensions:</strong> optional add-ons. Install <strong>C/C++ by Microsoft</strong> for C++ language support (highlighting, diagnostics). <strong>Code Runner</strong> is optional and adds a run button, but this course teaches direct terminal commands so the underlying process is explicit.</li>
+<li><strong>Visual Studio (without “Code”):</strong> a separate, larger Windows-only IDE. It includes its own compiler (<code>cl.exe</code>). It is a valid alternative, but this course uses VS Code with <code>g++</code> so that commands are consistent across operating systems.</li>
+</ul>
+<p><strong>Install VS Code:</strong> download from <code>https://code.visualstudio.com/</code> and run the installer. Then open VS Code → Extensions view (four-squares icon in the sidebar) → search <code>C/C++</code> → Install the extension published by Microsoft.</p>
+
+<h2>4. Terminal and PowerShell: command-line interface</h2>
+<p>A <strong>terminal</strong> is a text interface for running commands. Instead of selecting icons, you enter a command line and press Enter to execute it.</p>
+<ul>
+<li><strong>Terminology:</strong> terminal, console, command line, and shell refer to the same concept. A terminal is a text interface for running commands. On Windows this is PowerShell or Command Prompt. On macOS it is Terminal. On Linux it is Terminal or bash. Syntax varies slightly; function is equivalent.</li>
+<li><strong>Command structure:</strong> a command names a program followed by arguments. Example: <code>g++ hello.cpp -o hello</code> invokes the compiler <code>g++</code> to compile <code>hello.cpp</code> and write the output to <code>hello</code>.</li>
+<li><strong>Prompt:</strong> the input line where commands are entered, typically ending in <code>&gt;</code>, <code>$</code>, or <code>%</code>. Example: <code>PS C:\Users\You\Documents\CppCourse&gt;</code> indicates the current directory is <code>CppCourse</code>.</li>
+<li><strong>Current directory (working directory):</strong> the directory the terminal operates in. Commands resolve relative file names against it. If the file is in <code>Documents\CppCourse</code> but the terminal is in <code>Desktop</code>, the file will not be found. Use <code>cd</code> (change directory) to navigate.</li>
+</ul>
+<p><strong>How to open a terminal:</strong></p>
+<pre><code># Windows: press Start, type PowerShell, press Enter
+#   (PowerShell window opens). Then navigate to your folder:
+cd $HOME\Documents\CppCourse
+
+# Mac: press Cmd+Space, type Terminal, press Enter. Then:
+cd ~/Documents/CppCourse
+
+# Linux: press Ctrl+Alt+T. Then:
+cd ~/Documents/CppCourse</code></pre>
+<p><strong>Essential commands:</strong></p>
+<pre><code>pwd        # print working directory: shows the current directory path
+  # (on PowerShell, pwd is an alias for Get-Location)
+ls         # list directory contents: shows files in the current directory
+  # (on PowerShell, ls is an alias; dir is the native equivalent)
+cd Folder  # change directory: sets the current directory to Folder
+cd ..      # move to the parent directory
+g++ --version  # display the installed compiler version; confirms installation</code></pre>
+<div class="callout"><strong>Note:</strong> <code>pwd</code>, <code>ls</code>, and <code>cd</code> are read-only navigation commands. They list or change the viewed directory without modifying files. Compilation commands that create output files are explained in section 8.</div>
+
+<h2>5. g++, MinGW, and MSYS2</h2>
+<ul>
+<li><strong>Compiler:</strong> A compiler translates C++ source code into machine code the CPU executes. It does this in three stages: preprocessing of directives, translation to object code, and linking with libraries. If the source contains syntax errors, compilation stops and reports an <strong>error</strong> indicating the location and cause.</li>
+<li><strong>g++:</strong> a widely used C++ compiler, part of the <strong>GCC (GNU Compiler Collection)</strong>. Invoking <code>g++ hello.cpp -o hello</code> executes the compiler on the specified input. On macOS, <code>g++</code> typically invokes <strong>clang++</strong> (Apple’s compiler); the commands used in this course are compatible with both.</li>
+<li><strong>MinGW-w64 and MSYS2 (Windows):</strong> Windows does not include a C++ compiler by default. <strong>MinGW-w64</strong> is a Windows port of GCC providing <code>g++</code>. <strong>MSYS2</strong> is a package manager and environment for installing and updating MinGW-w64. In short: MSYS2 installs and maintains the toolchain; MinGW-w64 provides the compiler binaries; <code>g++</code> is the compiler executable.</li>
+<li><strong>cl.exe (Visual Studio):</strong> Microsoft’s C++ compiler. It is functional but uses different command syntax (<code>cl hello.cpp</code>). This course uses <code>g++</code> syntax for cross-platform consistency.</li>
+<li><strong>Debugger (gdb):</strong> a tool for pausing execution, inspecting variables, and stepping through code line by line. On Linux it is included with <code>build-essential</code>. It is introduced in Lesson 02.</li>
+</ul>
+
+<h2>6. PATH: definition and verification</h2>
+<p><strong>PATH</strong> is an OS-level list of directories searched for executables. When a command name such as <code>g++</code> is entered, the OS checks each directory in PATH in order and executes the first match. If no directory contains the program, the OS reports <code>'g++' is not recognized</code> or <code>command not found</code>.</p>
+<ul>
+<li><strong>Configuration requirement:</strong> after installing MinGW, its binary directory (for example, <code>C:\msys64\ucrt64\bin</code>) must be included in PATH. The MSYS2 installer provides an option to add it; accept it. Without this entry, PowerShell cannot locate <code>g++</code> even when it is installed.</li>
+<li><strong>PATH versus path:</strong> lowercase “path” denotes the location of a single file (<code>C:\...\hello.cpp</code>). Uppercase “PATH” denotes the OS-level search list. This course capitalizes the latter throughout.</li>
+</ul>
+<p><strong>How to check PATH and g++:</strong></p>
+<pre><code># Step 1: verify the compiler is resolvable
+g++ --version
+# Expected: version output such as g++ (Rev...) 13.2.0 or Apple clang version ...
+# If the result is 'g++' is not recognized / command not found, PATH is misconfigured (see fix below)
+
+# Step 2: inspect the directory list (optional)
+# Windows PowerShell:
+$env:Path -split ';'
+# Mac / Linux:
+echo $PATH | tr ':' '\n'
+
+# Step 3: locate the g++ executable
+# Windows PowerShell:
+where.exe g++
+# Mac / Linux:
+which g++</code></pre>
+<div class="callout ok"><strong>Requirement:</strong> after modifying PATH or installing a compiler, <strong>close and reopen the terminal</strong> before testing. Existing terminal sessions retain the previous PATH value. Most “not recognized” errors are resolved by this step.</div>
+
+<h2>7. Install a compiler (select your operating system)</h2>
+<h3>Windows (select one option — A is recommended)</h3>
+<p><strong>Option A — MinGW-w64 via MSYS2 (recommended, matches this course):</strong></p>
+<pre><code>1. Download MSYS2 from https://www.msys2.org/ and install with default options.
+2. Open "MSYS2 UCRT64" from the Start menu, then execute:
+   pacman -S --needed mingw-w64-ucrt-x86_64-gcc
+   # pacman is the MSYS2 package manager; this command installs the GCC C++ compiler.
+   # Confirm prompts with Enter / Y.
+3. Ensure C:\msys64\ucrt64\bin is included in PATH (the installer provides a checkbox for this).
+   # If missed: search Start for "Edit environment variables",
+   # open it, select Path -&gt; Edit -&gt; New -&gt; enter C:\msys64\ucrt64\bin -&gt; OK.
+4. Close all terminals. Open a new PowerShell and verify:
+   g++ --version</code></pre>
+<p><strong>Option B — Visual Studio Community (larger download, integrated debugger):</strong> Download “Visual Studio Community” (distinct from VS Code), run the installer, and select the workload <strong>“Desktop development with C++”</strong>. This provides <code>cl.exe</code> and a debugger. To follow this course verbatim, also install VS Code with MinGW so that <code>g++</code> commands apply directly.</p>
+<p>Also install <strong>VS Code</strong> with the <strong>C/C++ by Microsoft</strong> extension (see section 3). <strong>Code Runner</strong> is optional.</p>
+<h3>Mac</h3>
+<p>macOS provides Apple’s compiler toolchain; it must be activated:</p>
+<pre><code>xcode-select --install
+# An installation dialog appears -- confirm and wait for completion.
+g++ --version
+clang++ --version
+# Both should report a version such as Apple clang version 15.x
+# If g++ remains unavailable, install Xcode from the App Store and retry.</code></pre>
+<h3>Linux (Ubuntu / Debian / Mint)</h3>
+<pre><code>sudo apt update
+sudo apt install -y build-essential gdb cmake
+# sudo: execute with administrative privileges
+# apt: package manager
+# update: refresh the package index
+# install -y build-essential gdb cmake: install compiler toolchain, debugger, and build utility
+g++ --version</code></pre>
+<div class="callout ok"><strong>Verification (all systems):</strong> <code>g++ --version</code> should report a version such as <code>g++ 13.x</code> or <code>clang 15.x</code>. Version 9 or later is sufficient. If “not recognized / not found” is reported, recheck section 6: reopen the terminal, verify PATH, and repeat the installation step.</div>
+
+<h2>8. Hello, World — line by line</h2>
+<p>Create a file named <code>hello.cpp</code> inside <code>CppCourse</code>. In VS Code: File → Open Folder → select <code>CppCourse</code> → New File → save as <code>hello.cpp</code> (the extension must be <code>.cpp</code>, not <code>.txt</code>). Enter the following:</p>
+<pre><code>// hello.cpp -- my first program
+#include &lt;iostream&gt;   // gives us std::cout for printing
+
+int main() {          // every C++ program starts at main()
+    std::cout &lt;&lt; "Hello, world!\n";  // print text + newline
+    return 0;         // 0 means "success" to the OS
+}</code></pre>
+<p>Compile and run. In VS Code press <code>Ctrl</code>+<code>`</code> (backtick, left of the 1 key) to open the integrated terminal, then enter:</p>
+<pre><code>g++ -std=c++17 -Wall -Wextra hello.cpp -o hello
+./hello        # on Windows instead: .\hello.exe</code></pre>
+<p><strong>Compile command, token by token (this command is used throughout the course):</strong></p>
+<ul>
+<li><code>g++</code> — invokes the C++ compiler.</li>
+<li><code>-std=c++17</code> — selects the language standard. <code>-std</code> specifies the standard; <code>c++17</code> selects the 2017 revision.</li>
+<li><code>-Wall -Wextra</code> — enables standard and additional compiler warnings. <code>-W</code> denotes a warning category. These options surface potential errors during compilation.</li>
+<li><code>hello.cpp</code> — the input source file to compile.</li>
+<li><code>-o hello</code> — sets the output file name. <code>-o</code> denotes output. On Windows the output is <code>hello.exe</code>.</li>
+<li><code>./hello</code> (macOS/Linux) — executes the program in the current directory. <code>.</code> denotes the current directory; <code>/</code> is the path separator.</li>
+<li><code>.\hello.exe</code> (Windows) — the equivalent invocation on Windows, using <code>\</code> as the separator and <code>.exe</code> as the executable extension.</li>
+</ul>
+<p><strong>Source file, line by line:</strong></p>
+<ul>
+<li><code>// hello.cpp -- my first program</code> — a <strong>comment</strong>. Text following <code>//</code> is ignored by the compiler and serves as documentation.</li>
+<li><code>#include &lt;iostream&gt;</code> — a preprocessor directive that includes the standard header <code>iostream</code>. <code>#include</code> requests inclusion; angle brackets indicate the standard library location. <code>iostream</code> provides input/output facilities, including <code>std::cout</code>. Without it, <code>std::cout</code> is undefined.</li>
+<li><em>Blank line</em> — has no effect; included for readability.</li>
+<li><code>int main() {</code> — defines the program entry point. <code>main</code> is a <strong>function</strong> (a named block of code) that the OS calls first. <code>()</code> indicates no parameters in this example. <code>int</code> specifies that <code>main</code> returns an integer exit code. <code>{</code> opens the function body.</li>
+<li><code>std::cout &lt;&lt; "Hello, world!\n";</code> — outputs text. <code>std</code> is the standard library namespace; <code>::</code> is the scope-resolution operator; <code>cout</code> is the standard character-output stream. <code>&lt;&lt;</code> is the insertion operator directing data to the stream. <code>"..."</code> is a <strong>string</strong> literal. <code>\n</code> is the newline escape sequence. <code>;</code> terminates the statement — every statement requires one.</li>
+<li><code>return 0;</code> — returns the exit code to the OS. <code>0</code> indicates successful execution; nonzero values indicate an error condition. Inspect it with <code>echo $?</code> (macOS/Linux) or <code>echo $LASTEXITCODE</code> (PowerShell) immediately after execution.</li>
+<li><code>}</code> — closes the body of <code>main</code>. Each opening brace requires a matching closing brace.</li>
+</ul>
+<div class="callout"><strong>Expected result:</strong> the terminal displays <code>Hello, world!</code> followed by a new prompt. If output differs, refer to sections 9 and 10 for the build process and error reference.</div>
+
+<h2>9. What happens when you compile? (preprocessor → compiler → linker)</h2>
+<p>A single <code>g++ ...</code> invocation performs <strong>three sequential stages</strong>:</p>
+<pre><code>hello.cpp -&gt; [preprocessor] -&gt; [compiler] -&gt; hello.o -&gt; [linker + stdlib] -&gt; hello.exe
+  #include expanded   C++ -&gt; assembly -&gt; object code    objects joined into program</code></pre>
+<ul>
+<li><strong>Stage 1 — Preprocessor.</strong> Processes directives beginning with <code>#</code>. For <code>#include &lt;iostream&gt;</code>, it inserts the referenced header content into the translation unit, producing a complete source for compilation.</li>
+<li><strong>Stage 2 — Compiler.</strong> Translates the preprocessed C++ into <strong>assembly</strong> (low-level CPU mnemonics such as <code>mov</code> and <code>call</code>), then into <strong>object code</strong> (<code>hello.o</code> — machine code that is not yet executable because references to library functions remain unresolved).</li>
+<li><strong>Stage 3 — Linker.</strong> Combines object files with the standard library (<strong>stdlib</strong> — pre-compiled implementations of facilities such as output) into a single executable (<code>hello.exe</code> or <code>hello</code>).</li>
+<li><strong>Runtime role of the OS:</strong> when <code>./hello</code> is executed, the OS loads the program into <strong>memory (RAM)</strong>, provides access to output facilities, invokes <code>main()</code>, captures the exit code, and releases resources on termination.</li>
+</ul>
+<p>To observe each stage directly (optional):</p>
+<pre><code>g++ -E hello.cpp -o hello.i   # preprocessed output (large: source plus expanded headers; inspect hello.i)
+g++ -S hello.cpp -o hello.s   # assembly output: low-level CPU instructions in hello.s
+g++ -v hello.cpp -o hello     # verbose mode: displays each stage and searched paths</code></pre>
+<div class="callout"><strong>Working practice:</strong> A compiler translates C++ source code into machine code the CPU executes. It does this in three stages: preprocessing, compilation, and linking. A reported error identifies the file and line to correct. Reviewing errors systematically is standard practice.</div>
+
+<h2>10. Common errors and corrections</h2>
+<table><tr><th>Diagnostic</th><th>Meaning</th><th>Correction</th></tr>
+<tr><td><code>'g++' is not recognized / command not found</code></td><td>The OS searched each directory in PATH and found no program named <code>g++</code>. The compiler is either not installed or its directory is not in PATH, or the terminal session predates the PATH update.</td><td>Open a new terminal and rerun <code>g++ --version</code>. If the error persists, verify the MinGW binary directory (for example, <code>C:\msys64\ucrt64\bin</code>) is listed in PATH (section 6) and repeat the installation step.</td></tr>
+<tr><td><code>expected ';' before ... / expected ';'</code></td><td>A statement is missing its terminating semicolon.</td><td>Locate the reported line number and append <code>;</code>. Example: <code>std::cout &lt;&lt; "hi"</code> → <code>std::cout &lt;&lt; "hi";</code></td></tr>
+<tr><td><code>undefined reference to 'main'</code></td><td>The linker found no entry point named <code>main</code>. The function is typically misspelled (<code>Main</code>, <code>mian</code>) or has an incorrect signature.</td><td>Verify the exact spelling <code>int main()</code> with lowercase <code>m</code>. Confirm the file is saved and the correct file name is passed to <code>g++</code>.</td></tr>
+<tr><td><code>'cout' was not declared / 'cout' was not declared in this scope</code></td><td><code>cout</code> was used without the required header or qualified name.</td><td>Add <code>#include &lt;iostream&gt;</code> at the top and use the qualified name <code>std::cout</code>. The prefix <code>std::</code> refers to the standard library namespace.</td></tr>
+<tr><td><code>No such file or directory: hello.cpp</code></td><td>The working directory does not contain <code>hello.cpp</code>. The terminal is in a different directory than the source file.</td><td>Run <code>pwd</code> and <code>ls</code> to confirm location. Use <code>cd</code> to navigate to the source directory (section 4). In VS Code, open the project folder first, then open the integrated terminal.</td></tr>
+<tr><td><code>cannot open output file hello.exe / Permission denied</code></td><td>The output file is locked, typically because a previous instance is still running, or antivirus software has restricted access.</td><td>Terminate any running instance of the program. Check antivirus quarantine if applicable. Then repeat the <code>g++</code> command.</td></tr>
+<tr><td><code>stray '\...' / expected primary-expression</code></td><td>The source contains an invalid character, commonly curly quotation marks <code>“ ”</code> instead of straight quotes <code>" "</code>.</td><td>Re-enter quotation marks and semicolons directly in VS Code. Avoid copying code from formatted documents without correcting punctuation.</td></tr>
+<tr><td><code>fatal error: iostream: No such file</code></td><td>The preprocessor could not locate the standard headers. The compiler installation is incomplete.</td><td>Repeat the installation in section 7. On Linux, confirm <code>build-essential</code> completed. On Windows, confirm the package <code>mingw-w64-ucrt-x86_64-gcc</code> is installed.</td></tr>
+</table>
+
+<h2>Exercises (5 minutes each)</h2>
+<ol>
+<li><strong>Print your name and age on two lines.</strong> Use two <code>std::cout</code> statements, each with <code>\n</code> and a terminating <code>;</code>. Compile and run.</li>
+<li><strong>Observe the exit code.</strong> Change <code>return 0;</code> to <code>return 3;</code>, recompile, run, then immediately enter <code>echo $LASTEXITCODE</code> (PowerShell) or <code>echo $?</code> (macOS/Linux). The value 3 should be displayed. Restore <code>return 0;</code> afterward.</li>
+<li><strong>Practice error diagnosis:</strong> remove one <code>;</code>, recompile, and note the reported line number and message. Restore the semicolon and recompile to confirm the error is resolved.</li>
+<li><strong>Enable strict warnings.</strong> Compile with <code>g++ -std=c++17 -Wall -Wextra hello.cpp -o hello</code> and address any reported warnings. Warning-free compilation is standard professional practice.</li>
+</ol>
+
+<h2>VS Code tips</h2>
+<ul>
+<li><strong>Open the folder, not only the file.</strong> Use File → Open Folder → select <code>CppCourse</code>. Opening only <code>hello.cpp</code> may leave the integrated terminal in a different directory, causing “No such file” errors.</li>
+<li><strong>Use the integrated terminal:</strong> press <code>Ctrl</code>+<code>`</code> to open a terminal already set to the open folder.</li>
+<li><strong>Verify the file extension is <code>.cpp</code>.</strong> If Windows hides extensions, enable View → Show → File name extensions in Explorer to distinguish <code>hello.cpp</code> from <code>hello.cpp.txt</code>. Only the former is recognized as C++ source.</li>
+</ul>
+
+<div class="pager"><a class="btn ghost" href="index.html">← Home</a><a class="btn" href="02-basics.html">Next: Basics →</a></div>
+<footer>Learn C++ From Scratch · Lesson 01</footer>
+</main></div><script src="script.js"></script></body></html>

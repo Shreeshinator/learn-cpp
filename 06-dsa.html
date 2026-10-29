@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>06 · DSA — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 06 · DSA · Beginner Friendly</span>
+<h1>DSA: How to Store Data and How to Work With It Fast</h1>
+<p>This lesson covers <strong>DSA</strong> from first principles. <strong>DSA</strong> means <strong>Data Structures + Algorithms</strong>. The distinction matters because all performance decisions in this lesson follow from it.</p>
+
+<div class="explain"><strong>Definition: Data Structure</strong><br>A <strong>data structure</strong> is a defined organization of data in memory, with explicit trade-offs for access, insertion, deletion, and memory overhead. In C++, <code>vector</code>, linked lists, <code>stack</code>, <code>queue</code>, trees, and hash tables are standard options. They store the same logical data but provide different operation costs.</div>
+
+<div class="explain"><strong>Definition: Algorithm</strong><br>An <strong>algorithm</strong> is a finite, unambiguous sequence of steps that transforms input into output. For example, <strong>linear search</strong> examines each element in sequence until the target is found or the input is exhausted. Sorting algorithms reorder a sequence into ascending or defined order.</div>
+
+<div class="callout"><strong>Why DSA matters</strong><br>Small inputs tolerate any implementation. With 1,000 or 1,000,000 records — messages, entities, files, rows — the choice of structure and algorithm determines whether an operation completes in milliseconds or becomes impractical. DSA is the discipline of selecting representations and procedures whose scaling behavior fits the workload.</div>
+
+<div class="toc"><strong>In this lesson</strong><ol><li>Big-O: how runtime grows with input size</li><li>Linked lists: sequences of nodes linked by pointers</li><li>Stacks (LIFO) and queues (FIFO)</li><li>Sorting and binary search</li><li>Trees, BSTs, and hash tables</li><li>Recursion: functions that call themselves</li><li>Exercises</li></ol></div>
+
+<h2>1. Big-O: how runtime grows with input size</h2>
+<p>Big-O describes how runtime grows with input size. It expresses the number of operations as a function of <strong>n</strong>, where <strong>n</strong> is the number of input elements, abstracting away hardware and constant factors.</p>
+<p>Two reference cases:</p>
+<ul><li><strong>Direct access:</strong> retrieving an element by index requires one step regardless of collection size. This is <strong>O(1)</strong>.</li><li><strong>Sequential scan:</strong> examining each element in order requires up to <strong>n</strong> steps. This is <strong>O(n)</strong>.</li></ul>
+<p>In Big-O notation, <strong>O</strong> denotes order of growth and <strong>n</strong> denotes input size. <strong>O(n)</strong> means cost grows proportionally with n. <strong>O(1)</strong> means cost remains constant as n grows.</p>
+
+<div class="explain"><strong>Definition: n</strong><br><strong>n</strong> is the input size. For a <code>vector&lt;int&gt; v</code> containing 1,000,000 integers, n = 1,000,000. Big-O analysis asks how time and space requirements change as n increases.</div>
+
+<div class="explain"><strong>Definition: constant, logarithmic, linear, quadratic growth</strong>
+<ul><li><strong>Constant O(1):</strong> cost is independent of n.</li><li><strong>Logarithmic O(log n):</strong> cost grows slowly because each step reduces the remaining problem by a constant fraction, typically one half.</li><li><strong>Linear O(n):</strong> cost grows proportionally with n. Doubling the input doubles the work.</li><li><strong>Quadratic O(n²):</strong> cost grows proportionally to n multiplied by n. Doubling the input quadruples the work.</li></ul>
+</div>
+
+<h3>Search cost comparison</h3>
+<p>Consider locating a specific value in a collection of 1,000,000 sorted entries:</p>
+<ul><li><strong>Sequential scan:</strong> examine entries from first to last. Worst case 1,000,000 comparisons. This is <strong>O(n)</strong> — linear search. It requires no preconditions but scales linearly.</li><li><strong>Binary search:</strong> examine the midpoint, discard the half that cannot contain the target, and repeat on the remaining interval. Approximately 20 comparisons suffice for 1,000,000 entries, since 2²⁰ ≈ 1,048,576. This is <strong>O(log n)</strong>. It requires sorted input.</li><li><strong>Indexed access:</strong> when the position is known, retrieve it directly, e.g. <code>v[402]</code>. This is <strong>O(1)</strong>.</li></ul>
+
+<h3>Complexity reference table</h3>
+<p>Assume <strong>n = 1,000,000 (1M)</strong>. Approximate worst-case operation counts:</p>
+<table><tr><th>Big-O</th><th>Meaning</th><th>Example in C++</th><th>Steps when n = 1M</th></tr>
+<tr><td><code>O(1)</code></td><td>Constant; independent of n</td><td><code>v[500]</code> — access by index</td><td>1</td></tr>
+<tr><td><code>O(log n)</code></td><td>Halve the remaining interval each step</td><td><code>binary_search</code> on sorted vector</td><td>~20</td></tr>
+<tr><td><code>O(n)</code></td><td>Examine each element once</td><td>single <code>for</code> loop over all elements</td><td>1,000,000</td></tr>
+<tr><td><code>O(n log n)</code></td><td>n elements × log n divisions</td><td><code>std::sort</code></td><td>~20,000,000 (well under a second in C++)</td></tr>
+<tr><td><code>O(n²)</code></td><td>For each element, examine every other element</td><td><code>bubble sort</code> with two nested loops</td><td>1,000,000,000,000 (impractical)</td></tr></table>
+
+<div class="callout"><strong>Working rule:</strong> <code>O(1)</code> is constant time, <code>O(log n)</code> scales minimally, <code>O(n)</code> is acceptable for a single pass, <code>O(n log n)</code> is the expected cost for comparison sorting, and <code>O(n²)</code> is a risk indicator when n is large. When performance degrades, verify whether an inadvertent quadratic pattern is present.</div>
+
+<div class="explain"><strong>Definition: worst case</strong><br>Big-O conventionally describes the <strong>worst case</strong> — the maximum cost over all inputs of size n, such as a target located at the final position or absent entirely. A fast worst case guarantees acceptable behavior for all inputs.</div>
+
+<h2>2. Linked lists: sequences of nodes linked by pointers</h2>
+<p>A linked list is a sequence of nodes linked by pointers. A <code>vector</code> stores elements in contiguous memory and supports O(1) indexed access. A linked list stores elements in independently allocated nodes, each containing a value and the address of the next node.</p>
+<p>Each node contains two fields: <strong>(1)</strong> a stored value such as <code>10</code>, and <strong>(2)</strong> a pointer to the successor node. In C++ this element is conventionally defined as <strong>Node</strong>.</p>
+
+<div class="explain"><strong>Definition: node, pointer, nullptr, head, heap allocation</strong>
+<ul><li><strong>Node</strong> — one element of the list, holding data plus a pointer to the next node.</li><li><strong>Pointer</strong> (<code>Node*</code>) — a variable holding a memory address. The <code>*</code> indicates the variable stores an address rather than a value.</li><li><strong>nullptr</strong> — a pointer value indicating no target. It terminates the list.</li><li><strong>head</strong> — pointer to the first node. Loss of the head pointer makes the list unreachable.</li><li><strong>Heap allocation</strong> with <code>new</code> / <code>delete</code> — dynamic storage that persists until explicitly released. Each node is created with <code>new</code> and must later be released with <code>delete</code> to avoid a leak.</li></ul>
+</div>
+
+<p>Structure of a three-node list holding 1 → 2 → 3:</p>
+<pre><code>head
+  |
+  v
++-----+    +-----+    +-----+
+| 1| *----&gt;| 2| *----&gt;| 3| null |
++-----+    +-----+    +-----+
+  Node       Node       Node
+  val=1      val=2      val=3
+  next=addr  next=addr  next=nullptr</code></pre>
+<p>The <code>*</code> in each box denotes the <code>next</code> pointer. The final node stores <code>nullptr</code>.</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+// A Node holds a value and the address of the successor node.
+struct Node {
+    int val;      // stored value
+    Node* next;   // address of successor, or nullptr if last
+
+    // Construct a Node holding v with no successor.
+    Node(int v): val(v), next(nullptr) {}
+};
+
+int main() {
+    // 1. Allocate the first node holding 1. head addresses it.
+    Node* head = new Node(1);
+
+    // 2. Allocate the second node holding 2 and link it from head.
+    head-&gt;next = new Node(2);
+    // head-&gt;next means: access head, then follow its next pointer.
+    // -&gt; dereferences the pointer and accesses the member.
+
+    // 3. Allocate the third node holding 3 after the second.
+    head-&gt;next-&gt;next = new Node(3);
+
+    // 4. Traverse: begin at head, advance until nullptr.
+    // c denotes the current node; c = c-&gt;next advances one position.
+    for (Node* c = head; c != nullptr; c = c-&gt;next) {
+        std::cout &lt;&lt; c-&gt;val &lt;&lt; " "; // output the current value
+    }
+    std::cout &lt;&lt; "\n";
+
+    // 5. Release each allocation to avoid a leak.
+    // t preserves the current head before advancing,
+    // so the prior node can be deleted safely.
+    while (head != nullptr) {
+        Node* t = head;       // record node to delete
+        head = head-&gt;next;    // advance head to successor
+        delete t;             // return memory to the system
+    }
+    return 0;
+}</code></pre>
+
+<h3>Line-by-line walkthrough</h3>
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>struct Node { int val; Node* next; ... };</code></td><td>Defines the node layout: an integer value plus the address of the successor node.</td></tr>
+<tr><td><code>Node* head = new Node(1);</code></td><td>Allocates the first node on the heap. <code>head</code> stores its address.</td></tr>
+<tr><td><code>head-&gt;next = new Node(2);</code></td><td>Allocates the second node and stores its address in the first node's <code>next</code> field.</td></tr>
+<tr><td><code>head-&gt;next-&gt;next = new Node(3);</code></td><td>Allocates the third node and links it after the second.</td></tr>
+<tr><td><code>for (Node* c = head; c != nullptr; c = c-&gt;next)</code></td><td>Initializes at the first node, terminates at the end, and advances one node per iteration. Each node is visited once, hence O(n).</td></tr>
+<tr><td><code>while(head){ Node* t=head; head=head-&gt;next; delete t; }</code></td><td>Deletes nodes sequentially from the front. The address must be saved in <code>t</code> before advancing.</td></tr></table>
+
+<div class="callout"><strong>Selection criteria:</strong> Prefer <code>vector</code> when indexed access by position is required (O(1)). Prefer a linked list when frequent insertion and deletion occur away from the end and indexed access is not required. In production code use <code>std::list</code> or <code>std::forward_list</code>; implement a list manually once to establish pointer mechanics.</div>
+
+<h2>3. Stacks (LIFO) and queues (FIFO)</h2>
+<p>Stacks and queues are access disciplines applied to a sequence, not distinct storage mechanisms.</p>
+<ul><li><strong>Stack — LIFO.</strong> <strong>LIFO</strong> means <strong>Last In, First Out</strong>. <strong>push</strong> appends an element, <strong>pop</strong> removes the most recently added element, and <strong>top</strong> observes it. Only the most recent element is directly accessible.</li><li><strong>Queue — FIFO.</strong> <strong>FIFO</strong> means <strong>First In, First Out</strong>. Elements are appended at the back (<strong>push/enqueue</strong>) and removed from the front (<strong>pop/dequeue</strong>). The longest-resident element is served first.</li></ul>
+
+<div class="explain"><strong>Definition: push, pop, top, front</strong><br><code>push(x)</code> inserts x. <code>pop()</code> removes an element — the newest for a stack, the oldest for a queue. In C++ <code>pop()</code> removes without returning the value. Observe the value first with <code>top()</code> (stack) or <code>front()</code> (queue), then call <code>pop()</code>.</div>
+
+<pre><code>#include &lt;stack&gt;   // LIFO discipline
+#include &lt;queue&gt;   // FIFO discipline
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    // --- Stack demo ---
+    std::stack&lt;int&gt; st; // empty stack of ints
+    st.push(1); // stack: [1]
+    st.push(2); // stack: [1, 2], 2 is on top
+    std::cout &lt;&lt; st.top() &lt;&lt; "\n"; // 2 (observation, no removal)
+    st.pop();   // remove 2. stack is now [1]
+    std::cout &lt;&lt; st.top() &lt;&lt; "\n"; // 1
+
+    // --- Queue demo ---
+    std::queue&lt;int&gt; q; // empty queue of ints
+    q.push(1); // queue: [1]
+    q.push(2); // queue: [1, 2] (1 is front, 2 is back)
+    std::cout &lt;&lt; q.front() &lt;&lt; "\n"; // 1 (oldest element)
+    q.pop();   // remove 1. queue is now [2]
+    std::cout &lt;&lt; q.front() &lt;&lt; "\n"; // 2
+
+    // --- Standard stack application: bracket balance check for "{[()]}" ---
+    // On an opening bracket, push it. On a closing bracket,
+    // it must correspond to the current top; if so, pop.
+    std::string s = "{[()]}";
+    std::stack&lt;char&gt; b;
+    for (char c : s) {
+        if (c == '(' || c == '[' || c == '{') {
+            b.push(c); // opening bracket: record pending closer
+        } else {
+            // closing bracket: verify against top, then pop
+            // (full matching logic omitted here — complete as exercise)
+            if (!b.empty()) b.pop();
+        }
+    }
+    std::cout &lt;&lt; (b.empty() ? "balanced" : "not balanced") &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+
+<div class="callout ok"><strong>Typical applications:</strong> Stacks support undo history (most recent action reversed first), call management, bracket validation, and backtracking. Queues support print scheduling, message buffering, breadth-first search, and any workload requiring first-come-first-served order.</div>
+
+<h2>4. Sorting and searching</h2>
+<p><strong>Sorting</strong> arranges elements in defined order (numeric ascending, lexicographic). <strong>Searching</strong> locates a target value. The central result: sorted input permits binary search, which reduces search cost from O(n) to O(log n).</p>
+
+<h3>4a. Sorting — use <code>std::sort</code>; study bubble sort once</h3>
+<div class="explain"><strong>Definition: std::sort, bubble sort, swap</strong>
+<ul><li><strong>std::sort</strong> — the standard efficient sort (O(n log n)). Use it in production code.</li><li><strong>Bubble sort</strong> — an instructional O(n²) sort. It performs repeated passes, swapping each adjacent out-of-order pair so the maximum unsorted value settles at the end of the range per pass.</li><li><strong>swap(a,b)</strong> — exchanges two values. <code>std::swap(v[j], v[j+1])</code> exchanges two vector positions.</li></ul>
+</div>
+
+<pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt; // for std::sort and std::swap
+#include &lt;iostream&gt;
+
+// Bubble sort: instructive, not suitable for large n.
+// Each pass places the largest remaining value at the end of the unsorted prefix.
+void bubble(std::vector&lt;int&gt;&amp; v) {
+    // v.size() is the element count. size_t is an unsigned size type.
+    for (size_t i = 0; i &lt; v.size(); i++) {
+        // After i passes, the final i positions are ordered, so exclude them (- i).
+        // j+1 bound prevents access past the end.
+        for (size_t j = 0; j + 1 &lt; v.size() - i; j++) {
+            if (v[j] &gt; v[j + 1]) {
+                std::swap(v[j], v[j + 1]); // adjacent inversion -&gt; exchange
+            }
+        }
+    }
+}
+
+int main() {
+    std::vector&lt;int&gt; v = {5, 2, 9, 1};
+    bubble(v); // instructional sort — result: 1 2 5 9
+    // Production equivalent (O(n log n)):
+    // std::sort(v.begin(), v.end());
+    for (int x : v) std::cout &lt;&lt; x &lt;&lt; " ";
+    std::cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>for (i ...)</code> outer loop</td><td>Executes n passes. Pass 0 fixes the maximum at the final position; pass 1 fixes the next maximum, and so on.</td></tr>
+<tr><td><code>for (j ... v.size()-i)</code> inner loop</td><td>Scans left to right comparing adjacent pairs. The <code>- i</code> term excludes the already-ordered suffix.</td></tr>
+<tr><td><code>if (v[j] &gt; v[j+1]) swap</code></td><td>If the left element exceeds the right, the pair is inverted — exchange them. After a complete pass, the maximum has propagated to the end.</td></tr>
+<tr><td>Why O(n²)?</td><td>n passes × n comparisons per pass ≈ n×n operations. For n=1M this is on the order of a trillion — hence <code>std::sort</code> for real workloads.</td></tr></table>
+
+<h3>4b. Binary search on sorted data</h3>
+<p>Binary search locates a target in sorted input by repeatedly examining the midpoint of the remaining interval. If the midpoint equals the target, the search terminates. If the midpoint is less than the target, the lower half is discarded; otherwise the upper half is discarded. Each comparison halves the remaining range.</p>
+<div class="explain"><strong>Definition: binary search, sorted order, lo / hi / mid, O(log n)</strong>
+<ul><li><strong>Binary search</strong> — interval-halving search. Each step selects one of two halves and discards the other.</li><li><strong>Sorted</strong> — arranged in order. Binary search requires sorted input. Sort first or use linear scan for unsorted data.</li><li><strong>lo / hi / mid</strong> — lower bound index, upper bound index, and midpoint index. Together they delimit the current search interval.</li><li>Approximately 20 steps suffice for n=1M because repeated halving reaches one element after ~20 divisions (2²⁰ ≈ 1,048,576).</li></ul>
+</div>
+
+<pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+
+// Return index of target in sorted vector v, or -1 if absent.
+// const &amp; borrows v without copying (efficient) and prohibits modification.
+int binarySearch(const std::vector&lt;int&gt;&amp; v, int target) {
+    int lo = 0;                // lower bound of search interval
+    int hi = (int)v.size() - 1; // upper bound of search interval
+
+    while (lo &lt;= hi) {       // while interval is non-empty
+        int mid = lo + (hi - lo) / 2; // midpoint (overflow-safe form)
+        if (v[mid] == target) {
+            return mid;        // target located; return position
+        } else if (v[mid] &lt; target) {
+            lo = mid + 1;      // midpoint below target -&gt; discard lower half
+        } else {
+            hi = mid - 1;      // midpoint above target -&gt; discard upper half
+        }
+    }
+    return -1; // interval exhausted without match -&gt; absent
+}
+
+int main() {
+    std::vector&lt;int&gt; v = {5, 2, 9, 1};
+    std::sort(v.begin(), v.end()); // Required precondition: v becomes 1 2 5 9
+    std::cout &lt;&lt; binarySearch(v, 9) &lt;&lt; "\n"; // prints 3 (index of 9)
+    std::cout &lt;&lt; binarySearch(v, 7) &lt;&lt; "\n"; // prints -1 (absent)
+    return 0;
+}</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>lo=0, hi=size-1</code></td><td>Initializes the interval to the full index range.</td></tr>
+<tr><td><code>mid = lo+(hi-lo)/2</code></td><td>Computes the midpoint of the current interval. This form avoids overflow for large bounds, unlike <code>(lo+hi)/2</code>.</td></tr>
+<tr><td><code>v[mid]==target → return mid</code></td><td>Midpoint equals target — search complete; return its index.</td></tr>
+<tr><td><code>v[mid] &lt; target → lo=mid+1</code></td><td>Midpoint below target — all positions through mid are excluded; continue on the upper half.</td></tr>
+<tr><td><code>else hi=mid-1</code></td><td>Midpoint above target — continue on the lower half.</td></tr>
+<tr><td><code>return -1</code></td><td>Interval is empty and the target was not encountered. <code>-1</code> conventionally signals absence since valid indices begin at 0.</td></tr></table>
+
+<h2>5. Trees and hash tables</h2>
+<p>A <strong>tree</strong> is a hierarchical structure composed of nodes connected by directed edges. The single entry node is the <strong>root</strong>. Each node may reference child nodes; nodes with no children are <strong>leaves</strong>. A <strong>binary tree</strong> restricts each node to at most two children, conventionally designated <strong>left</strong> and <strong>right</strong>.</p>
+
+<div class="explain"><strong>Definition: root, child, leaf, BST, hash table</strong>
+<ul><li><strong>Root</strong> — the initial node from which all others descend. <strong>Child</strong> — a node directly below another. <strong>Leaf</strong> — a node with no children.</li><li><strong>BST (Binary Search Tree)</strong> — a binary tree satisfying the ordering invariant: all values in the left subtree are less than the node, all values in the right subtree are greater. This invariant permits O(log n) search when the tree is balanced.</li><li><strong>Balanced</strong> — depth is logarithmic in node count rather than degenerating into a linear chain. <code>std::map</code> maintains balance internally.</li><li><strong>Hash table</strong> — a structure in which a <strong>hash function</strong> maps each key to a bucket index. Average lookup is O(1), but iteration order is unspecified. This is <code>std::unordered_map</code>.</li></ul>
+</div>
+
+<p>BST with 5 at the root, 3 left, 8 right:</p>
+<pre><code>      5
+      / \
+     3   8
+    / \
+   1   4
+
+Invariant: left &lt; parent &lt; right
+- 3 &lt; 5, so 3 is left of 5
+- 8 &gt; 5, so 8 is right of 5
+- 1 &lt; 3, so 1 is left of 3</code></pre>
+
+<pre><code>#include &lt;map&gt;          // ordered map: balanced BST, O(log n), ordered keys
+#include &lt;unordered_map&gt; // hash table: average O(1), unordered keys
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Binary tree node for instruction:
+struct Tree {
+    int val;
+    Tree* l; // left child (lesser values in a BST)
+    Tree* r; // greater values in a BST)
+    Tree(int v): val(v), l(nullptr), r(nullptr) {}
+};
+
+// Inorder traversal: left -&gt; node -&gt; right.
+// For a BST this visits values in ascending order.
+void inorder(Tree* t) {
+    if (t == nullptr) return; // empty subtree: nothing to visit
+    inorder(t-&gt;l);             // 1. visit lesser values
+    std::cout &lt;&lt; t-&gt;val &lt;&lt; " "; // 2. visit current node
+    inorder(t-&gt;r);             // 3. visit greater values
+}
+
+int main() {
+    // std::map maintains keys in order (tree-based):
+    std::map&lt;std::string, int&gt; age;
+    age["bob"] = 25;
+    age["alice"] = 30; // iterates alice before bob (ordered)
+    for (auto&amp; p : age) std::cout &lt;&lt; p.first &lt;&lt; " " &lt;&lt; p.second &lt;&lt; "\n";
+
+    // std::unordered_map provides faster average lookup, unordered (hash-based):
+    std::unordered_map&lt;std::string, int&gt; score;
+    score["alice"] = 100; // hash("alice") determines the bucket holding 100
+    std::cout &lt;&lt; score["alice"] &lt;&lt; "\n";
+
+    // Manually constructed BST:    5
+    //                             / \
+    //                            3   8
+    Tree* root = new Tree(5);
+    root-&gt;l = new Tree(3);
+    root-&gt;r = new Tree(8);
+    inorder(root); // prints "3 5 8" — ascending order
+    std::cout &lt;&lt; "\n";
+    // (release allocations in production code; omitted for brevity)
+    return 0;
+}</code></pre>
+
+<h3>Traversal orders</h3>
+<div class="explain"><strong>Definition: traversal, DFS, BFS</strong><br><strong>Traversal</strong> visits every node exactly once. <strong>DFS (Depth-First Search)</strong> descends each path fully before visiting siblings (implemented with recursion or an explicit stack). <strong>BFS (Breadth-First Search)</strong> visits nodes level by level (implemented with a queue).
+<ul><li><strong>Inorder (L → Node → R):</strong> ascending order for a BST; suitable for ordered output.</li><li><strong>Preorder (Node → L → R):</strong> suitable for copying or serializing structure.</li><li><strong>Postorder (L → R → Node):</strong> suitable for safe deallocation (children before parent) and bottom-up aggregation.</li><li><strong>BFS with queue:</strong> shortest path in unweighted graphs; level-order processing.</li></ul>
+</div>
+
+<table><tr><th>Traversal</th><th>Order for root 5 with children 3, 8</th><th>Use</th></tr>
+<tr><td>Inorder</td><td>3, 5, 8</td><td>Ordered output from a BST</td></tr>
+<tr><td>Preorder</td><td>5, 3, 8</td><td>Copy or serialize preserving parent-before-child order</td></tr>
+<tr><td>Postorder</td><td>3, 8, 5</td><td>Deallocate or aggregate children before parent</td></tr>
+<tr><td>BFS (level order)</td><td>5, 3, 8</td><td>Level-by-level processing; shortest-path search</td></tr></table>
+
+<div class="callout"><strong>Map selection:</strong> When ordered iteration or range queries are required (“all keys A–M”), use <code>std::map</code> (tree, O(log n)). When maximum average lookup speed is required and order is irrelevant (caches, frequency counts), use <code>std::unordered_map</code> (hash, average O(1)).</div>
+
+<h2>6. Recursion: functions that call themselves</h2>
+<p><strong>Recursion</strong> defines a problem in terms of a smaller instance of itself. A recursive function contains a <strong>base case</strong> that returns directly and a <strong>recursive case</strong> that invokes the function on reduced input and combines the result.</p>
+<div class="explain"><strong>Definition: base case, recursive case, call stack, memoization</strong>
+<ul><li><strong>Base case</strong> — the minimal input with a direct result and no further self-invocation. Without it, recursion does not terminate and exhausts the call stack (<strong>stack overflow</strong>).</li><li><strong>Recursive case</strong> — reduction plus combination. Example: <code>fact(5) = 5 × fact(4)</code>.</li><li><strong>Call stack</strong> — the sequence of pending invocations awaiting return. Each recursive call adds a frame; the base case initiates unwinding.</li><li><strong>Memoization</strong> — caching computed results in an auxiliary array (<code>memo</code>) so each distinct subproblem is solved once, reducing exponential cost to linear.</li></ul>
+</div>
+
+<pre><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+// Factorial: 5! = 5*4*3*2*1 = 120
+// Base: fact(0) and fact(1) are 1 by definition; recursion stops here.
+int fact(int n) {
+    if (n &lt;= 1) return 1;  // BASE CASE: minimal input, direct result
+    return n * fact(n - 1);   // RECURSIVE CASE: n combined with solution of reduced input
+}
+// fact(3) expands as: 3*fact(2) -&gt; 3*2*fact(1) -&gt; 3*2*1 = 6
+
+// Fibonacci: 0,1,1,2,3,5,8... each term is the sum of the preceding two.
+// Unoptimized version: two self-invocations recompute identical subproblems.
+int fib(int n) {
+    if (n &lt;= 1) return n; // BASE: fib(0)=0, fib(1)=1
+    return fib(n - 1) + fib(n - 2); // two reduced subproblems
+}
+// fib(5) invokes fib(4)+fib(3); fib(3) is then computed twice.
+// Complexity is O(2^n) — exponential: fib(50) is computationally infeasible.
+
+// Optimized version with memoization:
+// m[i] holds fib(i), or -1 when not yet computed.
+int fibMemo(int n, std::vector&lt;int&gt;&amp; m) {
+    if (n &lt;= 1) return n; // BASE CASE evaluated first
+    if (m[n] != -1) return m[n]; // cached result: return without recomputation
+    // Compute once, store, then return:
+    return m[n] = fibMemo(n - 1, m) + fibMemo(n - 2, m);
+}
+
+int main() {
+    std::cout &lt;&lt; fact(5) &lt;&lt; "\n"; // 120
+    std::cout &lt;&lt; fib(10) &lt;&lt; "\n";  // 55 (unoptimized version acceptable only for small n)
+
+    int n = 40;
+    std::vector&lt;int&gt; memo(n + 1, -1); // cache of size n+1, all entries marked unknown (-1)
+    std::cout &lt;&lt; fibMemo(n, memo) &lt;&lt; "\n"; // efficient even for 40
+    return 0;
+}</code></pre>
+
+<table><tr><th>Code</th><th>Behavior</th></tr>
+<tr><td><code>if (n &lt;= 1) return ...</code></td><td>Base-case guard — evaluated first. It terminates recursion. Omission produces unbounded self-invocation and termination failure.</td></tr>
+<tr><td><code>return n * fact(n-1);</code></td><td>Recursive case: assumes <code>fact(n-1)</code> is correct and scales it by n. Each caller remains on the call stack until the reduced result returns.</td></tr>
+<tr><td><code>fib(n-1)+fib(n-2)</code></td><td>Two self-invocations per call produce exponential branching. A call tree for fib(5) contains fib(3) twice and fib(2) three times — redundant computation.</td></tr>
+<tr><td><code>if (m[n]!=-1) return m[n];</code></td><td>Cache lookup: if fib(n) was previously solved, return it in O(1), eliminating the repeated subtree.</td></tr>
+<tr><td><code>return m[n] = ...</code></td><td>Single computation followed by storage and return. Subsequent calls for the same n are constant time. Total complexity O(n) instead of O(2ⁿ).</td></tr></table>
+
+<div class="callout warn"><strong>Recursion checklist:</strong> 1) Define the base case. 2) Ensure each recursive call reduces the input. 3) Confirm all paths reach the base case. Validate with minimal inputs (0, 1, 2) and trace invocations when behavior is unclear. A crash or hang typically indicates a missing or unreachable base case.</div>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li><strong>Stack from a vector:</strong> Implement stack operations on <code>std::vector&lt;int&gt; v;</code>. Implement <code>push</code> with <code>push_back</code>, <code>top</code> with <code>back()</code>, and <code>pop</code> with <code>pop_back()</code>. Push 10, 20, 30 and record <code>top()</code> after each pop. Expected sequence: 30, then 20, then 10.</li>
+<li><strong>Reverse a linked list:</strong> On paper, represent 1 → 2 → 3 → null, then reverse the pointers to obtain 3 → 2 → 1 → null. Maintain three pointers: <code>prev</code> (initially null), <code>cur</code> (initially head), and <code>nxt</code> (preserves cur's successor before reassignment). Then implement the iterative procedure.</li>
+<li><strong>Valid parentheses:</strong> Given a string such as <code>"{[()]}"</code> or <code>"{[(])}"</code>, use <code>std::stack&lt;char&gt;</code>. Push each opening bracket <code>( [ {</code>. For each closing bracket, verify the stack is non-empty and the top element corresponds; if so pop, otherwise report invalid. An empty stack at termination indicates valid input.</li>
+<li><strong>Linear vs binary search measurement:</strong> Construct a sorted vector of 1,000,000 integers (0..999999). Measure a linear scan versus <code>binarySearch</code> for target 999999 with <code>chrono</code>. Compare ~1M comparisons against ~20 and record both durations.</li>
+<li><strong>Filesystem traversal preview:</strong> With <code>std::queue&lt;std::string&gt;</code> and <code>std::filesystem</code> (covered in Lesson 07/09), enqueue a starting directory, then while the queue is non-empty: remove the front entry, enumerate its entries, enqueue subdirectories, and output files. This is BFS applied to a directory hierarchy.</li>
+</ol>
+<div class="callout ok"><strong>Completion criteria:</strong> You can state representative Big-O classes and their implications, diagram a three-node linked list with values and pointers, distinguish LIFO from FIFO, and implement binary search plus a recursive function with a correct base case from memory.</div>
+
+<div class="pager"><a class="btn ghost" href="05-stl.html">← STL</a><a class="btn" href="07-advanced.html">Next: Advanced C++ →</a></div>
+<footer>Learn C++ From Scratch · Lesson 06</footer>
+</main></div><script src="script.js"></script></body></html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>07 · Advanced C++ — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 07 · Level up to pro · Beginner Friendly</span>
+<h1>Templates, exceptions, lambdas, threads, filesystem &amp; system calls</h1>
+<p>These facilities support production-scale C++: generic code, structured error handling, inline callables, concurrency, filesystem access, and interaction with the operating system. Each term is defined on first use, followed by a complete example and a line-by-line walkthrough.</p>
+
+<div class="toc"><strong>In this lesson</strong><ol><li>Templates — generic code parameterized by type</li><li>Exceptions — structured propagation of runtime errors</li><li>Lambdas — anonymous functions defined inline</li><li>Threads and mutexes — concurrent execution with synchronized access</li><li>Filesystem — portable file and directory operations</li><li>System calls — controlled requests to the kernel</li><li>Splitting projects + CMake — multi-file builds</li><li>Exercises</li></ol></div>
+
+<h2>1. Templates — generic code parameterized by type</h2>
+<p>A function such as <code>int biggest(int a, int b)</code> applies only to <code>int</code>. Duplicating it for <code>double</code> or <code>string</code> repeats identical logic for each type.</p>
+<p>A <strong>template</strong> defines logic once with a type parameter. The <strong>compiler</strong> instantiates a type-specific version for each type used at a call site. One definition therefore serves <code>int</code>, <code>double</code>, <code>string</code>, and other compatible types.</p>
+
+<div class="explain"><strong>Definition: template, type parameter, compile-time instantiation</strong>
+<ul><li><strong>Template</strong> — a definition parameterized by type, e.g. “maximum of two values of type T”. <code>T</code> is a placeholder resolved per use.</li><li><strong>typename</strong> (or <code>class</code>) in <code>template&lt;typename T&gt;</code> declares that T is a type parameter. In this context it does not denote an OOP class.</li><li><strong>Compile-time instantiation</strong> — resolution during the build. Calls to <code>myMax(3,7)</code> and <code>myMax(3.5,2.1)</code> cause the compiler to generate <code>int</code> and <code>double</code> specializations respectively.</li><li><strong>Class template</strong> — the same mechanism applied to a class, e.g. <code>Box&lt;T&gt;</code> or <code>std::vector&lt;T&gt;</code>. <code>vector</code> itself is a class template, which is why <code>vector&lt;int&gt;</code> and <code>vector&lt;string&gt;</code> are both valid.</li></ul>
+</div>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+// Function template: maximum of two values of identical type T.
+// T is deduced from the arguments: int, double, string...
+template&lt;typename T&gt;
+T myMax(T a, T b) {
+    return (a &gt; b) ? a : b; // ternary: evaluates to a if a&gt;b, else b
+}
+
+// Class template: a container holding a single value of type T.
+template&lt;typename T&gt;
+class Box {
+    T v; // stored value of type T
+public:
+    Box(T x): v(x) {}      // constructor initializes v from x
+    T get() const { return v; } // returns the stored value
+};
+
+int main() {
+    // int arguments -&gt; compiler instantiates myMax&lt;int&gt;:
+    std::cout &lt;&lt; myMax(3, 7) &lt;&lt; " ";         // 7
+    // double arguments -&gt; compiler instantiates myMax&lt;double&gt;:
+    std::cout &lt;&lt; myMax(3.5, 2.1) &lt;&lt; "\n";   // 3.5
+    // string arguments -&gt; compiler instantiates myMax&lt;string&gt;:
+    std::cout &lt;&lt; myMax(std::string("apple"), std::string("banana")) &lt;&lt; "\n";
+
+    Box&lt;std::string&gt; b("hi"); // Box instantiated for std::string
+    std::cout &lt;&lt; b.get() &lt;&lt; "\n"; // hi
+
+    Box&lt;int&gt; bi(42); // identical definition instantiated for int
+    std::cout &lt;&lt; bi.get() &lt;&lt; "\n"; // 42
+    return 0;
+}</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>template&lt;typename T&gt;</code></td><td>Declares T as a type parameter. The following function or class applies to any T.</td></tr>
+<tr><td><code>T myMax(T a, T b)</code></td><td>Accepts two values of type T and returns type T. T is bound per call site.</td></tr>
+<tr><td><code>return (a&gt;b)?a:b;</code></td><td>Returns the greater operand. Requires that T supports <code>operator&gt;</code>; <code>int</code>, <code>double</code>, and <code>string</code> satisfy this.</td></tr>
+<tr><td><code>class Box { T v; ... }</code></td><td>Defines storage for one value of type T. Structure is fixed; the value type varies per instantiation.</td></tr>
+<tr><td><code>Box&lt;std::string&gt; b("hi");</code></td><td>Instantiates the class with T fixed to <code>string</code> for this object.</td></tr></table>
+
+<div class="callout"><strong>Selection rule:</strong> Use a template when the logic is identical and only the type varies (maximum, exchange, output, containers). When behavior differs per type, prefer overloads or separate definitions.</div>
+
+<h2>2. Exceptions — structured propagation of runtime errors</h2>
+<p>Standard execution follows the expected path: division succeeds, files open. When an operation cannot produce a valid result — division by zero, missing file — the function must signal failure to the caller. C++ provides <strong>throw</strong> to raise an error object, <strong>try</strong> to delimit code that may raise, and <strong>catch</strong> to handle the error at a suitable level.</p>
+
+<div class="explain"><strong>Definition: exception, throw, try, catch, what()</strong>
+<ul><li><strong>Exception</strong> — an error object that transfers control to a handler, e.g. <code>std::runtime_error("divide by zero")</code>.</li><li><strong>throw</strong> — raises an exception: <code>throw std::runtime_error(...)</code>. The function exits immediately; no further statements execute.</li><li><strong>try</strong> — designates a block that may raise. Code that can throw is placed inside <code>try { ... }</code>.</li><li><strong>catch</strong> — handles a raised exception. <code>catch(const std::exception&amp; e)</code> accepts most standard errors. <code>e.what()</code> returns the diagnostic message.</li><li><strong>Stack unwinding</strong> — after a throw, active function calls terminate in reverse order until a matching catch is found. If none exists, the program terminates.</li></ul>
+</div>
+
+<pre><code>#include &lt;stdexcept&gt; // for std::runtime_error, std::exception
+#include &lt;iostream&gt;
+
+// When b is zero no quotient exists — raise instead of returning a sentinel.
+double divide(double a, double b) {
+    if (b == 0) {
+        throw std::runtime_error("divide by zero"); // raise error object
+    }
+    return a / b; // standard path: defined division
+}
+
+int main() {
+    // Delimit operations that may raise:
+    try {
+        std::cout &lt;&lt; divide(10, 2) &lt;&lt; "\n"; // 5 — no exception, standard output
+        std::cout &lt;&lt; divide(1, 0) &lt;&lt; "\n";  // throws — control transfers to catch
+        std::cout &lt;&lt; "you never see this\n";    // unreachable after throw
+    }
+    catch (const std::exception&amp; e) {
+        // Handler: report the condition and continue defined execution.
+        std::cout &lt;&lt; "Error: " &lt;&lt; e.what() &lt;&lt; "\n"; // Error: divide by zero
+    }
+    std::cout &lt;&lt; "program continues safely\n";
+    return 0;
+}</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>throw std::runtime_error(...)</code></td><td>Constructs an error object with a message and exits <code>divide()</code> immediately; the subsequent <code>return</code> does not execute.</td></tr>
+<tr><td><code>try { ... }</code></td><td>Marks the enclosed statements as exception-aware. Execution proceeds sequentially until a throw occurs.</td></tr>
+<tr><td>Statement after throw is skipped</td><td>Control leaves the try block at the throw point; remaining statements in the block do not execute.</td></tr>
+<tr><td><code>catch(const std::exception&amp; e)</code></td><td>Receives the thrown object. The reference (<code>&amp;</code>) avoids a copy; <code>const</code> prohibits modification.</td></tr>
+<tr><td><code>e.what()</code></td><td>Returns the stored message: "divide by zero".</td></tr></table>
+
+<div class="callout warn"><strong>Exceptions vs. return values:</strong> Use exceptions for unexpected failure conditions (resource exhaustion, missing required file, invalid domain such as division by zero). For routine outcomes such as invalid user input or absent search results, prefer return codes or <code>std::optional</code>. Never suppress an exception with an empty catch block; at minimum record the diagnostic.</div>
+
+<h2>3. Lambdas — anonymous functions defined inline</h2>
+<p>A named function is declared separately from its call site. When a short predicate or comparator is required exactly once — for filtering, counting, or ordering — a separate named definition adds indirection. A <strong>lambda</strong> defines an anonymous function at the point of use.</p>
+
+<div class="explain"><strong>Definition: lambda, capture, parameters, body</strong><br>A lambda has the form <code>[capture](parameters){ body }</code>:
+<ul><li><strong>[capture]</strong> — variables from the enclosing scope made visible inside the lambda. <code>[]</code> captures nothing. <code>[&amp;]</code> captures by reference. <code>[=]</code> captures by copy. <code>[threshold]</code> copies only threshold. <code>[&amp;threshold]</code> references only threshold.</li><li><strong>(parameters)</strong> — inputs, as in a standard function. Example: <code>(int x)</code>.</li><li><strong>{ body }</strong> — implementation. Must yield a value convertible to the type required by the algorithm (e.g. <code>bool</code> for <code>count_if</code> or a strict ordering for <code>sort</code>).</li><li><strong>Reference (&amp;) vs. copy (=):</strong> a reference observes and can modify the original; a copy operates on a snapshot. Prefer copies unless shared mutable access is required.</li></ul>
+</div>
+
+<pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt; // count_if, sort
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector&lt;int&gt; v = {1, 2, 3, 4, 5};
+    int threshold = 3;
+
+    // Count elements exceeding 3.
+    // For each x in v, the predicate evaluates x &gt; threshold.
+    // [&amp;] grants access to enclosing variables by reference.
+    int n = std::count_if(v.begin(), v.end(),
+        [&amp;](int x) { return x &gt; threshold; });
+    std::cout &lt;&lt; n &lt;&lt; "\n"; // 2 (elements 4 and 5)
+
+    // Equivalent with explicit capture restricted to threshold:
+    // [&](int x){...} vs [&amp;threshold](int x){...} — the latter is more precise.
+
+    // Order descending: a precedes b when a &gt; b.
+    // [] indicates no external state is required, only a and b.
+    std::sort(v.begin(), v.end(),
+        [](int a, int b) { return a &gt; b; });
+    // v is now 5 4 3 2 1
+
+    for (int x : v) std::cout &lt;&lt; x &lt;&lt; " ";
+    std::cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+
+<table><tr><th>Lambda component</th><th>Explanation</th></tr>
+<tr><td><code>[&amp;]</code></td><td>Captures enclosing variables by reference. The lambda observes the current value of threshold.</td></tr>
+<tr><td><code>[]</code></td><td>Captures nothing. Appropriate when the operation depends only on its parameters.</td></tr>
+<tr><td><code>(int x)</code> / <code>(int a, int b)</code></td><td>Parameters. <code>count_if</code> supplies each element as <code>x</code>; <code>sort</code> supplies pairs <code>(a,b)</code> and interprets a true result as “a precedes b”.</td></tr>
+<tr><td><code>{ return x &gt; threshold; }</code></td><td>Predicate body. <code>count_if</code> counts elements for which it returns true.</td></tr></table>
+
+<div class="callout"><strong>Usage rule:</strong> When a callable is used once and spans one to three lines, define it as a lambda at the call site. When it is reused across call sites or exceeds that scope, define a named function so it can be documented and tested independently.</div>
+
+<h2>4. Threads and mutexes — concurrent execution with synchronized access</h2>
+<p>Sequential execution performs one statement at a time. A <strong>thread</strong> is an independent execution path; multiple threads execute concurrently within one process. Concurrency reduces elapsed time for parallelizable work but introduces shared-state hazards when threads access the same object without coordination.</p>
+
+<div class="explain"><strong>Definition: thread, shared data, data race, mutex, lock_guard, join</strong>
+<ul><li><strong>Thread</strong> (<code>std::thread</code>) — an independent execution path. <code>main()</code> executes on the initial thread; <code>emplace_back(work,i)</code> starts an additional thread executing <code>work(i)</code>.</li><li><strong>Shared data</strong> — any object accessible from multiple threads, e.g. <code>std::cout</code> or a counter.</li><li><strong>Data race</strong> — concurrent unsynchronized modification of shared data, where the result depends on scheduling. In C++ this is <strong>undefined behavior</strong>: the standard imposes no defined outcome.</li><li><strong>Mutex</strong> (<code>std::mutex</code>, mutual exclusion) — a synchronization primitive permitting exactly one holder at a time. Threads without the mutex block until it is available.</li><li><strong>lock_guard</strong> — an RAII guard that acquires on construction and releases on destruction (including exception paths). Explicit unlock is unnecessary.</li><li><strong>join()</strong> — blocks until the associated thread completes. Without it, <code>main</code> may terminate while worker threads are still active.</li></ul>
+</div>
+
+<pre><code>#include &lt;thread&gt;   // std::thread, std::this_thread
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;mutex&gt;    // std::mutex, std::lock_guard
+
+std::mutex m; // single mutex protecting shared output
+
+// Each thread executes this function with a distinct id.
+void work(int id) {
+    // Acquire exclusive access for the extent of this block.
+    // Exactly one thread holds the mutex within these braces at a time.
+    std::lock_guard&lt;std::mutex&gt; lock(m); // acquisition point
+    std::cout &lt;&lt; "thread " &lt;&lt; id &lt;&lt; "\n";
+} // release point (guard destroyed)
+
+int main() {
+    std::vector&lt;std::thread&gt; ts; // active threads
+
+    for (int i = 0; i &lt; 4; i++) {
+        ts.emplace_back(work, i); // start thread executing work(i) concurrently
+    }
+    for (auto&amp; t : ts) {
+        t.join(); // block until each thread completes before exiting main
+    }
+    return 0;
+}
+// Compile: g++ -std=c++17 prog.cpp -pthread -o prog
+// -pthread enables thread support.</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>std::mutex m;</code></td><td>Defines one mutex shared by all threads. Global scope ensures a single instance.</td></tr>
+<tr><td><code>std::lock_guard&lt;std::mutex&gt; lock(m);</code></td><td>Acquires the mutex on construction. A thread arriving while another holds it blocks. Release is automatic at scope exit, including exception paths.</td></tr>
+<tr><td><code>std::cout &lt;&lt; ...</code> inside lock</td><td>Restricts shared output to the mutex holder. Without synchronization, characters from concurrent threads interleave.</td></tr>
+<tr><td><code>ts.emplace_back(work,i);</code></td><td>Constructs and starts a thread executing <code>work(i)</code>. Execution proceeds concurrently.</td></tr>
+<tr><td><code>t.join();</code></td><td>Waits for the thread to complete. Joining all threads ensures all work is finished before exit.</td></tr></table>
+
+<div class="callout warn"><strong>Synchronization rule: shared mutable data accessed from multiple threads requires a mutex or atomic.</strong> Restrict the locked region (<strong>critical section</strong>) to the shared access, not the surrounding computation. Acquiring multiple mutexes in inconsistent orders across threads risks deadlock. For a simple counter, <code>std::atomic&lt;int&gt;</code> is preferable to a mutex.</div>
+
+<h2>5. Filesystem — portable file and directory operations</h2>
+<p><code>std::filesystem</code> (C++17) provides portable operations for enumerating directories, testing entry types, creating directories, and querying file attributes across Windows, macOS, and Linux without OS-specific calls.</p>
+
+<div class="explain"><strong>Definition: filesystem, path, directory, iterator</strong>
+<ul><li><strong>std::filesystem</strong> — standard facility for files and directories. Requires C++17 (<code>-std=c++17</code>).</li><li><strong>path</strong> (<code>p.path()</code>) — filesystem address of an entry, e.g. <code>"demo/a/b"</code> or <code>"./notes.txt"</code>.</li><li><strong>Directory</strong> — container for entries. <strong>File</strong> — data entry within a directory.</li><li><strong>directory_iterator(".")</strong> — enumerates entries in one directory. <strong>recursive_directory_iterator</strong> — enumerates entries including nested subdirectories.</li><li><strong>Namespace alias</strong> <code>namespace fs = std::filesystem;</code> abbreviates qualified names: <code>fs::path</code> for <code>std::filesystem::path</code>.</li></ul>
+</div>
+
+<pre><code>#include &lt;filesystem&gt; // portable file and directory operations
+#include &lt;iostream&gt;
+
+namespace fs = std::filesystem; // alias permitting fs:: prefix
+
+int main() {
+    // 1. Enumerate entries in the current directory ("." denotes current).
+    // p is each entry (file or directory) yielded in sequence.
+    for (auto&amp; p : fs::directory_iterator(".")) {
+        std::cout &lt;&lt; p.path() &lt;&lt; " "
+                  &lt;&lt; (fs::is_directory(p) ? "[dir]" : "[file]")
+                  &lt;&lt; "\n";
+    }
+
+    // 2. Create nested directories demo/a/b (including missing parents).
+    fs::create_directories("demo/a/b");
+
+    // 3. Query file size in bytes.
+    // The target must exist; otherwise a filesystem_error is thrown.
+    std::cout &lt;&lt; fs::file_size("07-advanced.html") &lt;&lt; " bytes\n";
+
+    // 4. Recursive variant enumerating all descendants:
+    // for (auto&amp; p : fs::recursive_directory_iterator(".")) { ... }
+    return 0;
+}
+// Compile: g++ -std=c++17 prog.cpp -o prog
+// (Current toolchains link filesystem automatically.)</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>fs::directory_iterator(".")</code></td><td>Enumerates entries in the current directory.</td></tr>
+<tr><td><code>p.path()</code></td><td>Returns the entry address, e.g. <code>"./demo"</code>.</td></tr>
+<tr><td><code>fs::is_directory(p) ? "[dir]" : "[file]"</code></td><td>Tests the entry type and selects the corresponding label.</td></tr>
+<tr><td><code>fs::create_directories("demo/a/b")</code></td><td>Creates the full path including missing parents. Idempotent — no effect if the path exists.</td></tr>
+<tr><td><code>fs::file_size(...)</code></td><td>Returns the size in bytes. Throws if the file is absent — handle with try/catch in production code.</td></tr></table>
+
+<h2>6. System calls — controlled requests to the kernel</h2>
+<p>Application code executes with restricted privileges and cannot directly control hardware or other processes. The <strong>kernel</strong> (the privileged OS core) mediates such operations. A <strong>system call</strong> is a formal request to the kernel — open a file, start a process, suspend for a duration. C++ standard facilities wrap the most common requests portably; direct OS interfaces are reserved for cases the standard does not cover.</p>
+
+<div class="explain"><strong>Definition: kernel, system call, POSIX, Windows API, portable</strong>
+<ul><li><strong>Kernel</strong> — privileged OS core managing hardware and isolation. Application code runs in user mode; the kernel runs in privileged mode.</li><li><strong>System call</strong> — invocation by which user code requests a privileged kernel operation (file access, process creation, socket setup).</li><li><strong>POSIX</strong> — the Linux/macOS interface family (e.g. <code>fork()</code>, <code>execvp()</code>, <code>opendir()</code>).</li><li><strong>Windows API</strong> — the Windows interface family (e.g. <code>CreateProcess()</code>, <code>FindFirstFile()</code>, <code>Sleep()</code>).</li><li><strong>Portable</strong> — valid across platforms. Prefer <code>std::filesystem</code>, <code>std::thread</code>, and <code>std::chrono</code> over direct OS calls except where OS-specific behavior is the subject (e.g. Lesson 10).</li></ul>
+</div>
+
+<table><tr><th>Operation</th><th>POSIX (Linux / macOS)</th><th>Windows</th><th>Portable C++ (preferred)</th></tr>
+<tr><td>Run another program</td><td><code>fork() + execvp()</code> — duplicate the process, then replace the copy with the target program</td><td><code>CreateProcess()</code></td><td>No single standard facility; see shell lesson (Lesson 10). Provisional option: <code>std::system()</code> below</td></tr>
+<tr><td>List files</td><td><code>opendir() / readdir()</code></td><td><code>FindFirstFile() / FindNextFile()</code></td><td><code>std::filesystem::directory_iterator</code></td></tr>
+<tr><td>Network socket</td><td><code>socket() / bind() / listen()</code></td><td><code>Winsock2</code> (<code>WSAStartup</code> first)</td><td>Library such as Asio, or <code>#ifdef</code> per OS</td></tr>
+<tr><td>Sleep / measure time</td><td><code>sleep() / usleep()</code></td><td><code>Sleep()</code> (milliseconds, capital S)</td><td><code>std::this_thread::sleep_for()</code> + <code>std::chrono</code></td></tr></table>
+
+<div class="explain"><strong>Definition: fork/exec vs. CreateProcess; directory enumeration APIs</strong>
+<ul><li><strong>fork()</strong> duplicates the calling process. <strong>execvp()</strong> replaces the duplicate with the specified program. POSIX program launch uses both steps.</li><li><strong>CreateProcess()</strong> starts a new process in a single call on Windows. The observable effect matches fork/exec with a different interface.</li><li><strong>opendir/readdir</strong> and <strong>FindFirstFile</strong> both expose directory enumeration as “open a directory, read names sequentially”. <code>std::filesystem</code> abstracts this difference and is therefore preferred.</li></ul>
+</div>
+
+<pre><code>#include &lt;thread&gt;   // for sleep_for
+#include &lt;chrono&gt;   // for clocks and durations
+#include &lt;cstdlib&gt;  // for std::system
+#include &lt;iostream&gt;
+
+int main() {
+    // --- Portable interval measurement and suspension ---
+    // steady_clock is monotonic and never adjusts backward,
+    // unlike wall-clock time. It is appropriate for elapsed-time measurement.
+    auto t0 = std::chrono::steady_clock::now();
+
+    // Suspend this thread for 500 ms. The OS deschedules the thread
+    // and resumes it after the interval — no polling, no CPU consumption.
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    auto t1 = std::chrono::steady_clock::now();
+    // Convert the interval to milliseconds for output:
+    auto ms = std::chrono::duration_cast&lt;std::chrono::milliseconds&gt;(t1 - t0);
+    std::cout &lt;&lt; "slept " &lt;&lt; ms.count() &lt;&lt; " ms\n";
+
+    // --- Execute an external command through the OS shell ---
+    // system() submits the string to the platform shell (cmd on Windows,
+    // sh on Linux/macOS) and returns the exit code (conventionally 0 = success).
+    int rc = std::system("echo hello from OS");
+    std::cout &lt;&lt; "exit code " &lt;&lt; rc &lt;&lt; "\n";
+    // Caution: system() delegates to the shell — never forward unsanitized
+    // user input (command-injection risk). For a controlled shell, use fork/exec
+    // or CreateProcess directly (Lesson 10).
+    return 0;
+}</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>steady_clock::now()</code></td><td>Records a timestamp. Two timestamps delimit an interval. Monotonic behavior ensures validity even if the system clock is adjusted.</td></tr>
+<tr><td><code>sleep_for(milliseconds(500))</code></td><td>Requests suspension for 500 ms. The OS schedules other work during the interval.</td></tr>
+<tr><td><code>duration_cast&lt;...&gt;(t1-t0)</code></td><td>Converts the interval to milliseconds. <code>.count()</code> yields the numeric value.</td></tr>
+<tr><td><code>std::system("echo ...")</code></td><td>Delegates the command to the OS shell and returns its exit code. Convenient for scripts; unsuitable for untrusted input.</td></tr></table>
+
+<h2>7. Splitting projects + CMake: multi-file builds</h2>
+<p>Single-file programs do not scale. Production code separates interface from implementation: a <strong>header file</strong> (<code>.h</code>) <em>declares</em> available entities, and a <strong>source file</strong> (<code>.cpp</code>) <em>defines</em> them. <code>main.cpp</code> consumes the declarations. A minimal build description (<strong>CMake</strong>) specifies which translation units compose the executable.</p>
+
+<div class="explain"><strong>Definition: declaration vs. definition, header, #pragma once, CMake</strong>
+<ul><li><strong>Declaration</strong> — a specification: “<code>int add(int a,int b);</code> exists” (terminated, no body). <strong>Definition</strong> — the implementation: “<code>int add(...) { return a+b; }</code>”.</li><li><strong>Header (.h)</strong> — declarations imported with <code>#include "math.h"</code>. <strong>Source (.cpp)</strong> — corresponding definitions. Quoted form <code>"..."</code> denotes a project-local file; bracket form <code>&lt;...&gt;</code> denotes a system or library header.</li><li><strong>#pragma once</strong> — restricts inclusion to once per translation unit, preventing duplicate-definition errors from repeated inclusion.</li><li><strong>CMake</strong> — a build generator. A short <code>CMakeLists.txt</code> (“build executable app from these sources”) produces platform-specific build commands.</li></ul>
+</div>
+
+<pre><code>// ---- File: math.h (declarations) ----
+#pragma once // include at most once per translation unit
+int add(int a, int b); // declaration: add accepts two ints and returns int
+
+// ---- File: math.cpp (definitions) ----
+#include "math.h" // verify definitions against declarations
+int add(int a, int b) { return a + b; } // definition: implementation
+
+// ---- File: main.cpp (use) ----
+#include &lt;iostream&gt; // system facility: input/output
+#include "math.h"     // project declarations: authorizes calls to add()
+int main() {
+    std::cout &lt;&lt; add(2, 3) &lt;&lt; "\n"; // 5
+    return 0;
+}
+
+// ---- Build without CMake (direct g++): ----
+// g++ -std=c++17 main.cpp math.cpp -o app
+// Meaning: compile both translation units and link into program "app".
+// Omitting math.cpp yields "undefined reference to add" (declaration without definition).
+
+// ---- File: CMakeLists.txt (build description) ----
+// cmake_minimum_required(VERSION 3.15) // minimum required CMake version
+// project(myapp)                       // project name
+// add_executable(app main.cpp math.cpp) // executable app composed of these sources
+// Build with:
+// cmake -S . -B build   (process description, prepare build/ directory)
+// cmake --build build   (compile and link)</code></pre>
+
+<table><tr><th>Line</th><th>Explanation</th></tr>
+<tr><td><code>#pragma once</code></td><td>Prevents multiple inclusion of the header within one translation unit, avoiding redefinition errors.</td></tr>
+<tr><td><code>int add(int a,int b);</code> in .h</td><td>Declaration: signature and return type without implementation.</td></tr>
+<tr><td><code>#include "math.h"</code> in math.cpp</td><td>Aligns the definition with its declaration; the compiler diagnoses mismatches.</td></tr>
+<tr><td><code>#include "math.h"</code> in main.cpp</td><td>Introduces the declaration so <code>add()</code> can be called and type-checked.</td></tr>
+<tr><td><code>g++ main.cpp math.cpp -o app</code></td><td>Compiles both sources and links them into app. <strong>Linking</strong> resolves declarations to definitions.</td></tr>
+<tr><td><code>add_executable(app main.cpp math.cpp)</code></td><td>CMake equivalent: defines executable target “app” from the two sources.</td></tr></table>
+
+<div class="callout ok"><strong>Structural model:</strong> Header specifies the interface (available functions and types). Source file implements it. The consuming translation unit references the header. The linker binds references to implementations. CMake records this composition for repeatable builds.</div>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li><strong>Generic printer:</strong> Write a function template <code>printVector</code> accepting <code>const std::vector&lt;T&gt;&amp; v</code> and emitting each element separated by spaces. Instantiate it with <code>vector&lt;int&gt; {1,2,3}</code> and <code>vector&lt;string&gt; {"hi","bye"}</code>. One definition must serve both types.</li>
+<li><strong>Observe and correct a data race:</strong> Define <code>int counter = 0;</code> and launch two threads each executing <code>for (int i=0;i&lt;100000;i++) counter++;</code>. Without synchronization the result is typically below 200000 (lost updates). Then protect <code>counter++</code> with <code>std::mutex</code> + <code>lock_guard</code> (or replace with <code>std::atomic&lt;int&gt;</code>) and confirm 200000 on every run.</li>
+<li><strong>Directory inventory:</strong> With <code>fs::recursive_directory_iterator(".")</code>, enumerate all files under the current directory, output each path with <code>file_size</code> (guarded by try/catch for inaccessible entries), and accumulate the total in <code>long long total</code>.</li>
+<li><strong>Minimal CMake project:</strong> Create a directory containing <code>math.h</code>, <code>math.cpp</code> (add and multiply), <code>main.cpp</code> (invokes both), and <code>CMakeLists.txt</code> with the three directives above. Configure with <code>cmake -S . -B build</code>, build with <code>cmake --build build</code>, and run the result. Remove math.cpp from the target once to inspect the linker diagnostic, then restore it.</li>
+<li><strong>Lambda facility:</strong> Given <code>vector&lt;int&gt; v = {5,1,4,2,3}</code>, apply <code>count_if</code> with a lambda to count even elements (<code>x % 2 == 0</code>), then <code>sort</code> with a lambda for ascending order. Compare captures <code>[&amp;]</code> and <code>[]</code> and state why each is or is not sufficient.</li>
+</ol>
+<div class="callout ok"><strong>Completion criteria:</strong> You can define templates and their instantiation point, handle errors with try/catch, decompose a lambda into capture, parameters, and body, explain thread synchronization with mutexes, and partition a single-file program into headers, sources, and a CMake build.</div>
+
+<div class="pager"><a class="btn ghost" href="06-dsa.html">← DSA</a><a class="btn" href="08-networking.html">Next: Networking →</a></div>
+<footer>Learn C++ From Scratch · Lesson 07</footer>
+</main></div><script src="script.js"></script></body></html>

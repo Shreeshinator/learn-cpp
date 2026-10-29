@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02 · Basics: Variables to STL — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Lesson 02 · Foundations masterclass</span>
+<h1>Variables, types, pointers, functions, and I/O</h1>
+<p>No prior knowledge assumed. This lesson defines variables and types, then progresses to <code>static_cast</code>, <code>enum class</code>, references, structs, and vectors. Each example is self-contained and compiles as shown.</p>
+
+<div class="toc"><strong>On this page</strong><ol>
+<li>Variables & types (C + C++ additions)</li>
+<li>Typecasting (all 4 C++ casts)</li>
+<li>Enums (old vs enum class)</li>
+<li>typedef / using</li>
+<li>Pointers & references</li>
+<li>Functions (all passing styles)</li>
+<li>struct / union</li>
+<li>Normal I/O + File I/O (C and C++)</li>
+<li>Keywords: static, const, friend, virtual…</li>
+<li>OOP preview</li>
+<li>STL, vectors & templates preview</li>
+<li>Control flow: if, loops, switch</li>
+</ol></div>
+
+<h2>1. Variables and fundamental types</h2>
+<p>A <strong>variable</strong> is a named storage location with an associated type. The type determines the size, the set of representable values, and the permitted operations. C++ is <em>statically typed</em>: each variable’s type is declared and checked at compile time.</p>
+<pre><code>int x = 10;
+char c = 'A';
+float f = 3.14f; // f suffix, otherwise 3.14 is a double
+double d = 3.14;
+bool b = true;</code></pre>
+<div class="explain"><strong>Line by line</strong><br>
+• <code>int x = 10;</code> — declares an integer variable <code>x</code> initialized to 10. Typically 4 bytes.<br>
+• <code>char c = 'A';</code> — declares a 1-byte character variable. Single quotes denote a character literal. The value is the character encoding (65 in ASCII/UTF-8 for 'A').<br>
+• <code>float f = 3.14f;</code> — declares a 4-byte floating-point variable. The <code>f</code> suffix specifies <code>float</code>; without it, <code>3.14</code> has type <code>double</code>.<br>
+• <code>double d = 3.14;</code> — declares an 8-byte floating-point variable with higher precision. The default choice for fractional values.<br>
+• <code>bool b = true;</code> — declares a Boolean variable holding <code>true</code> or <code>false</code>. Introduced in C++ (C historically used <code>int</code> 0/1).</div>
+
+<table><tr><th>Type</th><th>From</th><th>Typical size</th><th>Holds</th></tr>
+<tr><td><code>char</code></td><td>C</td><td><strong>1</strong> (guaranteed)</td><td>character value, e.g. 'A' (numeric code 65)</td></tr>
+<tr><td><code>int</code></td><td>C</td><td>4 (platform-dependent, minimum 2)</td><td>whole numbers, typically −2,147,483,648 to 2,147,483,647</td></tr>
+<tr><td><code>float</code></td><td>C</td><td>4</td><td>floating-point, approximately 7 decimal digits of precision</td></tr>
+<tr><td><code>double</code></td><td>C</td><td>8</td><td>floating-point, approximately 15 decimal digits of precision</td></tr>
+<tr><td><code>void</code></td><td>C</td><td>— (no value)</td><td>indicates absence of a value or return type</td></tr>
+<tr><td><code>bool</code></td><td>C++</td><td>1</td><td>true or false</td></tr>
+<tr><td><code>wchar_t</code></td><td>C++</td><td>2 or 4</td><td>wide character for extended character sets</td></tr>
+<tr><td><code>std::string</code></td><td>C++</td><td>variable</td><td>character sequence, e.g. "hello world"</td></tr>
+<tr><td><code>nullptr</code></td><td>C++11</td><td>—</td><td>null pointer constant (prefer over NULL)</td></tr></table>
+<div class="callout"><strong>Type sizes:</strong> <code>char</code> is always 1 byte. Other sizes are implementation-defined — <code>int</code> is commonly 4 bytes, but the standard specifies only minimum ranges. When an exact width is required (file formats, network protocols), use fixed-width types such as <code>int32_t</code> and <code>uint8_t</code> from <code>&lt;cstdint&gt;</code>.</div>
+
+<h3>const, constexpr, auto</h3>
+<pre><code>const int MAX = 100;        // constant: value cannot be modified. Prefer over #define
+constexpr int SIZE = 10*10; // constant evaluated at compile time (C++11+)
+auto y = 42;      // C++11: type deduced by the compiler as int
+auto s = std::string("hi"); // deduced as std::string</code></pre>
+<p><code>#define MAX 100</code> performs untyped text substitution. <code>const</code> and <code>constexpr</code> are typed and respect scope. Prefer <code>const</code> and <code>constexpr</code>.</p>
+
+<h3>Storage duration</h3>
+<pre><code>int global = 5; // global/static storage: data segment, persists for the program lifetime
+
+int main(){
+  int local = 1; // automatic storage (stack): released when the function returns
+  static int calls = 0; // static storage inside a function: initialized once, persists across calls
+  calls++;
+  int* p = new int(10); // dynamic storage (heap): persists until explicitly released
+  delete p;
+}</code></pre>
+<table><tr><th>Storage</th><th>Declaration</th><th>Lifetime</th></tr>
+<tr><td>Automatic (stack)</td><td><code>int x;</code> inside a function</td><td>until the enclosing block ends (<code>}</code>)</td></tr>
+<tr><td>Static</td><td>global or <code>static</code> variable</td><td>entire program execution</td></tr>
+<tr><td>Dynamic (heap)</td><td>C: <code>malloc/free</code> · C++: <code>new/delete</code></td><td>until explicitly released</td></tr></table>
+
+<h2>2. Typecasting — converting between types</h2>
+<p>A <strong>cast</strong> is an explicit conversion from one type to another, for example from <code>double</code> to <code>int</code>. C permits <code>(int)3.7</code>, which performs the conversion without restriction. C++ provides four named casts that are type-checked, explicit, and searchable.</p>
+<pre><code>double pi = 3.7;
+int a = (int)pi;                 // C-style: permitted, but unchecked and difficult to locate
+
+int b = static_cast&lt;int&gt;(pi);    // standard numerical conversion, checked at compile time
+// reinterpret_cast: low-level reinterpretation of the bit pattern, e.g. address manipulation
+int* p = reinterpret_cast&lt;int*&gt;(0x100);
+// const_cast: removes const qualification only
+// dynamic_cast: checked downcast within an inheritance hierarchy, requires a polymorphic base, verified at runtime</code></pre>
+<div class="explain"><strong>Selection criteria</strong><br>
+• Standard numeric or pointer-to-base conversion → <code>static_cast</code>.<br>
+• Low-level address or bit-pattern reinterpretation → <code>reinterpret_cast</code> (infrequent, implementation-dependent).<br>
+• Removal of <code>const</code> to interoperate with a non-const API → <code>const_cast</code> (infrequent).<br>
+• Conversion from <code>Base*</code> to <code>Derived*</code> with runtime verification → <code>dynamic_cast</code> (returns <code>nullptr</code> on failure for pointer types).<br>
+Frequent casting indicates the design should be revised to reduce type mismatches.</div>
+<pre><code>// Implicit promotion: the compiler widens automatically
+int i = 5;
+float f2 = i + 2.5f; // int + float -&gt; float
+char ch = 'A';
+int code = ch;       // char -&gt; int (65). This is integral promotion.
+int x2 = 7 / 2;      // 3: both operands are int, so integer division applies. Use 7.0/2 for 3.5</code></pre>
+
+<h2>3. Enums — named constant sets</h2>
+<p>An enumeration defines a set of named integer constants, avoiding unexplained literal values:</p>
+<pre><code>enum Color { RED, GREEN = 5, BLUE }; // RED=0, GREEN=5, BLUE=6 (continues sequentially from 5)</code></pre>
+<p>A plain <code>enum</code> exposes its enumerators in the enclosing scope and converts implicitly to <code>int</code>. C++ provides scoped enumerations that prevent both:</p>
+<pre><code>enum class Color { Red, Green, Blue }; // scoped, strongly typed
+Color c = Color::Red;                  // qualification required
+// int v = c; // ERROR: no implicit conversion — this restriction is intentional
+int v = static_cast&lt;int&gt;(c);            // explicit conversion where required</code></pre>
+<p>Rule: <strong>use <code>enum class</code></strong> for all new code.</p>
+
+<h2>4. typedef / using — type aliases</h2>
+<pre><code>typedef unsigned int uint;              // C style
+typedef struct { int x, y; } Point;      // C style struct alias
+
+using uint = unsigned int;              // C++ style — prefer this
+using Matrix = std::vector&lt;std::vector&lt;int&gt;&gt;; // Matrix is an alias for a 2D vector</code></pre>
+<p><code>using</code> provides the functionality of <code>typedef</code> and integrates consistently with templates. Prefer <code>using</code>.</p>
+
+<h2>5. Pointers and references</h2>
+<p>A pointer is a variable that stores a <strong>memory address</strong>. A reference is an <strong>alias</strong> — an alternative name for an existing variable.</p>
+<pre><code>int x = 10;
+int* p = &x;  // &amp; = address-of operator. p stores the address of x
+int v = *p;   // * = dereference operator. v receives the value at that address (10)
+p = nullptr;  // null state: points to no object. Use nullptr; avoid NULL (defined as 0)</code></pre>
+<div class="explain"><strong><code>*</code> and <code>&amp;</code> depend on context</strong><br>
+• In a declaration: <code>int* p</code> declares a pointer; <code>int&amp; r</code> declares a reference.<br>
+• In an expression: <code>*p</code> dereferences a pointer; <code>&amp;x</code> takes the address of <code>x</code>.<br>
+Declarations are read right-to-left: <code>int* p</code> = “p is a pointer to int”.</div>
+<pre><code>int& r = x;   // reference: alias for x. Must be initialized, cannot be null, cannot be reseated
+r = 20;       // assignment through r modifies x; both names refer to the same storage
+
+int arr[3] = {1, 2, 3};
+*(arr + 1) == arr[1]; // true. arr converts to a pointer to its first element.
+                      // Adding 1 advances by sizeof(int), not by one byte. This is pointer arithmetic.
+
+// Dynamic allocation:
+int* q = new int(5); // allocates one int on the heap
+delete q;            // must be released; otherwise the allocation is leaked
+int* a = new int[10]; // array allocation on the heap
+delete[] a;           // array form required for arrays</code></pre>
+<div class="callout warn"><strong>Common pointer errors:</strong> (1) <em>Dangling pointer</em> — accessing storage after <code>delete</code>. (2) <em>Memory leak</em> — omitting <code>delete</code> for heap storage. (3) <em>Double-free</em> — calling <code>delete</code> twice on the same address. Mitigation: use smart pointers (Lesson 04).</div>
+<pre><code>#include &lt;memory&gt;
+std::unique_ptr&lt;int&gt; u = std::make_unique&lt;int&gt;(5); // sole ownership; released automatically
+// *u accesses the value. u cannot be copied, only moved.
+
+// Pointer to pointer and function pointers (common in C interfaces):
+int** pp = &p;              // pointer to a pointer
+void foo(int n) {}
+void (*fp)(int) = &foo;     // fp is a pointer to function foo
+fp(42);                     // invokes foo(42)</code></pre>
+
+<h2>6. Functions</h2>
+<pre><code>int add(int a, int b); // declaration (prototype): states the signature; definition follows
+int add(int a, int b) { return a + b; } // definition: provides the implementation</code></pre>
+<h3>Argument-passing methods</h3>
+<pre><code>void f1(int x) { x = 99; }              // by value: operates on a copy; caller is unaffected
+void f2(int* x) { *x = 99; }            // by pointer (C style): permits null; validate before dereference
+void f3(int& x) { x = 99; }             // by reference (C++ style): modifies caller; never null
+void f4(const std::string& s);          // const reference: avoids copying, read-only. Standard for strings and vectors
+
+void greet(int a = 10); // default argument (C++): greet() is equivalent to greet(10)
+
+// Variadic function (C style, uncommon): sum(3, 1,2,3)
+#include &lt;cstdarg&gt;
+int sum(int n, ...); // for a type-safe alternative, see variadic templates in Lesson 07</code></pre>
+<pre><code>// Overloading (C++ only; C does not support overloading):
+int add(int a, int b) { return a+b; }
+double add(double a, double b) { return a+b; } // same name with distinct parameter types is permitted
+
+inline int sq(int x) { return x*x; } // suggestion to expand at the call site; the compiler determines application</code></pre>
+
+<h2>7. struct / union — aggregate types</h2>
+<pre><code>struct Point { int x; int y; }; // C: aggregate of public data members
+struct Point p1 = {1, 2};</code></pre>
+<p>In C++, <code>struct</code> and <code>class</code> differ only in default member access (<code>struct</code> defaults to <code>public</code>; <code>class</code> defaults to <code>private</code>). C++ structs may include member functions, constructors, and inheritance:</p>
+<pre><code>struct Point {
+  int x, y;
+  Point(int x, int y): x(x), y(y) {}
+  void move(int dx, int dy){ x+=dx; y+=dy; }
+};</code></pre>
+<pre><code>union Data { int i; float f; }; // i and f occupy the same storage. Size equals the largest member.
+Data d; d.i = 42;               // reading d.f would reinterpret the same bytes as float
+// Applicable to storage-constrained layouts and hardware registers. Prefer std::variant in modern C++.</code></pre>
+
+<h2>8. Standard I/O and File I/O</h2>
+<h3>C style (retained for compatibility; common in existing C code and embedded systems)</h3>
+<pre><code>#include &lt;cstdio&gt;
+int x = 42; char c = 'A'; const char* str = "hi";
+printf("%d %s %c\n", x, str, c);
+scanf("%d", &x); // address-of operator required to store the result
+
+FILE* fp = fopen("a.txt", "r"); // modes: r = read, w = write (truncate), a = append, r+ / w+ = read and write
+if(fp){
+  fprintf(fp, "hi %d", x);
+  fscanf(fp, "%d", &x);
+  fclose(fp);
+}</code></pre>
+<table><tr><th>Specifier</th><th>Corresponding type</th></tr>
+<tr><td><code>%d</code></td><td>int</td></tr><tr><td><code>%f</code></td><td>float / double</td></tr><tr><td><code>%c</code></td><td>char</td></tr><tr><td><code>%s</code></td><td>C-style string</td></tr><tr><td><code>%p</code></td><td>pointer</td></tr><tr><td><code>%x</code></td><td>unsigned int, hexadecimal format</td></tr></table>
+<h3>C++ style (recommended)</h3>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+int x; std::string str;
+std::cout &lt;&lt; x &lt;&lt; std::endl; // endl inserts a newline and flushes the stream (prefer '\n' in loops for performance)
+std::cin &gt;&gt; x;                    // formatted extraction; skips leading whitespace
+std::getline(std::cin, str);     // reads a complete line including spaces
+
+std::ifstream in("a.txt");   // input file stream for reading
+std::ofstream out("b.txt");  // output file stream for writing (truncates existing content)
+std::string line;
+while(std::getline(in, line)) out &lt;&lt; line &lt;&lt; '\n';</code></pre>
+<div class="callout warn"><strong>Input interaction:</strong> after <code>std::cin &gt;&gt; x</code>, the trailing newline remains in the buffer, so a subsequent <code>getline</code> returns an empty string. Insert <code>std::cin.ignore(1000,'\n');</code> between formatted extraction and line-based input.</div>
+
+<h2>9. Storage and type qualifiers: static, const, friend, virtual</h2>
+<pre><code>const int* p1;       // pointer to const: *p1 cannot be modified through p1 (p1 itself can be reassigned)
+int* const p2 = &x;  // const pointer: p2 cannot be reassigned (*p2 can be modified)
+int f() const;       // const member function: does not modify the object state
+constexpr int N = 64; // compile-time constant expression</code></pre>
+<pre><code>// static has three distinct meanings depending on context:
+void counter(){
+  static int n = 0; // 1. local static: initialized once, retains its value across calls
+  n++;
+}
+static int helper(){} // 2. internal linkage at file scope (C). In C++ prefer an anonymous namespace.
+class A {
+  static int count; // 3. static data member: single instance shared by all objects of the class
+};</code></pre>
+<pre><code>extern int g;   // declaration of a variable defined in another translation unit
+volatile int flag; // indicates the value may change externally; prevents caching optimizations
+
+class A {
+  friend class B;     // grants class B access to private members of A
+  friend void f(A&);  // grants function f access to private members of A
+private: int x;
+};
+
+virtual void draw() = 0; // pure virtual function: derived classes must override; makes the class abstract</code></pre>
+
+<h2>10. OOP concepts (preview — full Lesson 03)</h2>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;string&gt;
+class Animal {
+private: int age = 0;
+protected: std::string name; // accessible to derived classes, not to external code
+public:
+  Animal(std::string n): name(n) {}
+  virtual void speak() { std::cout &lt;&lt; name &lt;&lt; "\n"; } // virtual: dispatch to the derived override
+  virtual ~Animal() {} // virtual destructor required when a base class has virtual functions
+};
+class Dog : public Animal { // public inheritance (protected and private inheritance also exist)
+public:
+  Dog(): Animal("dog") {}
+  void speak() override { std::cout &lt;&lt; "woof\n"; } // override: replaces the base implementation
+};</code></pre>
+<div class="explain"><strong>The four principles</strong><br>
+1. <strong>Encapsulation:</strong> restrict direct access (<code>private</code>) and expose a controlled interface (<code>public</code>).<br>
+2. <strong>Inheritance:</strong> derive classes from a base (<code>class Dog : public Animal</code>). Multiple inheritance (<code>class D : public B1, public B2</code>) is permitted but can introduce ambiguity when bases share an ancestor (the diamond hierarchy) — address with <code>virtual</code> inheritance or prefer composition.<br>
+3. <strong>Polymorphism:</strong> compile-time (function overloading, templates) versus runtime (overridden <code>virtual</code> functions invoked through a <code>Base*</code>).<br>
+4. <strong>Abstraction:</strong> define behavior through pure-virtual interfaces without exposing implementation.<br><br>
+<strong>Object lifetime:</strong> default, parameterized, copy (<code>A(const A&amp;)</code>), and move (<code>A(A&amp;&amp;)</code>) constructors, plus member initializer lists. <strong>Rule of 3/5:</strong> if a destructor, copy, or move operation is explicitly defined, define all applicable operations (alternatively, apply RAII so no manual definition is needed). <code>this</code> is a pointer to the current object. An <code>explicit</code> constructor prevents unintended implicit conversions. Operators (<code>+</code>, <code>==</code>) may be overloaded for user-defined types.</div>
+
+<h2>11. STL, vectors & templates (preview — full Lesson 05)</h2>
+<pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;string&gt;
+int main(){
+  std::vector&lt;int&gt; v = {3, 1, 2};
+  v.push_back(4);   // amortized O(1); capacity is expanded geometrically when exhausted
+  v.pop_back();
+  v.size(); v[0]; v.at(0); // at() performs bounds checking; operator[] does not
+  for(int x : v) std::cout &lt;&lt; x;
+  sort(v.begin(), v.end()); // iterators delimit the range from begin to end
+}</code></pre>
+<table><tr><th>Container</th><th>Application</th><th>Complexity</th></tr>
+<tr><td><code>vector/string/array</code></td><td>contiguous sequences</td><td>indexed access O(1)</td></tr>
+<tr><td><code>list/deque</code></td><td>insertion at either end</td><td>insertion O(1)</td></tr>
+<tr><td><code>stack/queue</code></td><td>LIFO / FIFO adapters</td><td>—</td></tr>
+<tr><td><code>set/map</code></td><td>ordered associative containers (tree-based)</td><td>O(log n)</td></tr>
+<tr><td><code>unordered_set/map</code></td><td>hash-based associative containers</td><td>average O(1)</td></tr>
+<tr><td><code>pair/tuple</code></td><td>fixed-size heterogeneous groups</td><td>—</td></tr></table>
+<pre><code>// Algorithms are provided in &lt;algorithm&gt;: sort, find, count, reverse.
+// std::string is a class type (supporting +, substr(), c_str()), not a character array.
+
+// Templates provide the mechanism behind the STL. A single definition supports multiple types:
+template&lt;typename T&gt;
+T myMax(T a, T b){ return a &gt; b ? a : b; }
+int m1 = myMax(3, 7);       // T deduced as int
+double m2 = myMax(2.5, 1.1); // T deduced as double</code></pre>
+
+<h2>12. Control flow: if, switch, loops</h2>
+<pre><code>int marks; std::cin &gt;&gt; marks;
+if(marks &gt;= 90) std::cout &lt;&lt; "A\n";
+else if(marks &gt;= 75) std::cout &lt;&lt; "B\n";
+else std::cout &lt;&lt; "Keep practicing\n";
+
+char op = '+';
+switch(op){
+  case '+': std::cout &lt;&lt; "add\n"; break; // break prevents fall-through to the next case
+  case '-': std::cout &lt;&lt; "sub\n"; break;
+  default: std::cout &lt;&lt; "?\n";
+}
+
+for(int i = 1; i &lt;= 5; i++) std::cout &lt;&lt; i &lt;&lt; " ";
+int n = 1;
+while(n &lt;= 5){ std::cout &lt;&lt; n &lt;&lt; " "; n++; }</code></pre>
+
+<h2>Exercises</h2>
+<ol>
+<li><strong>Types:</strong> print <code>sizeof(char,int,float,double,bool)</code>. Explain why <code>7/2==3</code>.</li>
+<li><strong>Casts:</strong> convert <code>3.99</code> with <code>static_cast&lt;int&gt;</code>; attempt assignment from <code>enum class</code> to int (observe the error), then correct it with an explicit cast.</li>
+<li><strong>Pointers:</strong> implement <code>void swap(int&amp;,int&amp;)</code>; then verify <code>*(arr+2)==arr[2]</code>.</li>
+<li><strong>Allocation:</strong> allocate <code>new int[5]</code>, output the values, then release with <code>delete[]</code>. Recompile with <code>-fsanitize=address</code> to verify memory correctness.</li>
+<li><strong>Functions:</strong> overload <code>add(int,int)</code> and <code>add(string,string)</code>.</li>
+<li><strong>I/O:</strong> implement the same program twice: once with <code>printf/scanf</code> and once with <code>cin/cout/getline</code>. Handle the <code>ignore()</code> requirement between formatted and line input.</li>
+<li><strong>Files:</strong> write 5 names to a file, then read them back with line numbers.</li>
+<li><strong>Calculator + FizzBuzz</strong> (standard introductory exercises).</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="01-setup.html">← Setup</a><a class="btn" href="03-oop.html">Next: OOP →</a></div>
+<footer>Learn C++ From Scratch · Lesson 02</footer>
+</main></div><script src="script.js"></script></body></html>

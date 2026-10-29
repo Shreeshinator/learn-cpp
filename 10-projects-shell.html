@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>10 · Build Your Own Shell — Learn C++</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('cpp-theme')==='light'?'light':'dark')}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head>
+<body><div class="progress" id="progress" aria-hidden="true"></div>
+<header class="topbar">
+<button class="menu-btn" type="button" aria-label="Show lessons" aria-expanded="false" aria-controls="sidebar" data-menu-btn><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 4.5h11M2.5 8h11M2.5 11.5h11"/></svg></button>
+<a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 7.5l4.5 4.5-4.5 4.5"/><path d="M12.5 16.5h6"/></svg></span><span class="brand-name">Learn C++</span><span class="brand-sub">from scratch</span></a>
+<nav class="navlinks">
+<a href="index.html">Home</a>
+<a href="01-setup.html">Start Here</a>
+<a class="nav-opt" href="05-stl.html">STL</a>
+<a class="nav-opt" href="10-projects-shell.html">Projects</a>
+<button class="iconbtn" type="button" data-theme-btn aria-label="Switch light and dark theme" title="Switch light and dark theme"><svg class="i-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1.6v1.6M8 12.8v1.6M1.6 8h1.6M12.8 8h1.6M3.5 3.5l1.1 1.1M11.4 11.4l1.1 1.1M3.5 12.5l1.1-1.1M11.4 4.6l1.1-1.1"/></svg><svg class="i-moon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M13.4 9.7A5.6 5.6 0 0 1 6.3 2.6a5.6 5.6 0 1 0 7.1 7.1z"/></svg></button>
+</nav>
+</header>
+<div class="layout"><aside class="sidebar" id="sidebar" aria-label="Lessons">
+<div class="side-title">Explorer</div>
+<div class="side-root">learn-cpp-from-scratch</div>
+<div class="search"><svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg><input id="search" type="text" placeholder="Filter lessons" autocomplete="off" spellcheck="false" aria-label="Filter lessons"><kbd>/</kbd></div>
+<div class="tree">
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 0 — Start</button>
+<div class="tree-items">
+<a class="tree-item" href="index.html"><span class="ti-icon home"></span><span class="ti-num"></span><span class="ti-title">Home &amp; Roadmap</span></a>
+<a class="tree-item" href="01-setup.html"><span class="ti-icon"></span><span class="ti-num">01</span><span class="ti-title">Setup, Compiler &amp; Hello World</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 1 — Foundations</button>
+<div class="tree-items">
+<a class="tree-item" href="02-basics.html"><span class="ti-icon"></span><span class="ti-num">02</span><span class="ti-title">Basics: Variables, I/O, Loops, Functions</span></a>
+<a class="tree-item" href="03-oop.html"><span class="ti-icon"></span><span class="ti-num">03</span><span class="ti-title">OOP: Classes, Inheritance, Polymorphism</span></a>
+<a class="tree-item" href="04-memory.html"><span class="ti-icon"></span><span class="ti-num">04</span><span class="ti-title">Memory, Pointers &amp; Smart Pointers</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 2 — Professional C++</button>
+<div class="tree-items">
+<a class="tree-item" href="05-stl.html"><span class="ti-icon"></span><span class="ti-num">05</span><span class="ti-title">STL, Vectors, Maps &amp; Algorithms</span></a>
+<a class="tree-item" href="06-dsa.html"><span class="ti-icon"></span><span class="ti-num">06</span><span class="ti-title">DSA for C++ Devs</span></a>
+<a class="tree-item" href="07-advanced.html"><span class="ti-icon"></span><span class="ti-num">07</span><span class="ti-title">Advanced: Templates, Threads, System Calls</span></a>
+<a class="tree-item" href="08-networking.html"><span class="ti-icon"></span><span class="ti-num">08</span><span class="ti-title">Network Programming &amp; Sockets</span></a>
+</div>
+</div>
+<div class="tree-group">
+<button class="tree-head" type="button" aria-expanded="true">Phase 3 — Build Real Projects</button>
+<div class="tree-items">
+<a class="tree-item" href="09-projects-terminal.html"><span class="ti-icon"></span><span class="ti-num">09</span><span class="ti-title">Project: Terminal App</span></a>
+<a class="tree-item" href="10-projects-shell.html"><span class="ti-icon"></span><span class="ti-num">10</span><span class="ti-title">Project: Build Your Own Shell</span></a>
+<a class="tree-item" href="11-projects-audio.html"><span class="ti-icon"></span><span class="ti-num">11</span><span class="ti-title">Project: Audio Player</span></a>
+<a class="tree-item" href="12-projects-opengl.html"><span class="ti-icon"></span><span class="ti-num">12</span><span class="ti-title">Project: OpenGL / SFML Game</span></a>
+<a class="tree-item" href="13-projects-ai.html"><span class="ti-icon"></span><span class="ti-num">13</span><span class="ti-title">Project: AI Inference Engine</span></a>
+</div>
+</div>
+</div>
+</aside><main class="content">
+<span class="badge">Project 10 · OS + processes · ~90 min</span>
+<h1>Build your own shell (mini-bash)</h1>
+<p><strong>Goal:</strong> implement a minimal command interpreter that prints a prompt (<code>mysh&gt;</code>), reads input lines, and executes them. This project covers <strong>shell architecture, REPL, tokenization, builtins, fork, exec, wait, pipes, redirection, and history</strong>.</p>
+
+<div class="toc"><strong>On this page</strong><ol><li>Shell architecture</li><li>The REPL loop</li><li>Tokenization and parsing</li><li>Builtins vs external programs</li><li>fork / exec / wait</li><li>Full shell implementation</li><li>Windows implementation: CreateProcess vs system()</li><li>Pipes and dup2</li><li>Redirection and history</li><li>Compiling, running, and testing</li><li>Exercises</li></ol></div>
+
+<div class="callout"><strong>Overview:</strong> A shell implements a read-evaluate loop: parse input, execute builtins in-process, spawn external programs via <code>fork</code>/<code>exec</code> (POSIX) or <code>CreateProcess</code> (Windows). A <strong>pipe</strong> (<code>|</code>) connects the standard output of one process to the standard input of another.</div>
+
+<h2>1. Shell architecture</h2>
+<ul>
+<li><strong>Shell</strong> — a program that displays a prompt (<code>mysh&gt;</code> or <code>$</code>) and executes entered command lines. Examples include <strong>bash</strong> (Linux/macOS default), <strong>PowerShell</strong> (Windows), and <strong>CMD</strong> (legacy Windows).</li>
+<li><strong>Terminal</strong> — the host window providing input/output for the shell process. The shell executes as an ordinary user-space program within the terminal.</li>
+<li><strong>Kernel / OS</strong> — the <strong>kernel</strong> is the privileged core of the <strong>operating system</strong> responsible for process creation and resource management. The shell requests services via <strong>system calls</strong> (e.g. process creation).</li>
+<li><strong>Process</strong> — an executing program instance. Each process has a unique <strong>PID (process ID)</strong>.</li>
+</ul>
+<div class="explain"><strong>Definitions:</strong> Terminal = I/O environment. Shell = command interpreter executing within it. Process = runtime instance. Kernel = subsystem implementing system calls.</div>
+
+<h2>2. The REPL loop</h2>
+<p><strong>REPL</strong> denotes <strong>Read → Eval → Print → Loop</strong>:</p>
+<pre><code>loop forever:
+  print "mysh&gt; "          # P: display prompt
+  line = readline()       # R: read one input line
+  args = split(line)      # E part 1: tokenize input
+  run(args)               # E part 2: execute
+  # L: repeat (while(true))</code></pre>
+<div class="explain"><strong>Line by line:</strong> Display the prompt to indicate readiness. Read input until newline (<code>string</code>). Tokenize into discrete arguments. Execute the requested operation. Repeat until termination via <code>exit</code> or end-of-input (Ctrl+D / Ctrl+Z).</div>
+
+<h2>3. Tokenization and parsing</h2>
+<p><strong>Parsing</strong> is structured interpretation of input. <strong>Tokenization</strong> is the initial phase: splitting <code>"g++ a.cpp -o a"</code> into <code>["g++","a.cpp","-o","a"]</code> on whitespace boundaries.</p>
+<ul>
+<li><strong>Token</strong> — a single lexical unit. <code>"g++"</code> is a token.</li>
+<li><strong>Rationale:</strong> process creation interfaces require an argument vector (<code>argv</code>, see Lesson 09), not a raw string. Tokenization produces that structured form.</li>
+<li>This implementation splits on whitespace (spaces, tabs, newlines). It does not process quotation marks (<code>"my file.txt"</code> yields two tokens). Quote-aware tokenization is listed as an extension exercise.</li>
+</ul>
+<pre><code>// split() -- tokenize on whitespace
+#include &lt;sstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+std::vector&lt;std::string&gt; split(const std::string&amp; s) {
+    std::istringstream iss(s);
+    std::vector&lt;std::string&gt; out;
+    std::string w;
+    while (iss &gt;&gt; w) out.push_back(w);
+    return out;
+}</code></pre>
+<div class="explain"><strong>Line by line:</strong><br>
+<code>std::istringstream iss(s);</code> — constructs an input string stream over <code>s</code>, enabling formatted extraction with <code>&gt;&gt;</code>.<br>
+<code>std::vector&lt;std::string&gt; out;</code> — result container for tokens.<br>
+<code>std::string w;</code> — temporary holder for the current token.<br>
+<code>while (iss &gt;&gt; w)</code> — extracts successive whitespace-delimited tokens; extraction automatically skips arbitrary whitespace runs.<br>
+<code>out.push_back(w);</code> — appends each token. <code>return out;</code> returns the token vector.</div>
+
+<h2>4. Builtins vs external programs</h2>
+<div class="callout"><strong>Definition:</strong> <strong>Builtins</strong> execute inside the shell process (no new process). <strong>External programs</strong> are independent executables the shell launches as child processes.</div>
+<ul>
+<li><strong>Builtin examples:</strong> <code>cd</code> (modifies the shell's own working directory — this must execute in-process, as a child process cannot alter the parent's state), <code>exit</code>, <code>help</code>, <code>pwd</code>, <code>echo</code>, <code>history</code>.</li>
+<li><strong>External examples:</strong> <code>g++</code>, <code>notepad</code>, <code>python</code> — discrete files located via PATH.</li>
+<li><strong>Dispatch:</strong> <code>if (args[0]=="cd") ... else if (args[0]=="exit") ... else // external: fork+exec</code>. Builtins are handled by conditional branches; all other commands follow the process-creation path.</li>
+</ul>
+
+<h2>5. fork / exec / wait</h2>
+<p>On POSIX systems (Linux/macOS), launching an external program requires three operations. On Windows the API differs (see section 7); the control flow is equivalent.</p>
+<ul>
+<li><strong><code>fork()</code></strong> — creates a child process by duplicating the calling process. Both parent and child continue from the return point. The parent receives the child's PID (positive); the child receives 0. A return value of -1 indicates failure. The branch <code>if (pid==0)</code> therefore identifies child execution.</li>
+<li><strong><code>execvp()</code></strong> — replaces the current process image with a specified program. <code>exec</code> = execute, <code>v</code> = vector argument form, <code>p</code> = PATH search.</li>
+<li><strong><code>waitpid()</code></strong> — suspends the parent until the specified child terminates, preventing premature prompt redisplay.</li>
+</ul>
+<pre><code>BEFORE fork:                AFTER fork:                 AFTER exec in child:
++----------------+          +---------------+           +---------------+
+| shell (parent) |  fork()  | shell parent  |           | shell parent  |
+| pid = 100      |  ======&gt; | pid = 100     |  exec()   | pid = 100     |
+|                | duplicate+---------------+  replace  |  (waiting)    |
++----------------+          | shell CHILD   | ======&gt;   +---------------+
+                            | pid = 0       |           | g++ program   |
+                            | (duplicate)   |           | (new image)   |
+                            +---------------+           +---------------+
+Parent then calls waitpid() until child exits, then loops.</code></pre>
+<div class="explain"><strong>Control flow:</strong> A single process duplicates into parent and child (<code>fork</code>). The child replaces its image with the target program (<code>exec</code>). The parent blocks in <code>wait</code>. When the child terminates, the parent resumes and redisplays the prompt. If <code>fork</code> returns -1, duplication failed. If <code>exec</code> returns, loading failed; the child must report via <code>perror("exec")</code> and terminate, otherwise two shell instances remain.</div>
+<div class="callout"><strong>Terminology:</strong> <strong>System call</strong> = kernel service request (<code>fork</code>/<code>exec</code>/<code>wait</code> are system calls). <strong><code>perror</code></strong> translates the current <code>errno</code> value to a descriptive message. <strong><code>_exit(1)</code></strong> terminates the child immediately with status 1 without flushing parent stdio buffers (preferred over <code>exit</code> in the post-fork child).</div>
+
+<h2>6. Full shell implementation</h2>
+<pre><code>// mysh.cpp -- g++ -std=c++17 mysh.cpp -o mysh
+#include &lt;iostream&gt;
+#include &lt;sstream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#ifndef _WIN32
+#include &lt;unistd.h&gt;
+#include &lt;sys/wait.h&gt;
+#endif
+#include &lt;filesystem&gt;
+
+std::vector&lt;std::string&gt; split(const std::string&amp; s) {
+    std::istringstream iss(s);
+    std::vector&lt;std::string&gt; out;
+    std::string w;
+    while (iss &gt;&gt; w) out.push_back(w);
+    return out;
+}
+int main() {
+    std::string line;
+    while (true) {
+        std::cout &lt;&lt; std::filesystem::current_path().string() &lt;&lt; " mysh&gt; ";
+        if (!std::getline(std::cin, line)) break;
+        auto args = split(line);
+        if (args.empty()) continue;
+        if (args[0] == "exit") break;
+        if (args[0] == "cd") {
+            if (args.size() &lt; 2 || chdir(args[1].c_str()) != 0) perror("cd");
+            continue;
+        }
+        if (args[0] == "help") {
+            std::cout &lt;&lt; "builtins: cd exit help\n";
+            continue;
+        }
+#ifndef _WIN32
+        pid_t pid = fork();
+        if (pid == 0) {
+            std::vector&lt;char*&gt; argv;
+            for (auto&amp; a : args) argv.push_back(a.data());
+            argv.push_back(nullptr);
+            execvp(argv[0], argv.data());
+            perror("exec");
+            _exit(1);
+        } else if (pid &gt; 0) {
+            int st;
+            waitpid(pid, &amp;st, 0);
+        } else {
+            perror("fork");
+        }
+#else
+        std::string cmd = line;
+        if (std::system(cmd.c_str()) != 0) std::cout &lt;&lt; "(exit != 0)\n";
+#endif
+    }
+    return 0;
+}</code></pre>
+<div class="explain"><strong>Part A — headers:</strong> <code>iostream/sstream/vector/string</code> provide console I/O, string streams, containers, and text. <code>#ifndef _WIN32</code> conditionally includes POSIX headers only on non-Windows builds (<code>_WIN32</code> is predefined by Windows compilers). <code>unistd.h</code> declares <code>fork/exec/chdir</code>; <code>sys/wait.h</code> declares <code>waitpid</code>. <code>filesystem</code> provides <code>current_path()</code>.</div>
+<div class="explain"><strong>Part B — split() and loop entry:</strong> <code>split</code> tokenizes as defined above. <code>main</code> takes no arguments; input arrives via standard input. <code>std::string line;</code> holds the current command line. <code>while(true)</code> implements the REPL. The prompt displays the current working directory plus <code>mysh&gt;</code>. <code>std::getline(std::cin,line)</code> reads until newline; failure (end-of-input) terminates via <code>break</code>.</div>
+<div class="explain"><strong>Part C — builtins:</strong> <code>auto args = split(line);</code> tokenizes. Empty input triggers <code>continue</code> (reprompt). <code>exit</code> breaks the loop. <code>cd</code> invokes <code>chdir(path)</code>; <code>.c_str()</code> converts to null-terminated form. Missing arguments or system errors are reported via <code>perror("cd")</code>. <code>continue</code> skips process creation. <code>help</code> prints the builtin summary.</div>
+<div class="explain"><strong>Part D — fork/exec/wait (POSIX):</strong> <code>pid_t pid = fork();</code> duplicates the process. <code>if (pid==0)</code> (child): constructs a null-terminated <code>char*</code> vector as required by <code>execvp</code> (<code>data()</code> exposes the character buffer; final <code>nullptr</code> terminates the array), then replaces the image via <code>execvp(argv[0], argv.data())</code>. On failure, reports and calls <code>_exit(1)</code>. <code>else if (pid&gt;0)</code> (parent): blocks in <code>waitpid(pid,&amp;st,0)</code> until child completion (<code>st</code> receives exit status). <code>else perror("fork")</code> handles duplication failure.</div>
+<div class="explain"><strong>Part E — Windows fallback:</strong> The <code>#else</code> branch compiles on Windows: <code>std::system(cmd.c_str())</code> delegates execution to the system command processor. Non-zero status prints <code>(exit != 0)</code>. The loop then repeats. Final <code>return 0;</code> indicates clean termination.</div>
+
+<h2>7. Windows notes: CreateProcess vs system()</h2>
+<ul>
+<li><strong><code>fork/exec</code> are unavailable on Windows.</strong> The native equivalents are <strong><code>CreateProcessA()</code></strong> (creates a new process in a single call) combined with <strong><code>WaitForSingleObject()</code></strong> (blocks until completion).</li>
+<li><strong><code>std::system(...)</code></strong> delegates the full command line to the system shell (<code>cmd.exe</code> on Windows, <code>/bin/sh</code> on POSIX). It concisely handles <code>dir</code>, <code>echo hi</code>, and <code>notepad</code>. Trade-offs: reduced control and additional shell overhead. It is suitable for an initial implementation; direct process APIs are appropriate for subsequent refinement.</li>
+<li><strong><code>chdir</code> vs <code>_chdir</code>:</strong> MSVC declares <code>_chdir</code>. MinGW/g++ accepts <code>chdir</code>. If <code>chdir</code> is unresolved, substitute <code>_chdir</code>.</li>
+<li><strong>Windows validation:</strong> <code>echo hi</code> verifies basic execution, <code>dir</code> verifies directory listing, <code>notepad</code> verifies blocking wait (the shell resumes after Notepad closes).</li>
+</ul>
+<div class="callout"><strong>Recommendation:</strong> implement with <code>system()</code> first for cross-platform functionality, then adopt <code>fork</code>/<code>exec</code> on POSIX systems to demonstrate direct process management.</div>
+
+<h2>8. Pipes and dup2</h2>
+<div class="callout"><strong>Definition:</strong> A <strong>pipe</strong> (<code>|</code>) redirects the standard output (<strong>stdout</strong>) of one process to the standard input (<strong>stdin</strong>) of another. Example: <code>ls | grep cpp</code> filters directory output through pattern matching without intermediate files.</div>
+<ul>
+<li><strong><code>pipe(fd)</code></strong> — requests a kernel pipe, returning two file descriptors: <code>fd[0]</code> = read end, <code>fd[1]</code> = write end (<strong>fd</strong> = file descriptor, an integer handle for an open I/O channel).</li>
+<li><strong><code>dup2(old, new)</code></strong> — duplicates a file descriptor, redirecting <code>new</code> to reference <code>old</code>. <code>dup2(fd[1], STDOUT_FILENO)</code> redirects standard output (descriptor 1) into the pipe. <code>STDIN_FILENO</code> is descriptor 0.</li>
+<li><strong>Procedure for <code>cmd1 | cmd2</code>:</strong> create pipe → fork first child (redirect stdout to pipe write end, close unused descriptors, exec <code>cmd1</code>) → fork second child (redirect stdin from pipe read end, close unused descriptors, exec <code>cmd2</code>) → parent closes both ends → waits for both children.</li>
+<li><strong>Descriptor hygiene:</strong> all unused pipe ends must be closed. An open write end prevents end-of-file detection, causing the reader to block indefinitely.</li>
+</ul>
+<pre><code>#ifndef _WIN32
+// Sketch for "cmd1 | cmd2":
+// int fd[2]; pipe(fd);                 // fd[0]=read, fd[1]=write
+// if (fork() == 0) {                  // first child executes left side
+//     dup2(fd[1], STDOUT_FILENO);      // stdout -&gt; pipe write end
+//     close(fd[0]); close(fd[1]);
+//     execvp(cmd1[0], cmd1args);
+// }
+// if (fork() == 0) {                  // second child executes right side
+//     dup2(fd[0], STDIN_FILENO);       // stdin &lt;- pipe read end
+//     close(fd[0]); close(fd[1]);
+//     execvp(cmd2[0], cmd2args);
+// }
+// close(fd[0]); close(fd[1]);          // parent releases descriptors
+// waitpid(...); waitpid(...);          // wait for both children
+#endif</code></pre>
+<div class="explain"><strong>Reading the sketch:</strong> each <code>fork</code> creates a command stage. Each <code>dup2</code> remaps standard I/O to the pipe. <code>close</code> releases redundant descriptors to ensure correct EOF semantics. The parent closes its copies and waits for both children. Multi-stage pipelines (<code>a | b | c</code>) extend this pattern with chained pipes.</div>
+
+<h2>9. Redirection and history</h2>
+<ul>
+<li><strong>Redirection <code>&gt;</code></strong> — redirects standard output to a file. <code>echo hi &gt; out.txt</code> creates <code>out.txt</code> containing <code>hi</code>. Implementation: in the child before <code>exec</code>, open the file and apply <code>dup2(fileFd, STDOUT_FILENO)</code>. <code>&gt;</code> truncates; <code>&gt;&gt;</code> appends. <code>&lt;</code> redirects file content to standard input.</li>
+<li><strong>Minimal redirection:</strong> <code>freopen("out.txt","w",stdout)</code> in the child reassigns standard output to the file. <code>open()+dup2()</code> provides full control for production code.</li>
+<li><strong>History</strong> — retains prior command lines for review and re-execution. Maintain <code>std::vector&lt;std::string&gt; hist;</code>, append each non-empty line, and implement a <code>history</code> builtin that prints numbered entries. Bound capacity (e.g. 20–100 entries) to limit memory. Interactive recall via arrow keys requires terminal libraries; print-and-retype is sufficient for this version.</li>
+</ul>
+<pre><code># Exercise after building mysh:
+mysh&gt; echo hello &gt; out.txt
+mysh&gt; history
+# Expected: history lists prior lines including "echo hello &gt; out.txt"</code></pre>
+<div class="explain"><strong>Summary:</strong> redirection is output remapping (standard output to file). History is state retention (a vector of strings). Both require minimal code once <code>fork</code>/<code>exec</code> is functional.</div>
+
+<h2>10. Compiling, running, and testing</h2>
+<pre><code># Navigate to the project directory
+cd ~/Documents/CppCourse
+# Windows PowerShell: cd $HOME\Documents\CppCourse
+
+# Compile
+g++ -std=c++17 mysh.cpp -o mysh
+
+# Execute -- the shell now hosts an interactive session
+./mysh
+# Windows: .\mysh.exe
+
+# Validation sequence inside mysh:
+mysh&gt; help
+mysh&gt; echo hello world
+mysh&gt; pwd
+mysh&gt; cd ..
+mysh&gt; exit</code></pre>
+<div class="explain"><strong>Validation rationale:</strong> <code>help</code> verifies builtin dispatch. <code>echo hello world</code> verifies external process execution. <code>pwd/cd</code> verify directory management. <code>exit</code> verifies loop termination. An <code>exec: No such file</code> diagnostic indicates PATH resolution failure; verify spelling or use a fully qualified path.</div>
+<table><tr><th>Symptom</th><th>Cause</th><th>Resolution</th></tr>
+<tr><td><code>exec: No such file or directory</code></td><td>Unrecognized program name or absent PATH entry.</td><td>Verify spelling. Test with <code>ls</code> / <code>dir</code>. On Windows test with <code>notepad</code>.</td></tr>
+<tr><td><code>cd: No such file or directory</code></td><td>Target directory does not exist relative to current location.</td><td>Execute <code>pwd</code> first, then supply a correct relative or absolute path.</td></tr>
+<tr><td>Shell blocks after pipe implementation</td><td>Pipe write end remains open; reader never observes EOF.</td><td>Close <code>fd[0]/fd[1]</code> in the parent and unused ends in each child.</td></tr>
+<tr><td>Duplicate prompts / output after fork</td><td>Child failed to <code>exec</code> and re-entered the main loop.</td><td>After <code>perror("exec")</code> unconditionally call <code>_exit(1)</code> in the child branch.</td></tr>
+</table>
+
+<h2>✅ Exercises</h2>
+<ol>
+<li><strong>pwd and echo builtins:</strong> <code>pwd</code> prints <code>current_path()</code>. <code>echo</code> prints all trailing arguments separated by spaces. This isolates builtin handling from process creation.</li>
+<li><strong>Output redirection:</strong> implement <code>echo hi &gt; out.txt</code> to create <code>out.txt</code> containing <code>hi</code>. Hint: call <code>freopen</code> in the child before <code>exec</code>, then verify file contents.</li>
+<li><strong>Single pipe:</strong> implement <code>ls | grep cpp</code> (or equivalent on Windows) by detecting <code>|</code> in the token list, splitting into left/right command vectors, and applying the pipe procedure.</li>
+<li><strong>Command history:</strong> maintain <code>vector&lt;string&gt; hist</code> of the last 20 entries. Implement a <code>history</code> builtin to display them numbered. Extension: <code>!3</code> re-executes entry 3.</li>
+<li><strong>Quote handling:</strong> extend <code>split</code> to preserve <code>"my file.txt"</code> as a single token. Hint: iterate character-by-character tracking quotation state.</li>
+</ol>
+
+<div class="pager"><a class="btn ghost" href="09-projects-terminal.html">← Terminal App</a><a class="btn" href="11-projects-audio.html">Next: Audio Player →</a></div>
+<footer>Learn C++ From Scratch · Project 10</footer>
+</main></div><script src="script.js"></script></body></html>
